@@ -2,7 +2,10 @@
 main:
   - title: "CV"
     url: /cv/
-  
+
+  - title: "Projects"
+    url: /projects/  
+
   - title: "Publications"
     url: /publications/
 
@@ -21,5 +24,4 @@ main:
   - title: "Guide"
     url: /markdown/
 
-  - title: "Test"
-    url: /test/
+
