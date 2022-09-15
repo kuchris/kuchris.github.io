@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "zh-HK"
-title                    : "Chris Wong"
+title                    : "Chris Wong's Pages"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "personal description"
+name                     : &name "Chris Wong"
+description              : &description "Physics Learner"
 url                      : https://kuchris.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "kuchris/kuchris.github.io"
@@ -80,7 +80,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Sidebar Name"
+  name             : "Chris Wong"
   avatar           : "profile.png"
   bio              : "Your biography for the left-hand sidebar"
   location         : "Location"
