@@ -8,5 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-Main Page
+About Me
 ------
+I love physics.
