@@ -16,7 +16,7 @@ Education
 
 Work experience
 ======
-* 2015: Assistant Research Engineer
+* 2021/12 - Present : Assistant Research Engineer
   * Amonics Ltd.
   * Develop program to communicate with laser modules via RS232
   * Develop python script for automate data extraction via GPIB
