@@ -8,4 +8,5 @@ redirect_from:
   - /about.html
 ---
 
-I love physics.
+<center>I love physics.</center>
+
