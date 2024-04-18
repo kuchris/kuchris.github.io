@@ -8,5 +8,5 @@ redirect_from:
   - /about.html
 ---
 
-<center>I love physics.</center>
+<center>I love physics. test</center>
 <br/><center><img src='/images/about-background.jpg'></center>
