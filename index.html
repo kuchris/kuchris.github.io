@@ -75,6 +75,28 @@
             text-align: center;
             padding: 4rem 0 6rem;
             color: white;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%), 
+                        url('images/hero-background.jpg') center/cover;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .hero-content {
@@ -235,16 +257,14 @@
             border-bottom: 1px solid rgba(255,255,255,0.2);
         }
 
-        .research-card-image-placeholder {
-            width: 100%;
-            height: 200px;
+        .research-card-header {
             background: linear-gradient(45deg, #667eea, #764ba2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: white;
-            font-size: 3rem;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding: 1.5rem;
+        }
+
+        .research-card-content {
+            background: white;
         }
 
         .research-card-body {
@@ -445,65 +465,131 @@
             <div class="container">
                 <h2 class="section-title">Research Projects</h2>
                 <div class="research-grid">
+                    <!-- Current Research (2024) -->
                     <div class="research-card">
                         <div class="research-card-header">
                             <h3>Study of P-wave Feshbach Molecules</h3>
                             <span class="research-year">2024 - Present</span>
                         </div>
                         <div class="research-card-body">
-                            <p>Advancing understanding of ultracold atomic physics through study of cooling mechanisms, Feshbach resonances, and P-wave contacts. This research is directly relevant to quantum computing and quantum simulation applications.</p>
+                            <p>Advanced study of ultracold atomic physics including cooling mechanisms, Feshbach resonances, and P-wave contacts. This research is directly relevant to current quantum computing and quantum simulation applications.</p>
                         </div>
                     </div>
                     
+                    <!-- Quantum Mechanics & Numerical Methods (2021-2022) -->
                     <div class="research-card">
                         <div class="research-card-header">
-                            <h3>3D Schrödinger Equation Solver</h3>
-                            <span class="research-year">2021-2022</span>
-                        </div>
-                        <div class="research-card-body">
-                            <p>Developed comprehensive numerical methods for solving time-independent and time-dependent Schrödinger equations in 1D, 2D, and 3D for arbitrary potential functions using finite difference methods.</p>
-                            <a href="http://dx.doi.org/10.13140/RG.2.2.13878.01602/1" class="doi-link">View Publication →</a>
-                        </div>
-                    </div>
-                    
-                    <div class="research-card">
-                        <div class="research-card-header">
-                            <h3>Topological Photonics</h3>
-                            <span class="research-year">2021</span>
-                        </div>
-                        <div class="research-card-body">
-                            <p>Investigated topology in physics using 1D diatomic crystal structures, Berry phase in quantum models, and Integer Quantum Hall effects, contributing to understanding of topological states of matter.</p>
-                            <a href="http://dx.doi.org/10.13140/RG.2.2.27651.22560" class="doi-link">View Publication →</a>
-                        </div>
-                    </div>
-                    
-                    <div class="research-card">
-                        <div class="research-card-header">
-                            <h3>Monte Carlo Ising Model</h3>
+                            <h3>Solving 1D and 2D Time-Dependent Schrödinger Equation</h3>
                             <span class="research-year">2022</span>
                         </div>
                         <div class="research-card-body">
-                            <p>Implemented Monte Carlo simulations to study physical properties of 2D binary alloys, investigating phase transitions and critical phenomena in statistical mechanics.</p>
+                            <p>Applied finite difference method to study eigenvalues and time evolution of eigenvectors from 1D and 2D time-dependent Schrödinger equation for arbitrary potential energy functions.</p>
                         </div>
                     </div>
-                    
+
                     <div class="research-card">
                         <div class="research-card-header">
-                            <h3>Quantum Entanglement Studies</h3>
-                            <span class="research-year">2020</span>
+                            <h3>Electromagnetically Induced Transparency via Coupled Oscillators</h3>
+                            <span class="research-year">2022</span>
                         </div>
                         <div class="research-card-body">
-                            <p>Experimental verification of CHSH inequality and wave-particle duality using entangled photon pairs, exploring foundations of quantum mechanics and Bell's theorem.</p>
+                            <p>Reproduced EIT-like behavior by solving coupled simple harmonic oscillator systems using numerical methods and different ODE solvers to analyze oscillator dynamics.</p>
+                            <a href="http://dx.doi.org/10.13140/RG.2.2.33199.00164/1" class="doi-link">View Publication →</a>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>Monte Carlo Simulation of 2D Ising Model</h3>
+                            <span class="research-year">2022</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Investigated physical properties of different sizes of 2D binary alloys using Monte Carlo methods to study phase transitions and critical phenomena in statistical mechanics.</p>
                         </div>
                     </div>
                     
                     <div class="research-card">
                         <div class="research-card-header">
-                            <h3>Electronic Band Structure Calculations</h3>
+                            <h3>3D Time-Independent Schrödinger Equation Solver</h3>
                             <span class="research-year">2021</span>
                         </div>
                         <div class="research-card-body">
-                            <p>Computational study of electronic band structures for various materials using Quantum ESPRESSO based on density functional theory, contributing to materials science research.</p>
+                            <p>Developed finite difference method to find eigenvalues and eigenvectors from the 3D time-independent Schrödinger equation for arbitrary potential energy functions.</p>
+                            <a href="http://dx.doi.org/10.13140/RG.2.2.13878.01602/1" class="doi-link">View Publication →</a>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>2D Time-Independent Schrödinger Equation Solver</h3>
+                            <span class="research-year">2021</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Applied finite difference method to solve 2D time-independent Schrödinger equation for arbitrary potential energy functions, extending 1D numerical approaches.</p>
+                            <a href="http://dx.doi.org/10.13140/RG.2.2.12835.99360" class="doi-link">View Publication →</a>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>1D Time-Independent Schrödinger Equation Solver</h3>
+                            <span class="research-year">2021</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Implemented tri-diagonal method to find eigenvalues and eigenvectors from the bounded 1D time-independent Schrödinger equation for arbitrary potential energy functions.</p>
+                            <a href="http://dx.doi.org/10.13140/RG.2.2.26129.97127" class="doi-link">View Publication →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- University Research Projects (2020-2021) -->
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>Topological Photonics</h3>
+                            <span class="research-year">2021 - CUHK</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Investigated topology in physics using 1D diatomic crystal structures, Berry phase in quantum models, and Integer Quantum Hall effects under supervision of Prof. Daniel H.C. Ong.</p>
+                            <a href="http://dx.doi.org/10.13140/RG.2.2.27651.22560" class="doi-link">View Publication →</a>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>Computing Band Structures</h3>
+                            <span class="research-year">2021 - CUHK</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Computational study of electronic band structures for different materials using Quantum ESPRESSO based on density functional theory under supervision of Prof. HUI Pak Ming.</p>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>Classical Analog of Electromagnetically Induced Transparency</h3>
+                            <span class="research-year">2021 - CUHK</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Reproduced EIT-like behavior using coupled RLC circuits, demonstrating classical analogies to quantum optical phenomena under supervision of Prof. Daniel H.C. Ong.</p>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>CHSH Inequality and Wave-Particle Duality</h3>
+                            <span class="research-year">2020 - CityU</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Experimental verification using entangled photon pairs and quED/quCR demonstrator to study quantum entanglement, Bell's theorem, and local hidden variable theories under supervision of Prof. Sai Tak CHU.</p>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>NP-complete Problems in Combinatorial Optimization</h3>
+                            <span class="research-year">2019 - CityU</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Applied genetic algorithms and self-organizing mapping to solve NP-hard problems, specifically the traveling salesman problem, demonstrating computational physics approaches to optimization.</p>
                         </div>
                     </div>
                 </div>
