@@ -1,86 +1,86 @@
 [
     {
         "id": "research-1",
-        "title": "Study of P-wave Feshbach Molecules",
-        "year": "2024 - Present",
-        "text": "Advanced study of ultracold atomic physics including cooling mechanisms, Feshbach resonances, and P-wave contacts. This research is directly relevant to current quantum computing and quantum simulation applications.",
+        "title": "NP-complete Problems in Combinatorial Optimization",
+        "year": "2019 - CityU",
+        "text": "Applied genetic algorithms and self-organizing mapping to solve NP-hard problems, specifically the traveling salesman problem, demonstrating computational physics approaches to optimization.",
         "doi": null
     },
     {
         "id": "research-2",
-        "title": "Solving 1D and 2D Time-Dependent Schrödinger Equation",
-        "year": "2022",
-        "text": "Applied finite difference method to study eigenvalues and time evolution of eigenvectors from 1D and 2D time-dependent Schrödinger equation for arbitrary potential energy functions.",
+        "title": "CHSH Inequality and Wave-Particle Duality",
+        "year": "2020 - CityU",
+        "text": "Experimental verification using entangled photon pairs and quED/quCR demonstrator to study quantum entanglement, Bell's theorem, and local hidden variable theories under supervision of Prof. Sai Tak CHU.",
         "doi": null
-    },
+    },    
     {
         "id": "research-3",
-        "title": "Electromagnetically Induced Transparency via Coupled Oscillators",
-        "year": "2022",
-        "text": "Reproduced EIT-like behavior by solving coupled simple harmonic oscillator systems using numerical methods and different ODE solvers to analyze oscillator dynamics.",
-        "doi": "http://dx.doi.org/10.13140/RG.2.2.33199.00164/1"
-    },
-    {
-        "id": "research-4",
-        "title": "Monte Carlo Simulation of 2D Ising Model",
-        "year": "2022",
-        "text": "Investigated physical properties of different sizes of 2D binary alloys using Monte Carlo methods to study phase transitions and critical phenomena in statistical mechanics.",
-        "doi": null
-    },
-    {
-        "id": "research-5",
-        "title": "3D Time-Independent Schrödinger Equation Solver",
-        "year": "2021",
-        "text": "Developed finite difference method to find eigenvalues and eigenvectors from the 3D time-independent Schrödinger equation for arbitrary potential energy functions.",
-        "doi": "http://dx.doi.org/10.13140/RG.2.2.13878.01602/1"
-    },
-    {
-        "id": "research-6",
-        "title": "2D Time-Independent Schrödinger Equation Solver",
-        "year": "2021",
-        "text": "Applied finite difference method to solve 2D time-independent Schrödinger equation for arbitrary potential energy functions, extending 1D numerical approaches.",
-        "doi": "http://dx.doi.org/10.13140/RG.2.2.12835.99360"
-    },
-    {
-        "id": "research-7",
-        "title": "1D Time-Independent Schrödinger Equation Solver",
-        "year": "2021",
-        "text": "Implemented tri-diagonal method to find eigenvalues and eigenvectors from the bounded 1D time-independent Schrödinger equation for arbitrary potential energy functions.",
-        "doi": "http://dx.doi.org/10.13140/RG.2.2.26129.97127"
-    },
-    {
-        "id": "research-8",
-        "title": "Topological Photonics",
-        "year": "2021 - CUHK",
-        "text": "Investigated topology in physics using 1D diatomic crystal structures, Berry phase in quantum models, and Integer Quantum Hall effects under supervision of Prof. Daniel H.C. Ong.",
-        "doi": "http://dx.doi.org/10.13140/RG.2.2.27651.22560"
-    },
-    {
-        "id": "research-9",
-        "title": "Computing Band Structures",
-        "year": "2021 - CUHK",
-        "text": "Computational study of electronic band structures for different materials using Quantum ESPRESSO based on density functional theory under supervision of Prof. HUI Pak Ming.",
-        "doi": null
-    },
-    {
-        "id": "research-10",
         "title": "Classical Analog of Electromagnetically Induced Transparency",
         "year": "2021 - CUHK",
         "text": "Reproduced EIT-like behavior using coupled RLC circuits, demonstrating classical analogies to quantum optical phenomena under supervision of Prof. Daniel H.C. Ong.",
         "doi": null
     },
     {
+        "id": "research-4",
+        "title": "Computing Band Structures",
+        "year": "2021 - CUHK",
+        "text": "Computational study of electronic band structures for different materials using Quantum ESPRESSO based on density functional theory under supervision of Prof. HUI Pak Ming.",
+        "doi": null
+    },
+    {
+        "id": "research-5",
+        "title": "Topological Photonics",
+        "year": "2021 - CUHK",
+        "text": "Investigated topology in physics using 1D diatomic crystal structures, Berry phase in quantum models, and Integer Quantum Hall effects under supervision of Prof. Daniel H.C. Ong.",
+        "doi": "http://dx.doi.org/10.13140/RG.2.2.27651.22560"
+    },
+    {
+        "id": "research-6",
+        "title": "1D Time-Independent Schrödinger Equation Solver",
+        "year": "2021",
+        "text": "Implemented tri-diagonal method to find eigenvalues and eigenvectors from the bounded 1D time-independent Schrödinger equation for arbitrary potential energy functions.",
+        "doi": "http://dx.doi.org/10.13140/RG.2.2.26129.97127"
+    },
+    {
+        "id": "research-7",
+        "title": "2D Time-Independent Schrödinger Equation Solver",
+        "year": "2021",
+        "text": "Applied finite difference method to solve 2D time-independent Schrödinger equation for arbitrary potential energy functions, extending 1D numerical approaches.",
+        "doi": "http://dx.doi.org/10.13140/RG.2.2.12835.99360"
+    },
+    {
+        "id": "research-8",
+        "title": "3D Time-Independent Schrödinger Equation Solver",
+        "year": "2021",
+        "text": "Developed finite difference method to find eigenvalues and eigenvectors from the 3D time-independent Schrödinger equation for arbitrary potential energy functions.",
+        "doi": "http://dx.doi.org/10.13140/RG.2.2.13878.01602/1"
+    },
+    {
+        "id": "research-9",
+        "title": "Electromagnetically Induced Transparency via Coupled Oscillators",
+        "year": "2022",
+        "text": "Reproduced EIT-like behavior by solving coupled simple harmonic oscillator systems using numerical methods and different ODE solvers to analyze oscillator dynamics.",
+        "doi": "http://dx.doi.org/10.13140/RG.2.2.33199.00164/1"
+    },
+    {
+        "id": "research-10",
+        "title": "Monte Carlo Simulation of 2D Ising Model",
+        "year": "2022",
+        "text": "Investigated physical properties of different sizes of 2D binary alloys using Monte Carlo methods to study phase transitions and critical phenomena in statistical mechanics.",
+        "doi": null
+    },
+    {
         "id": "research-11",
-        "title": "CHSH Inequality and Wave-Particle Duality",
-        "year": "2020 - CityU",
-        "text": "Experimental verification using entangled photon pairs and quED/quCR demonstrator to study quantum entanglement, Bell's theorem, and local hidden variable theories under supervision of Prof. Sai Tak CHU.",
+        "title": "Solving 1D and 2D Time-Dependent Schrödinger Equation",
+        "year": "2022",
+        "text": "Applied finite difference method to study eigenvalues and time evolution of eigenvectors from 1D and 2D time-dependent Schrödinger equation for arbitrary potential energy functions.",
         "doi": null
     },
     {
         "id": "research-12",
-        "title": "NP-complete Problems in Combinatorial Optimization",
-        "year": "2019 - CityU",
-        "text": "Applied genetic algorithms and self-organizing mapping to solve NP-hard problems, specifically the traveling salesman problem, demonstrating computational physics approaches to optimization.",
+        "title": "Study of P-wave Feshbach Molecules",
+        "year": "2024",
+        "text": "Advanced study of ultracold atomic physics including cooling mechanisms, Feshbach resonances, and P-wave contacts. This research is directly relevant to current quantum computing and quantum simulation applications.",
         "doi": null
     },
     {
