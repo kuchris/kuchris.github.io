@@ -90,7 +90,7 @@
             text-align: center;
             padding: 4rem 0 6rem;
             color: white;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%), 
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%), 
                         url('images/hero-background.jpg') center/cover;
             background-attachment: fixed;
             position: relative;
@@ -103,7 +103,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%); 
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); 
             z-index: 1;
         }
 
@@ -525,8 +525,133 @@
         <section id="research" class="section">
             <div class="container">
                 <h2 id="research-title" class="section-title">Research Projects</h2>
-                <div id="research-projects-container" class="research-grid">
-                    <!-- Research projects will be dynamically loaded here -->
+                <div class="research-grid">
+                    <!-- Current Research (2024) -->
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3 id="research-1-title">Study of P-wave Feshbach Molecules</h3>
+                            <span id="research-1-year" class="research-year">2024 - Present</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p id="research-1-text">Advanced study of ultracold atomic physics including cooling mechanisms, Feshbach resonances, and P-wave contacts. This research is directly relevant to current quantum computing and quantum simulation applications.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Other research projects with IDs -->
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3 id="research-2-title">Solving 1D and 2D Time-Dependent Schrödinger Equation</h3>
+                            <span id="research-2-year" class="research-year">2022</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p id="research-2-text">Applied finite difference method to study eigenvalues and time evolution of eigenvectors from 1D and 2D time-dependent Schrödinger equation for arbitrary potential energy functions.</p>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3 id="research-3-title">Electromagnetically Induced Transparency via Coupled Oscillators</h3>
+                            <span id="research-3-year" class="research-year">2022</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p id="research-3-text">Reproduced EIT-like behavior by solving coupled simple harmonic oscillator systems using numerical methods and different ODE solvers to analyze oscillator dynamics.</p>
+                            <a href="http://dx.doi.org/10.13140/RG.2.2.33199.00164/1" class="doi-link">View Publication →</a>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3 id="research-4-title">Monte Carlo Simulation of 2D Ising Model</h3>
+                            <span id="research-4-year" class="research-year">2022</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p id="research-4-text">Investigated physical properties of different sizes of 2D binary alloys using Monte Carlo methods to study phase transitions and critical phenomena in statistical mechanics.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3 id="research-5-title">3D Time-Independent Schrödinger Equation Solver</h3>
+                            <span id="research-5-year" class="research-year">2021</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p id="research-5-text">Developed finite difference method to find eigenvalues and eigenvectors from the 3D time-independent Schrödinger equation for arbitrary potential energy functions.</p>
+                            <a href="http://dx.doi.org/10.13140/RG.2.2.13878.01602/1" class="doi-link">View Publication →</a>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3 id="research-6-title">2D Time-Independent Schrödinger Equation Solver</h3>
+                            <span id="research-6-year" class="research-year">2021</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p id="research-6-text">Applied finite difference method to solve 2D time-independent Schrödinger equation for arbitrary potential energy functions, extending 1D numerical approaches.</p>
+                            <a href="http://dx.doi.org/10.13140/RG.2.2.12835.99360" class="doi-link">View Publication →</a>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3 id="research-7-title">1D Time-Independent Schrödinger Equation Solver</h3>
+                            <span id="research-7-year" class="research-year">2021</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p id="research-7-text">Implemented tri-diagonal method to find eigenvalues and eigenvectors from the bounded 1D time-independent Schrödinger equation for arbitrary potential energy functions.</p>
+                            <a href="http://dx.doi.org/10.13140/RG.2.2.26129.97127" class="doi-link">View Publication →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3 id="research-8-title">Topological Photonics</h3>
+                            <span id="research-8-year" class="research-year">2021 - CUHK</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p id="research-8-text">Investigated topology in physics using 1D diatomic crystal structures, Berry phase in quantum models, and Integer Quantum Hall effects under supervision of Prof. Daniel H.C. Ong.</p>
+                            <a href="http://dx.doi.org/10.13140/RG.2.2.27651.22560" class="doi-link">View Publication →</a>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3 id="research-9-title">Computing Band Structures</h3>
+                            <span id="research-9-year" class="research-year">2021 - CUHK</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p id="research-9-text">Computational study of electronic band structures for different materials using Quantum ESPRESSO based on density functional theory under supervision of Prof. HUI Pak Ming.</p>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3 id="research-10-title">Classical Analog of Electromagnetically Induced Transparency</h3>
+                            <span id="research-10-year" class="research-year">2021 - CUHK</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p id="research-10-text">Reproduced EIT-like behavior using coupled RLC circuits, demonstrating classical analogies to quantum optical phenomena under supervision of Prof. Daniel H.C. Ong.</p>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3 id="research-11-title">CHSH Inequality and Wave-Particle Duality</h3>
+                            <span id="research-11-year" class="research-year">2020 - CityU</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p id="research-11-text">Experimental verification using entangled photon pairs and quED/quCR demonstrator to study quantum entanglement, Bell\'s theorem, and local hidden variable theories under supervision of Prof. Sai Tak CHU.</p>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3 id="research-12-title">NP-complete Problems in Combinatorial Optimization</h3>
+                            <span id="research-12-year" class="research-year">2019 - CityU</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p id="research-12-text">Applied genetic algorithms and self-organizing mapping to solve NP-hard problems, specifically the traveling salesman problem, demonstrating computational physics approaches to optimization.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -657,7 +782,7 @@
                 'contact-github': '💻 GitHub',
                 'contact-researchgate': '🔬 ResearchGate',
                 'contact-description': 'I am actively seeking research opportunities in academia and jobs. Please feel free to reach out to me for collaborations or to discuss potential roles.',
-                'footer-text': '&copy; 2024 Chris Wong. Exploring the quantum universe through computation.'
+                'footer-text': '&copy; 2025 Chris Wong. Exploring the quantum universe through computation.'
             },
             'jp': {
                 'hero-title': 'クリス・ウォン',
@@ -697,7 +822,7 @@
                 'contact-github': '💻 GitHub',
                 'contact-researchgate': '🔬 ResearchGate',
                 'contact-description': 'アカデミアでの研究職や就職機会を積極的に探しています。共同研究や職務についてご相談がありましたら、お気軽にご連絡ください。',
-                'footer-text': '&copy; 2024 クリス・ウォン. 計算を通して量子宇宙を探求します。'
+                'footer-text': '&copy; 2025 クリス・ウォン. 計算を通して量子宇宙を探求します。'
             }
         };
 
@@ -720,59 +845,7 @@
             localStorage.setItem('preferredLang', lang);
         }
 
-        // Function to load research projects from JSON
-        async function loadResearchProjects() {
-            const container = document.getElementById('research-projects-container');
-            if (!container) return; // Exit if container not found
-
-            try {
-                const response = await fetch('projects.json'); // Fetch the JSON file
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const projects = await response.json(); // Parse JSON data
-
-                // Clear existing projects (if any, though they should be removed from HTML)
-                container.innerHTML = ''; 
-
-                projects.forEach(project => {
-                    const card = document.createElement('div');
-                    card.className = 'research-card';
-                    card.id = project.id; // Assign ID from JSON
-
-                    let doiLinkHtml = '';
-                    if (project.doi) {
-                        doiLinkHtml = `<a href="${project.doi}" class="doi-link">View Publication →</a>`;
-                    }
-
-                    card.innerHTML = `
-                        <div class="research-card-header">
-                            <h3>${project.title}</h3>
-                            <span class="research-year">${project.year}</span>
-                        </div>
-                        <div class="research-card-body">
-                            <p>${project.text}</p>
-                            ${doiLinkHtml}
-                        </div>
-                    `;
-                    container.appendChild(card);
-                });
-
-                // Re-apply animation logic to newly added cards
-                document.querySelectorAll('.research-card').forEach(card => {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(30px)';
-                    card.style.transition = 'all 0.6s ease';
-                });
-                animateOnScroll(); // Trigger initial animation check for new cards
-
-            } catch (error) {
-                console.error('Error loading research projects:', error);
-                container.innerHTML = '<p style="text-align: center; color: #e74c3c;">Failed to load research projects. Please try again later.</p>';
-            }
-        }
-
-        // Call loadResearchProjects when the DOM is fully loaded
+        // Check for a saved language preference on page load
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferredLang');
             const defaultLang = 'en';
@@ -782,8 +855,6 @@
             } else {
                 switchLanguage(defaultLang);
             }
-
-            loadResearchProjects(); // Load projects after initial language setup
         });
     </script>
 </body>
