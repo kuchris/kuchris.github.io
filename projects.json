@@ -82,5 +82,12 @@
         "year": "2019 - CityU",
         "text": "Applied genetic algorithms and self-organizing mapping to solve NP-hard problems, specifically the traveling salesman problem, demonstrating computational physics approaches to optimization.",
         "doi": null
+    },
+    {
+        "id": "research-14",
+        "title": "test",
+        "year": "2025 - CityU",
+        "text": "test",
+        "doi": null
     }
 ]
