@@ -1,93 +1,119 @@
 [
     {
         "id": "research-1",
-        "title": "NP-complete Problems in Combinatorial Optimization",
+        "title_en": "NP-complete Problems in Combinatorial Optimization",
+        "title_jp": "組み合わせ最適化におけるNP完全問題",
         "year": "2019 - CityU",
-        "text": "Applied genetic algorithms and self-organizing mapping to solve NP-hard problems, specifically the traveling salesman problem, demonstrating computational physics approaches to optimization.",
+        "text_en": "Applied genetic algorithms and self-organizing mapping to solve NP-hard problems, specifically the traveling salesman problem, demonstrating computational physics approaches to optimization.",
+        "text_jp": "巡回セールスマン問題といったNP困難な問題を解決するために遺伝的アルゴリズムと自己組織化マッピングを適用し、最適化に対する計算物理学のアプローチを実証しました。",
         "doi": null
     },
     {
         "id": "research-2",
-        "title": "CHSH Inequality and Wave-Particle Duality",
+        "title_en": "CHSH Inequality and Wave-Particle Duality",
+        "title_jp": "CHSH不等式と波-粒子二重性",
         "year": "2020 - CityU",
-        "text": "Experimental verification using entangled photon pairs and quED/quCR demonstrator to study quantum entanglement, Bell's theorem, and local hidden variable theories under supervision of Prof. Sai Tak CHU.",
+        "text_en": "Experimental verification using entangled photon pairs and quED/quCR demonstrator to study quantum entanglement, Bell's theorem, and local hidden variable theories under supervision of Prof. Sai Tak CHU.",
+        "text_jp": "Prof. Sai Tak CHUの指導の下、絡み合った光子ペアとquED/quCRデモンストレーターを用いて、量子もつれ、ベルの定理、局所隠れた変数理論を研究するための実験的検証を行いました。",
         "doi": null
-    },    
+    },
     {
         "id": "research-3",
-        "title": "Classical Analog of Electromagnetically Induced Transparency",
+        "title_en": "Classical Analog of Electromagnetically Induced Transparency",
+        "title_jp": "電磁誘導透過の古典的アナログ",
         "year": "2021 - CUHK",
-        "text": "Reproduced EIT-like behavior using coupled RLC circuits, demonstrating classical analogies to quantum optical phenomena under supervision of Prof. Daniel H.C. Ong.",
+        "text_en": "Reproduced EIT-like behavior using coupled RLC circuits, demonstrating classical analogies to quantum optical phenomena under supervision of Prof. Daniel H.C. Ong.",
+        "text_jp": "Prof. Daniel H.C. Ongの指導の下、結合RLC回路を用いてEITのような振る舞いを再現し、量子光学現象の古典的な類推を実証しました。",
         "doi": null
     },
     {
         "id": "research-4",
-        "title": "Computing Band Structures",
+        "title_en": "Computing Band Structures",
+        "title_jp": "バンド構造の計算",
         "year": "2021 - CUHK",
-        "text": "Computational study of electronic band structures for different materials using Quantum ESPRESSO based on density functional theory under supervision of Prof. HUI Pak Ming.",
+        "text_en": "Computational study of electronic band structures for different materials using Quantum ESPRESSO based on density functional theory under supervision of Prof. HUI Pak Ming.",
+        "text_jp": "Prof. HUI Pak Mingの指導の下、密度汎関数理論に基づき、Quantum ESPRESSOを用いて異なる材料の電子バンド構造を計算的に研究しました。",
         "doi": null
     },
     {
         "id": "research-5",
-        "title": "Topological Photonics",
+        "title_en": "Topological Photonics",
+        "title_jp": "トポロジカルフォトニクス",
         "year": "2021 - CUHK",
-        "text": "Investigated topology in physics using 1D diatomic crystal structures, Berry phase in quantum models, and Integer Quantum Hall effects under supervision of Prof. Daniel H.C. Ong.",
+        "text_en": "Investigated topology in physics using 1D diatomic crystal structures, Berry phase in quantum models, and Integer Quantum Hall effects under supervision of Prof. Daniel H.C. Ong.",
+        "text_jp": "Prof. Daniel H.C. Ongの指導の下、1次元二原子結晶構造、ベリー位相、量子モデル、整数量子ホール効果を用いて物理学におけるトポロジーを調査しました。",
         "doi": "http://dx.doi.org/10.13140/RG.2.2.27651.22560"
     },
     {
         "id": "research-6",
-        "title": "1D Time-Independent Schrödinger Equation Solver",
+        "title_en": "1D Time-Independent Schrödinger Equation Solver",
+        "title_jp": "1次元時間非依存シュレディンガー方程式ソルバー",
         "year": "2021",
-        "text": "Implemented tri-diagonal method to find eigenvalues and eigenvectors from the bounded 1D time-independent Schrödinger equation for arbitrary potential energy functions.",
+        "text_en": "Implemented tri-diagonal method to find eigenvalues and eigenvectors from the bounded 1D time-independent Schrödinger equation for arbitrary potential energy functions.",
+        "text_jp": "任意のポテンシャルエネルギー関数に対する境界を持つ1次元時間非依存シュレディンガー方程式から、固有値と固有ベクトルを見つけるために三対角行列法を実装しました。",
         "doi": "http://dx.doi.org/10.13140/RG.2.2.26129.97127"
     },
     {
         "id": "research-7",
-        "title": "2D Time-Independent Schrödinger Equation Solver",
+        "title_en": "2D Time-Independent Schrödinger Equation Solver",
+        "title_jp": "2次元時間非依存シュレディンガー方程式ソルバー",
         "year": "2021",
-        "text": "Applied finite difference method to solve 2D time-independent Schrödinger equation for arbitrary potential energy functions, extending 1D numerical approaches.",
+        "text_en": "Applied finite difference method to solve 2D time-independent Schrödinger equation for arbitrary potential energy functions, extending 1D numerical approaches.",
+        "text_jp": "任意のポテンシャルエネルギー関数に対して2次元時間非依存シュレディンガー方程式を解くために有限差分法を適用し、1次元の数値的アプローチを拡張しました。",
         "doi": "http://dx.doi.org/10.13140/RG.2.2.12835.99360"
     },
     {
         "id": "research-8",
-        "title": "3D Time-Independent Schrödinger Equation Solver",
+        "title_en": "3D Time-Independent Schrödinger Equation Solver",
+        "title_jp": "3次元時間非依存シュレディンガー方程式ソルバー",
         "year": "2021",
-        "text": "Developed finite difference method to find eigenvalues and eigenvectors from the 3D time-independent Schrödinger equation for arbitrary potential energy functions.",
+        "text_en": "Developed finite difference method to find eigenvalues and eigenvectors from the 3D time-independent Schrödinger equation for arbitrary potential energy functions.",
+        "text_jp": "任意のポテンシャルエネルギー関数に対する3次元時間非依存シュレディンガー方程式から、固有値と固有ベクトルを見つけるための有限差分法を開発しました。",
         "doi": "http://dx.doi.org/10.13140/RG.2.2.13878.01602/1"
     },
     {
         "id": "research-9",
-        "title": "Electromagnetically Induced Transparency via Coupled Oscillators",
+        "title_en": "Electromagnetically Induced Transparency via Coupled Oscillators",
+        "title_jp": "結合振動子による電磁誘導透過",
         "year": "2022",
-        "text": "Reproduced EIT-like behavior by solving coupled simple harmonic oscillator systems using numerical methods and different ODE solvers to analyze oscillator dynamics.",
+        "text_en": "Reproduced EIT-like behavior by solving coupled simple harmonic oscillator systems using numerical methods and different ODE solvers to analyze oscillator dynamics.",
+        "text_jp": "数値手法と異なるODEソルバーを使用して、結合した単振動子システムを解くことにより、振動子のダイナミクスを分析し、EITのような振る舞いを再現しました。",
         "doi": "http://dx.doi.org/10.13140/RG.2.2.33199.00164/1"
     },
     {
         "id": "research-10",
-        "title": "Monte Carlo Simulation of 2D Ising Model",
+        "title_en": "Monte Carlo Simulation of 2D Ising Model",
+        "title_jp": "2次元イジングモデルのモンテカルロシミュレーション",
         "year": "2022",
-        "text": "Investigated physical properties of different sizes of 2D binary alloys using Monte Carlo methods to study phase transitions and critical phenomena in statistical mechanics.",
+        "text_en": "Investigated physical properties of different sizes of 2D binary alloys using Monte Carlo methods to study phase transitions and critical phenomena in statistical mechanics.",
+        "text_jp": "モンテカルロ法を用いて、異なるサイズの2次元二元合金の物理的特性を調査し、統計力学における相転移と臨界現象を研究しました。",
         "doi": null
     },
     {
         "id": "research-11",
-        "title": "Solving 1D and 2D Time-Dependent Schrödinger Equation",
+        "title_en": "Solving 1D and 2D Time-Dependent Schrödinger Equation",
+        "title_jp": "1次元および2次元時間依存シュレディンガー方程式の解法",
         "year": "2022",
-        "text": "Applied finite difference method to study eigenvalues and time evolution of eigenvectors from 1D and 2D time-dependent Schrödinger equation for arbitrary potential energy functions.",
+        "text_en": "Applied finite difference method to study eigenvalues and time evolution of eigenvectors from 1D and 2D time-dependent Schrödinger equation for arbitrary potential energy functions.",
+        "text_jp": "任意のポテンシャルエネルギー関数に対する1次元および2次元の時間依存シュレディンガー方程式から、固有値と固有ベクトルの時間発展を研究するために有限差分法を適用しました。",
         "doi": null
     },
     {
         "id": "research-12",
-        "title": "Study of P-wave Feshbach Molecules",
+        "title_en": "Study of P-wave Feshbach Molecules",
+        "title_jp": "P波フェッシュバッハ分子の研究",
         "year": "2024",
-        "text": "Advanced study of ultracold atomic physics including cooling mechanisms, Feshbach resonances, and P-wave contacts. This research is directly relevant to current quantum computing and quantum simulation applications.",
+        "text_en": "Advanced study of ultracold atomic physics including cooling mechanisms, Feshbach resonances, and P-wave contacts. This research is directly relevant to current quantum computing and quantum simulation applications.",
+        "text_jp": "冷却メカニズム、フェッシュバッハ共鳴、P波接触を含む超低温原子物理学の高度な研究。この研究は、現在の量子コンピューティングと量子シミュレーションの応用に直接関連しています。",
         "doi": null
     },
     {
         "id": "research-13",
-        "title": "Numerical Solution of the Gross-Pitaevskii Equation: Ground State Analysis and Dynamics",
+        "title_en": "Numerical Solution of the Gross-Pitaevskii Equation: Ground State Analysis and Dynamics",
+        "title_jp": "グロス-ピタエフスキー方程式の数値解法：基底状態解析とダイナミクス",
         "year": "2025",
-        "text": "test",
+        "text_en": "This project focuses on the numerical solution of the Gross-Pitaevskii equation to analyze the ground state properties and dynamic behavior of Bose-Einstein condensates.",
+        "text_jp": "このプロジェクトは、ボーズ・アインシュタイン凝縮体の基底状態特性と動的挙動を解析するために、グロス-ピタエフスキー方程式の数値解法に焦点を当てています。",
         "doi": null
     }
 ]
