@@ -90,7 +90,8 @@
             text-align: center;
             padding: 4rem 0 6rem;
             color: white;
-            background: url('images/hero-background.jpg') center/cover;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%), 
+                        url('images/hero-background.jpg') center/cover;
             background-attachment: fixed;
             position: relative;
         }
@@ -102,7 +103,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+            /* MODIFIED: Reduced opacity of the gradient overlay */
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.4) 0%, rgba(118, 75, 162, 0.4) 100%); 
             z-index: 1;
         }
 
