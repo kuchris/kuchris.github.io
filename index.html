@@ -90,8 +90,7 @@
             text-align: center;
             padding: 4rem 0 6rem;
             color: white;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%), 
-                        url('images/hero-background.jpg') center/cover;
+            background: url('images/hero-background.jpg') center/cover;
             background-attachment: fixed;
             position: relative;
         }
@@ -630,11 +629,10 @@
                 'skill-3-text': 'Current focus on ultracold atomic systems, Feshbach resonances, BEC dynamics, and quantum many-body systems relevant to quantum computing applications.',
                 'skill-4-title': '📊 Statistical Physics',
                 'skill-4-text': 'Monte Carlo simulations, Ising models, phase transitions, and statistical mechanics applied to complex physical systems and materials science.',
-                'skill-5-title': '🔧 Laboratory Automation',
                 'skill-5-text': 'Hardware control via GPIB/PyVISA, RS232 communication, optical instrumentation, and automated data acquisition systems.',
-                'skill-6-title': '💻 Scientific Software',
                 'skill-6-text': 'Proficient in MATLAB, LabVIEW, Quantum ESPRESSO for DFT calculations, and various computational physics packages.',
                 'research-title': 'Research Projects',
+                // Removed redundant research project translations here as they are loaded from projects.json
                 'contact-title': 'Connect With Me',
                 'contact-email': '📧 Email',
                 'contact-github': '💻 GitHub',
@@ -657,11 +655,11 @@
                 'skill-2-text': '1D、2D、3Dのシュレディンガー方程式、量子力学の問題解決、および量子システムのための有限差分法の実装に豊富な経験があります。',
                 'skill-3-title': '❄️ 冷たい原子物理学',
                 'skill-3-text': '現在の焦点は、量子コンピューティングや量子シミュレーションの応用に関連する、極低温原子システム、フェッシュバッハ共鳴、BECダイナミクス、および量子多体システムです。',
-                'skill-4-title': '📊 統計物理学',
                 'skill-4-text': 'モンテカルロシミュレーション、イジングモデル、相転移、および複雑な物理システムや材料科学に適用される統計力学。',
                 'skill-5-text': 'GPIB/PyVISA、RS232通信、光学機器、および自動データ収集システムを介したハードウェア制御。',
                 'skill-6-text': 'MATLAB、LabVIEW、DFT計算のためのQuantum ESPRESSO、およびさまざまな計算物理学パッケージに習熟しています。',
                 'research-title': '研究プロジェクト',
+                // Removed redundant research project translations here as they are loaded from projects.json
                 'contact-title': '私とつながる',
                 'contact-email': '📧 メール',
                 'contact-github': '💻 GitHub',
@@ -688,6 +686,9 @@
 
             // Save language preference to local storage
             localStorage.setItem('preferredLang', lang);
+
+            // Re-load research projects with the new language
+            loadResearchProjects();
         }
 
         // Function to load research projects from JSON
@@ -704,21 +705,28 @@
                 }
                 let projects = await response.json(); // Parse JSON data
 
-                // Sort projects by year in descending order (most recent first)
+                // Sort projects by year in DESCENDING order (newest first)
                 projects.sort((a, b) => {
-                    // Handle cases where year might be a range (e.g., "2024 - Present")
                     const yearA = parseInt(a.year.split(' ')[0]);
                     const yearB = parseInt(b.year.split(' ')[0]);
-                    return yearB - yearA; // Descending order
+                    return yearB - yearA; // Descending order (newest year first)
                 });
 
-                // Clear existing projects (if any, though they should be removed from HTML)
+                // Get the current active language
+                const currentLang = document.documentElement.lang || 'en'; // Default to 'en' if not set
+
+                // Clear existing projects
                 container.innerHTML = ''; 
 
                 projects.forEach(project => {
                     const card = document.createElement('div');
                     card.className = 'research-card';
                     card.id = project.id; // Assign ID from JSON
+
+                    // Select title and text based on current language
+                    // Use the correct language-specific fields from your JSON
+                    const projectTitle = project[`title_${currentLang}`] || project.title_en;
+                    const projectText = project[`text_${currentLang}`] || project.text_en;
 
                     let doiLinkHtml = '';
                     if (project.doi) {
@@ -727,11 +735,11 @@
 
                     card.innerHTML = `
                         <div class="research-card-header">
-                            <h3>${project.title}</h3>
+                            <h3>${projectTitle}</h3>
                             <span class="research-year">${project.year}</span>
                         </div>
                         <div class="research-card-body">
-                            <p>${project.text}</p>
+                            <p>${projectText}</p>
                             ${doiLinkHtml}
                         </div>
                     `;
@@ -763,7 +771,8 @@
                 switchLanguage(defaultLang);
             }
 
-            loadResearchProjects(); // Load projects after initial language setup
+            // Initial load of projects (will be re-called by switchLanguage if needed)
+            // loadResearchProjects(); // Removed as switchLanguage now calls it
         });
     </script>
 </body>
