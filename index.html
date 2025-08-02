@@ -90,7 +90,7 @@
             text-align: center;
             padding: 4rem 0 6rem;
             color: white;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%), 
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%), 
                         url('images/hero-background.jpg') center/cover;
             background-attachment: fixed;
             position: relative;
@@ -103,8 +103,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            /* MODIFIED: Reduced opacity of the gradient overlay */
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); 
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%); 
             z-index: 1;
         }
 
@@ -433,7 +432,6 @@
         <nav class="container">
             <a href="#" class="logo">Chris Wong</a>
             
-            <!-- MODIFIED: Grouped nav links and language buttons -->
             <div class="nav-right-group">
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
@@ -641,7 +639,7 @@
                             <span id="research-11-year" class="research-year">2020 - CityU</span>
                         </div>
                         <div class="research-card-body">
-                            <p id="research-11-text">Experimental verification using entangled photon pairs and quED/quCR demonstrator to study quantum entanglement, Bell's theorem, and local hidden variable theories under supervision of Prof. Sai Tak CHU.</p>
+                            <p id="research-11-text">Experimental verification using entangled photon pairs and quED/quCR demonstrator to study quantum entanglement, Bell\'s theorem, and local hidden variable theories under supervision of Prof. Sai Tak CHU.</p>
                         </div>
                     </div>
 
@@ -674,8 +672,7 @@
                 </div>
                 <div style="text-align: center; margin-top: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
                     <p id="contact-description" style="font-size: 1.1rem; color: #666;">
-                        Interested in collaboration, research opportunities, or discussing the fascinating world of cold atom physics? 
-                        I'm always excited to connect with fellow researchers and explore new projects in computational physics.
+                        I am actively seeking research opportunities in academia and jobs. Please feel free to reach out to me for collaborations or to discuss potential roles.
                     </p>
                 </div>
             </div>
@@ -737,7 +734,7 @@
         window.addEventListener('scroll', animateOnScroll);
         animateOnScroll(); // Initial check
 
-        // --- NEW: Language Switcher Logic ---
+        // --- Language Switcher Logic ---
 
         // Object containing all translations
         const translations = {
@@ -773,26 +770,19 @@
                 'research-4-text': 'Investigated physical properties of different sizes of 2D binary alloys using Monte Carlo methods to study phase transitions and critical phenomena in statistical mechanics.',
                 'research-5-title': '3D Time-Independent Schrödinger Equation Solver',
                 'research-5-text': 'Developed finite difference method to find eigenvalues and eigenvectors from the 3D time-independent Schrödinger equation for arbitrary potential energy functions.',
-                'research-6-title': '2D Time-Independent Schrödinger Equation Solver',
                 'research-6-text': 'Applied finite difference method to solve 2D time-independent Schrödinger equation for arbitrary potential energy functions, extending 1D numerical approaches.',
-                'research-7-title': '1D Time-Independent Schrödinger Equation Solver',
                 'research-7-text': 'Implemented tri-diagonal method to find eigenvalues and eigenvectors from the bounded 1D time-independent Schrödinger equation for arbitrary potential energy functions.',
-                'research-8-title': 'Topological Photonics',
                 'research-8-text': 'Investigated topology in physics using 1D diatomic crystal structures, Berry phase in quantum models, and Integer Quantum Hall effects under supervision of Prof. Daniel H.C. Ong.',
-                'research-9-title': 'Computing Band Structures',
                 'research-9-text': 'Computational study of electronic band structures for different materials using Quantum ESPRESSO based on density functional theory under supervision of Prof. HUI Pak Ming.',
-                'research-10-title': 'Classical Analog of Electromagnetically Induced Transparency',
                 'research-10-text': 'Reproduced EIT-like behavior using coupled RLC circuits, demonstrating classical analogies to quantum optical phenomena under supervision of Prof. Daniel H.C. Ong.',
-                'research-11-title': 'CHSH Inequality and Wave-Particle Duality',
                 'research-11-text': 'Experimental verification using entangled photon pairs and quED/quCR demonstrator to study quantum entanglement, Bell\'s theorem, and local hidden variable theories under supervision of Prof. Sai Tak CHU.',
-                'research-12-title': 'NP-complete Problems in Combinatorial Optimization',
                 'research-12-text': 'Applied genetic algorithms and self-organizing mapping to solve NP-hard problems, specifically the traveling salesman problem, demonstrating computational physics approaches to optimization.',
                 'contact-title': 'Connect With Me',
                 'contact-email': '📧 Email',
                 'contact-github': '💻 GitHub',
                 'contact-researchgate': '🔬 ResearchGate',
                 'contact-description': 'I am actively seeking research opportunities in academia and jobs. Please feel free to reach out to me for collaborations or to discuss potential roles.',
-                'footer-text': '&copy; 2025 Chris Wong. Exploring the quantum universe through computation.'
+                'footer-text': '&copy; 2024 Chris Wong. Exploring the quantum universe through computation.'
             },
             'jp': {
                 'hero-title': 'クリス・ウォン',
@@ -807,45 +797,32 @@
                 'skill-1-text': 'NumPy, SciPy, Matplotlib, Pandas, PyTorch, Numbaを含む科学計算Pythonエコシステムに精通しています。数値計算、データ分析、物理シミュレーションを専門としています。',
                 'skill-2-title': '🔬 量子物理シミュレーション',
                 'skill-2-text': '1D、2D、3Dのシュレディンガー方程式、量子力学の問題解決、および量子システムのための有限差分法の実装に豊富な経験があります。',
-                'skill-3-title': '❄️ 冷却原子物理学',
+                'skill-3-title': '❄️ 冷たい原子物理学',
                 'skill-3-text': '現在の焦点は、量子コンピューティングや量子シミュレーションの応用に関連する、極低温原子システム、フェッシュバッハ共鳴、BECダイナミクス、および量子多体システムです。',
                 'skill-4-title': '📊 統計物理学',
                 'skill-4-text': 'モンテカルロシミュレーション、イジングモデル、相転移、および複雑な物理システムや材料科学に適用される統計力学。',
-                'skill-5-title': '🔧 実験室の自動化',
                 'skill-5-text': 'GPIB/PyVISA、RS232通信、光学機器、および自動データ収集システムを介したハードウェア制御。',
-                'skill-6-title': '💻 科学ソフトウェア',
                 'skill-6-text': 'MATLAB、LabVIEW、DFT計算のためのQuantum ESPRESSO、およびさまざまな計算物理学パッケージに習熟しています。',
                 'research-title': '研究プロジェクト',
                 'research-1-title': 'P波フェッシュバッハ分子の研究',
                 'research-1-text': '冷却メカニズム、フェッシュバッハ共鳴、P波接触を含む超低温原子物理学の高度な研究。この研究は、現在の量子コンピューティングと量子シミュレーションの応用に直接関連しています。',
-                'research-2-title': '1次元および2次元の時間依存シュレディンガー方程式の解法',
                 'research-2-text': '任意のポテンシャルエネルギー関数に対する1次元および2次元の時間依存シュレディンガー方程式から、固有値と固有ベクトルの時間発展を研究するために有限差分法を適用しました。',
-                'research-3-title': '結合振動子による電磁誘導透明化',
                 'research-3-text': '数値手法と異なるODEソルバーを使用して、結合した単振動子システムを解くことにより、振動子のダイナミクスを分析し、EITのような振る舞いを再現しました。',
-                'research-4-title': '2次元イジングモデルのモンテカルロシミュレーション',
                 'research-4-text': 'モンテカルロ法を用いて、異なるサイズの2次元二元合金の物理的特性を調査し、統計力学における相転移と臨界現象を研究しました。',
-                'research-5-title': '3次元時間非依存シュレディンガー方程式ソルバー',
                 'research-5-text': '任意のポテンシャルエネルギー関数に対する3次元時間非依存シュレディンガー方程式から、固有値と固有ベクトルを見つけるための有限差分法を開発しました。',
-                'research-6-title': '2次元時間非依存シュレディンガー方程式ソルバー',
                 'research-6-text': '任意のポテンシャルエネルギー関数に対して2次元時間非依存シュレディンガー方程式を解くために有限差分法を適用し、1次元の数値的アプローチを拡張しました。',
-                'research-7-title': '1次元時間非依存シュレディンガー方程式ソルバー',
                 'research-7-text': '任意のポテンシャルエネルギー関数に対する境界を持つ1次元時間非依存シュレディンガー方程式から、固有値と固有ベクトルを見つけるために三対角行列法を実装しました。',
-                'research-8-title': 'トポロジカルフォトニクス',
                 'research-8-text': 'Prof. Daniel H.C. Ongの指導の下、1次元二原子結晶構造、ベリー位相、量子モデル、整数量子ホール効果を用いて物理学におけるトポロジーを調査しました。',
-                'research-9-title': 'バンド構造の計算',
                 'research-9-text': 'Prof. HUI Pak Mingの指導の下、密度汎関数理論に基づき、Quantum ESPRESSOを用いて異なる材料の電子バンド構造を計算的に研究しました。',
-                'research-10-title': '電磁誘導透明化の古典的アナログ',
                 'research-10-text': 'Prof. Daniel H.C. Ongの指導の下、結合RLC回路を用いてEITのような振る舞いを再現し、量子光学現象の古典的な類推を実証しました。',
-                'research-11-title': 'CHSH不等式と波動・粒子二重性',
                 'research-11-text': 'Prof. Sai Tak CHUの指導の下、絡み合った光子ペアとquED/quCRデモンストレーターを用いて、量子もつれ、ベルの定理、局所隠れた変数理論を研究するための実験的検証を行いました。',
-                'research-12-title': '組合せ最適化におけるNP完全問題',
                 'research-12-text': '巡回セールスマン問題といったNP困難な問題を解決するために遺伝的アルゴリズムと自己組織化マッピングを適用し、最適化に対する計算物理学のアプローチを実証しました。',
                 'contact-title': '私とつながる',
                 'contact-email': '📧 メール',
                 'contact-github': '💻 GitHub',
                 'contact-researchgate': '🔬 ResearchGate',
                 'contact-description': 'アカデミアでの研究職や就職機会を積極的に探しています。共同研究や職務についてご相談がありましたら、お気軽にご連絡ください。',
-                'footer-text': '&copy; 2025 クリス・ウォン. 計算を通して量子宇宙を探求します。'
+                'footer-text': '&copy; 2024 クリス・ウォン. 計算を通して量子宇宙を探求します。'
             }
         };
 
@@ -882,4 +859,3 @@
     </script>
 </body>
 </html>
-�
