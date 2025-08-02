@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chris Wong - Computational Physics & Cold Atom Research</title>
     <style>
+        /* Global Reset & Body Styles */
         * {
             margin: 0;
             padding: 0;
@@ -19,12 +20,14 @@
             min-height: 100vh;
         }
 
+        /* Container for content width */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
+        /* Header Styles */
         header {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -36,13 +39,15 @@
             transition: all 0.3s ease;
         }
 
+        /* Navigation Bar Styles */
         nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Pushes logo to left, nav-right-group to right */
             align-items: center;
             padding: 1rem 0;
         }
 
+        /* Logo Styles */
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
@@ -50,6 +55,14 @@
             text-decoration: none;
         }
 
+        /* Group for navigation links and language buttons */
+        .nav-right-group {
+            display: flex;
+            align-items: center;
+            gap: 2rem; /* Space between nav links and language buttons */
+        }
+
+        /* Navigation Links Styles */
         .nav-links {
             display: flex;
             list-style: none;
@@ -67,10 +80,12 @@
             color: #f39c12;
         }
 
+        /* Main Content Area */
         main {
-            margin-top: 80px;
+            margin-top: 80px; /* Offset for fixed header */
         }
 
+        /* Hero Section Styles */
         .hero {
             text-align: center;
             padding: 4rem 0 6rem;
@@ -99,11 +114,7 @@
             z-index: 2;
         }
 
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
+        /* Profile Image Styles */
         .profile-img {
             width: 200px;
             height: 200px;
@@ -131,6 +142,7 @@
             color: white;
         }
 
+        /* Hero Text Styles */
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
@@ -153,6 +165,7 @@
             line-height: 1.8;
         }
 
+        /* Call to Action Buttons */
         .cta-buttons {
             display: flex;
             gap: 1rem;
@@ -184,7 +197,7 @@
             border: 2px solid rgba(255, 255, 255, 0.3);
         }
         
-        /* NEW: Language button styling */
+        /* Language button styling */
         .btn-language {
             background: none;
             color: white;
@@ -195,6 +208,7 @@
             border-radius: 5px;
             opacity: 0.7;
             transition: all 0.2s ease;
+            margin-left: 0.5rem; /* Small margin between buttons */
         }
 
         .btn-language:hover {
@@ -214,6 +228,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
+        /* Section Styles */
         .section {
             padding: 5rem 0;
             background: white;
@@ -230,6 +245,7 @@
             color: #2c3e50;
         }
 
+        /* Skills Grid Styles */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -255,6 +271,7 @@
             font-size: 1.3rem;
         }
 
+        /* Research Grid Styles */
         .research-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -318,6 +335,7 @@
             color: #c0392b;
         }
 
+        /* Social Links */
         .social-links {
             display: flex;
             justify-content: center;
@@ -343,6 +361,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
+        /* Footer Styles */
         footer {
             background: #2c3e50;
             color: white;
@@ -350,6 +369,7 @@
             padding: 2rem 0;
         }
 
+        /* Quantum Animation (Background Element) */
         .quantum-animation {
             position: absolute;
             top: 20%;
@@ -365,6 +385,7 @@
             to { transform: rotate(360deg); }
         }
 
+        /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
@@ -374,16 +395,23 @@
                 font-size: 1.2rem;
             }
             
+            /* Hide nav links on small screens, keep language buttons */
             .nav-links {
                 display: none;
             }
             
+            /* Adjust language buttons for mobile if needed */
+            .language-buttons {
+                margin-left: auto; /* Push to right if nav-links are hidden */
+            }
+
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
             }
         }
 
+        /* Particle Animation (Background Element) */
         .particle {
             position: absolute;
             width: 4px;
@@ -403,16 +431,20 @@
     <header>
         <nav class="container">
             <a href="#" class="logo">Chris Wong</a>
-            <div class="language-buttons">
-                <button class="btn-language active" onclick="switchLanguage('en')">EN</button>
-                <button class="btn-language" onclick="switchLanguage('jp')">JP</button>
+            
+            <!-- MODIFIED: Grouped nav links and language buttons -->
+            <div class="nav-right-group">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="language-buttons">
+                    <button class="btn-language active" onclick="switchLanguage('en')">EN</button>
+                    <button class="btn-language" onclick="switchLanguage('jp')">JP</button>
+                </div>
             </div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
         </nav>
     </header>
 
@@ -495,6 +527,7 @@
             <div class="container">
                 <h2 id="research-title" class="section-title">Research Projects</h2>
                 <div class="research-grid">
+                    <!-- Current Research (2024) -->
                     <div class="research-card">
                         <div class="research-card-header">
                             <h3 id="research-1-title">Study of P-wave Feshbach Molecules</h3>
@@ -505,6 +538,7 @@
                         </div>
                     </div>
                     
+                    <!-- Other research projects with IDs -->
                     <div class="research-card">
                         <div class="research-card-header">
                             <h3 id="research-2-title">Solving 1D and 2D Time-Dependent Schrödinger Equation</h3>
@@ -756,8 +790,8 @@
                 'contact-email': '📧 Email',
                 'contact-github': '💻 GitHub',
                 'contact-researchgate': '🔬 ResearchGate',
-                'contact-description': 'I am actively seeking research opportunities in academia and industry. Please feel free to reach out to me for collaborations or to discuss potential roles.',
-                'footer-text': '&copy; 2025 Chris Wong. Exploring the quantum universe through computation.'
+                'contact-description': 'I am actively seeking research opportunities in academia and jobs. Please feel free to reach out to me for collaborations or to discuss potential roles.',
+                'footer-text': '&copy; 2024 Chris Wong. Exploring the quantum universe through computation.'
             },
             'jp': {
                 'hero-title': 'クリス・ウォン',
@@ -776,7 +810,7 @@
                 'skill-3-text': '現在の焦点は、量子コンピューティングや量子シミュレーションの応用に関連する、極低温原子システム、フェッシュバッハ共鳴、BECダイナミクス、および量子多体システムです。',
                 'skill-4-title': '📊 統計物理学',
                 'skill-4-text': 'モンテカルロシミュレーション、イジングモデル、相転移、および複雑な物理システムや材料科学に適用される統計力学。',
-                'skill-5-title': '🔧 実験室の自動化',
+                'skill-5-title': '� 実験室の自動化',
                 'skill-5-text': 'GPIB/PyVISA、RS232通信、光学機器、および自動データ収集システムを介したハードウェア制御。',
                 'skill-6-title': '💻 科学ソフトウェア',
                 'skill-6-text': 'MATLAB、LabVIEW、DFT計算のためのQuantum ESPRESSO、およびさまざまな計算物理学パッケージに習熟しています。',
@@ -796,7 +830,7 @@
                 'research-7-title': '1次元時間非依存シュレディンガー方程式ソルバー',
                 'research-7-text': '任意のポテンシャルエネルギー関数に対する境界を持つ1次元時間非依存シュレディンガー方程式から、固有値と固有ベクトルを見つけるために三対角行列法を実装しました。',
                 'research-8-title': 'トポロジカルフォトニクス',
-                'research-8-text': 'Prof. Daniel H.C. Ongの指導の下、1次元二原子結晶構造、量子モデルにおけるベリー位相、整数量子ホール効果を用いて物理学におけるトポロジーを調査しました。',
+                'research-8-text': 'Prof. Daniel H.C. Ongの指導の下、1次元二原子結晶構造、ベリー位相、量子モデル、整数量子ホール効果を用いて物理学におけるトポロジーを調査しました。',
                 'research-9-title': 'バンド構造の計算',
                 'research-9-text': 'Prof. HUI Pak Mingの指導の下、密度汎関数理論に基づき、Quantum ESPRESSOを用いて異なる材料の電子バンド構造を計算的に研究しました。',
                 'research-10-title': '電磁誘導透明化の古典的アナログ',
@@ -809,8 +843,8 @@
                 'contact-email': '📧 メール',
                 'contact-github': '💻 GitHub',
                 'contact-researchgate': '🔬 ResearchGate',
-                'contact-description': 'アカデミアでの研究機会、または仕事の機会を積極的に探しています。共同研究や職務についてご相談がありましたら、お気軽にご連絡ください。',
-                'footer-text': '&copy; 2025 Chris Wong. 計算を通して量子宇宙を探求します。'
+                'contact-description': 'アカデミアでの研究職や就職機会を積極的に探しています。共同研究や職務についてご相談がありましたら、お気軽にご連絡ください。',
+                'footer-text': '&copy; 2024 クリス・ウォン. 計算を通して量子宇宙を探求します。'
             }
         };
 
@@ -847,3 +881,4 @@
     </script>
 </body>
 </html>
+�
