@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris Wong - Computational Physics & Cold Atom Research</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #f39c12;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0 6rem;
+            color: white;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%), 
+                        url('images/hero-background.jpg') center/cover;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-img-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #f39c12, #e74c3c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #f39c12);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #f39c12, #e74c3c);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .skill-card h3 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .research-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .research-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .research-card-header {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .research-card-content {
+            background: white;
+        }
+
+        .research-card-body {
+            padding: 2rem;
+        }
+
+        .research-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .research-year {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .doi-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .doi-link:hover {
+            color: #c0392b;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: white;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #2c3e50;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .quantum-animation {
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            width: 200px;
+            height: 200px;
+            opacity: 0.1;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Chris Wong</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="profile-img">
+                        <!-- Replace with your actual photo once uploaded -->
+                        <img src="images/profile.jpg" alt="Chris Wong" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="profile-img-placeholder" style="display: none;">CW</div>
+                    </div>
+                    <h1>Chris Wong</h1>
+                    <p class="hero-subtitle">Computational Physics | Physics Enthusiast</p>
+                    <p class="hero-description">
+                        A recent physics graduate from Hong Kong specializing in computational physics and cold atom systems.
+                        Using Python and advanced mathematical modeling, 
+                        I bridge the gap between abstract theory and data-driven insights through numerical simulations.
+                        I am eager to apply my analytical skills to new challenges in a technical role or in academic research.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#research" class="btn btn-primary">Explore My Research</a>
+                        <a href="https://github.com/kuchris" class="btn btn-secondary">View GitHub</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Floating particles animation -->
+            <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="top: 30%; left: 80%; animation-delay: 2s;"></div>
+            <div class="particle" style="top: 60%; left: 15%; animation-delay: 4s;"></div>
+            <div class="particle" style="top: 70%; left: 85%; animation-delay: 1s;"></div>
+            <div class="particle" style="top: 40%; left: 70%; animation-delay: 3s;"></div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 1.8;">
+                    <p>I am a physics graduate with a Master's from The Chinese University of Hong Kong and a Bachelor's from City University of Hong Kong. 
+                        My expertise is in computational methods and cold atom physics. 
+                        I specialize in applying theoretical knowledge to simulate complex ultracold quantum systems, 
+                        with a focus on nonlinear Schrödinger-type equations like the Gross-Pitaevskii equation and the analysis of interactions in various partial waves. 
+                        My goal is to use simulation and analysis to bridge the gap between abstract quantum phenomena and tangible solutions</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Technical Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>🐍 Python Programming</h3>
+                        <p>Expert in scientific Python ecosystem including NumPy, SciPy, Matplotlib, Pandas, PyTorch, and Numba. Specialized in numerical methods, data analysis, and physics simulations.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>🔬 Quantum Physics Simulation</h3>
+                        <p>Extensive experience solving Schrödinger equations (1D, 2D, 3D), quantum mechanics problems, and implementing finite difference methods for quantum systems.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>❄️ Cold Atom Physics</h3>
+                        <p>Current focus on ultracold atomic systems, Feshbach resonances, BEC dynamics, and quantum many-body systems relevant to quantum computing applications.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>📊 Statistical Physics</h3>
+                        <p>Monte Carlo simulations, Ising models, phase transitions, and statistical mechanics applied to complex physical systems and materials science.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>🔧 Laboratory Automation</h3>
+                        <p>Hardware control via GPIB/PyVISA, RS232 communication, optical instrumentation, and automated data acquisition systems.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>💻 Scientific Software</h3>
+                        <p>Proficient in MATLAB, LabVIEW, Quantum ESPRESSO for DFT calculations, and various computational physics packages.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="section">
+            <div class="container">
+                <h2 class="section-title">Research Projects</h2>
+                <div class="research-grid">
+                    <!-- Current Research (2024) -->
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>Study of P-wave Feshbach Molecules</h3>
+                            <span class="research-year">2024 - Present</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Advanced study of ultracold atomic physics including cooling mechanisms, Feshbach resonances, and P-wave contacts. This research is directly relevant to current quantum computing and quantum simulation applications.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Quantum Mechanics & Numerical Methods (2021-2022) -->
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>Solving 1D and 2D Time-Dependent Schrödinger Equation</h3>
+                            <span class="research-year">2022</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Applied finite difference method to study eigenvalues and time evolution of eigenvectors from 1D and 2D time-dependent Schrödinger equation for arbitrary potential energy functions.</p>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>Electromagnetically Induced Transparency via Coupled Oscillators</h3>
+                            <span class="research-year">2022</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Reproduced EIT-like behavior by solving coupled simple harmonic oscillator systems using numerical methods and different ODE solvers to analyze oscillator dynamics.</p>
+                            <a href="http://dx.doi.org/10.13140/RG.2.2.33199.00164/1" class="doi-link">View Publication →</a>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>Monte Carlo Simulation of 2D Ising Model</h3>
+                            <span class="research-year">2022</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Investigated physical properties of different sizes of 2D binary alloys using Monte Carlo methods to study phase transitions and critical phenomena in statistical mechanics.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>3D Time-Independent Schrödinger Equation Solver</h3>
+                            <span class="research-year">2021</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Developed finite difference method to find eigenvalues and eigenvectors from the 3D time-independent Schrödinger equation for arbitrary potential energy functions.</p>
+                            <a href="http://dx.doi.org/10.13140/RG.2.2.13878.01602/1" class="doi-link">View Publication →</a>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>2D Time-Independent Schrödinger Equation Solver</h3>
+                            <span class="research-year">2021</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Applied finite difference method to solve 2D time-independent Schrödinger equation for arbitrary potential energy functions, extending 1D numerical approaches.</p>
+                            <a href="http://dx.doi.org/10.13140/RG.2.2.12835.99360" class="doi-link">View Publication →</a>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>1D Time-Independent Schrödinger Equation Solver</h3>
+                            <span class="research-year">2021</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Implemented tri-diagonal method to find eigenvalues and eigenvectors from the bounded 1D time-independent Schrödinger equation for arbitrary potential energy functions.</p>
+                            <a href="http://dx.doi.org/10.13140/RG.2.2.26129.97127" class="doi-link">View Publication →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- University Research Projects (2020-2021) -->
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>Topological Photonics</h3>
+                            <span class="research-year">2021 - CUHK</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Investigated topology in physics using 1D diatomic crystal structures, Berry phase in quantum models, and Integer Quantum Hall effects under supervision of Prof. Daniel H.C. Ong.</p>
+                            <a href="http://dx.doi.org/10.13140/RG.2.2.27651.22560" class="doi-link">View Publication →</a>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>Computing Band Structures</h3>
+                            <span class="research-year">2021 - CUHK</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Computational study of electronic band structures for different materials using Quantum ESPRESSO based on density functional theory under supervision of Prof. HUI Pak Ming.</p>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>Classical Analog of Electromagnetically Induced Transparency</h3>
+                            <span class="research-year">2021 - CUHK</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Reproduced EIT-like behavior using coupled RLC circuits, demonstrating classical analogies to quantum optical phenomena under supervision of Prof. Daniel H.C. Ong.</p>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>CHSH Inequality and Wave-Particle Duality</h3>
+                            <span class="research-year">2020 - CityU</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Experimental verification using entangled photon pairs and quED/quCR demonstrator to study quantum entanglement, Bell's theorem, and local hidden variable theories under supervision of Prof. Sai Tak CHU.</p>
+                        </div>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-header">
+                            <h3>NP-complete Problems in Combinatorial Optimization</h3>
+                            <span class="research-year">2019 - CityU</span>
+                        </div>
+                        <div class="research-card-body">
+                            <p>Applied genetic algorithms and self-organizing mapping to solve NP-hard problems, specifically the traveling salesman problem, demonstrating computational physics approaches to optimization.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Connect With Me</h2>
+                <div class="social-links">
+                    <a href="mailto:kuchrisuk@gmail.com" class="social-link">
+                        📧 Email
+                    </a>
+                    <a href="https://github.com/kuchris" class="social-link">
+                        💻 GitHub
+                    </a>
+                    <a href="https://www.researchgate.net/profile/Wai-Kui-Wong" class="social-link">
+                        🔬 ResearchGate
+                    </a>
+                </div>
+                <div style="text-align: center; margin-top: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    <p style="font-size: 1.1rem; color: #666;">
+                        Interested in collaboration, research opportunities, or discussing the fascinating world of cold atom physics? 
+                        I'm always excited to connect with fellow researchers and explore new projects in computational physics.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Chris Wong. Exploring the quantum universe through computation.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(44, 62, 80, 0.95)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.1)';
+            }
+        });
+
+        // Add floating animation to cards on scroll
+        function animateOnScroll() {
+            const cards = document.querySelectorAll('.skill-card, .research-card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const cardVisible = 150;
+                
+                if (cardTop < window.innerHeight - cardVisible) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Initialize cards as hidden
+        document.querySelectorAll('.skill-card, .research-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Initial check
+    </script>
+</body>
+</html>

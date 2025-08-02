@@ -183,6 +183,31 @@
             color: white;
             border: 2px solid rgba(255, 255, 255, 0.3);
         }
+        
+        /* NEW: Language button styling */
+        .btn-language {
+            background: none;
+            color: white;
+            border: 1px solid white;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 5px;
+            opacity: 0.7;
+            transition: all 0.2s ease;
+        }
+
+        .btn-language:hover {
+            opacity: 1;
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-language.active {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.4);
+            font-weight: 700;
+        }
 
         .btn:hover {
             transform: translateY(-2px);
@@ -378,6 +403,10 @@
     <header>
         <nav class="container">
             <a href="#" class="logo">Chris Wong</a>
+            <div class="language-buttons">
+                <button class="btn-language active" onclick="switchLanguage('en')">EN</button>
+                <button class="btn-language" onclick="switchLanguage('jp')">JP</button>
+            </div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -392,26 +421,24 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="profile-img">
-                        <!-- Replace with your actual photo once uploaded -->
                         <img src="images/profile.jpg" alt="Chris Wong" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div class="profile-img-placeholder" style="display: none;">CW</div>
                     </div>
-                    <h1>Chris Wong</h1>
-                    <p class="hero-subtitle">Computational Physics | Physics Enthusiast</p>
-                    <p class="hero-description">
+                    <h1 id="hero-title">Chris Wong</h1>
+                    <p id="hero-subtitle" class="hero-subtitle">Computational Physics | Physics Enthusiast</p>
+                    <p id="hero-description" class="hero-description">
                         A recent physics graduate from Hong Kong specializing in computational physics and cold atom systems.
                         Using Python and advanced mathematical modeling, 
                         I bridge the gap between abstract theory and data-driven insights through numerical simulations.
                         I am eager to apply my analytical skills to new challenges in a technical role or in academic research.
                     </p>
                     <div class="cta-buttons">
-                        <a href="#research" class="btn btn-primary">Explore My Research</a>
-                        <a href="https://github.com/kuchris" class="btn btn-secondary">View GitHub</a>
+                        <a id="cta-research" href="#research" class="btn btn-primary">Explore My Research</a>
+                        <a id="cta-github" href="https://github.com/kuchris" class="btn btn-secondary">View GitHub</a>
                     </div>
                 </div>
             </div>
             
-            <!-- Floating particles animation -->
             <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
             <div class="particle" style="top: 30%; left: 80%; animation-delay: 2s;"></div>
             <div class="particle" style="top: 60%; left: 15%; animation-delay: 4s;"></div>
@@ -421,9 +448,9 @@
 
         <section id="about" class="section">
             <div class="container">
-                <h2 class="section-title">About Me</h2>
+                <h2 id="about-title" class="section-title">About Me</h2>
                 <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 1.8;">
-                    <p>I am a physics graduate with a Master's from The Chinese University of Hong Kong and a Bachelor's from City University of Hong Kong. 
+                    <p id="about-text">I am a physics graduate with a Master's from The Chinese University of Hong Kong and a Bachelor's from City University of Hong Kong. 
                         My expertise is in computational methods and cold atom physics. 
                         I specialize in applying theoretical knowledge to simulate complex ultracold quantum systems, 
                         with a focus on nonlinear Schrödinger-type equations like the Gross-Pitaevskii equation and the analysis of interactions in various partial waves. 
@@ -434,31 +461,31 @@
 
         <section id="skills" class="section">
             <div class="container">
-                <h2 class="section-title">Technical Expertise</h2>
+                <h2 id="skills-title" class="section-title">Technical Expertise</h2>
                 <div class="skills-grid">
                     <div class="skill-card">
-                        <h3>🐍 Python Programming</h3>
-                        <p>Expert in scientific Python ecosystem including NumPy, SciPy, Matplotlib, Pandas, PyTorch, and Numba. Specialized in numerical methods, data analysis, and physics simulations.</p>
+                        <h3 id="skill-1-title">🐍 Python Programming</h3>
+                        <p id="skill-1-text">Expert in scientific Python ecosystem including NumPy, SciPy, Matplotlib, Pandas, PyTorch, and Numba. Specialized in numerical methods, data analysis, and physics simulations.</p>
                     </div>
                     <div class="skill-card">
-                        <h3>🔬 Quantum Physics Simulation</h3>
-                        <p>Extensive experience solving Schrödinger equations (1D, 2D, 3D), quantum mechanics problems, and implementing finite difference methods for quantum systems.</p>
+                        <h3 id="skill-2-title">🔬 Quantum Physics Simulation</h3>
+                        <p id="skill-2-text">Extensive experience solving Schrödinger equations (1D, 2D, 3D), quantum mechanics problems, and implementing finite difference methods for quantum systems.</p>
                     </div>
                     <div class="skill-card">
-                        <h3>❄️ Cold Atom Physics</h3>
-                        <p>Current focus on ultracold atomic systems, Feshbach resonances, BEC dynamics, and quantum many-body systems relevant to quantum computing applications.</p>
+                        <h3 id="skill-3-title">❄️ Cold Atom Physics</h3>
+                        <p id="skill-3-text">Current focus on ultracold atomic systems, Feshbach resonances, BEC dynamics, and quantum many-body systems relevant to quantum computing applications.</p>
                     </div>
                     <div class="skill-card">
-                        <h3>📊 Statistical Physics</h3>
-                        <p>Monte Carlo simulations, Ising models, phase transitions, and statistical mechanics applied to complex physical systems and materials science.</p>
+                        <h3 id="skill-4-title">📊 Statistical Physics</h3>
+                        <p id="skill-4-text">Monte Carlo simulations, Ising models, phase transitions, and statistical mechanics applied to complex physical systems and materials science.</p>
                     </div>
                     <div class="skill-card">
-                        <h3>🔧 Laboratory Automation</h3>
-                        <p>Hardware control via GPIB/PyVISA, RS232 communication, optical instrumentation, and automated data acquisition systems.</p>
+                        <h3 id="skill-5-title">🔧 Laboratory Automation</h3>
+                        <p id="skill-5-text">Hardware control via GPIB/PyVISA, RS232 communication, optical instrumentation, and automated data acquisition systems.</p>
                     </div>
                     <div class="skill-card">
-                        <h3>💻 Scientific Software</h3>
-                        <p>Proficient in MATLAB, LabVIEW, Quantum ESPRESSO for DFT calculations, and various computational physics packages.</p>
+                        <h3 id="skill-6-title">💻 Scientific Software</h3>
+                        <p id="skill-6-text">Proficient in MATLAB, LabVIEW, Quantum ESPRESSO for DFT calculations, and various computational physics packages.</p>
                     </div>
                 </div>
             </div>
@@ -466,133 +493,130 @@
 
         <section id="research" class="section">
             <div class="container">
-                <h2 class="section-title">Research Projects</h2>
+                <h2 id="research-title" class="section-title">Research Projects</h2>
                 <div class="research-grid">
-                    <!-- Current Research (2024) -->
                     <div class="research-card">
                         <div class="research-card-header">
-                            <h3>Study of P-wave Feshbach Molecules</h3>
-                            <span class="research-year">2024 - Present</span>
+                            <h3 id="research-1-title">Study of P-wave Feshbach Molecules</h3>
+                            <span id="research-1-year" class="research-year">2024 - Present</span>
                         </div>
                         <div class="research-card-body">
-                            <p>Advanced study of ultracold atomic physics including cooling mechanisms, Feshbach resonances, and P-wave contacts. This research is directly relevant to current quantum computing and quantum simulation applications.</p>
+                            <p id="research-1-text">Advanced study of ultracold atomic physics including cooling mechanisms, Feshbach resonances, and P-wave contacts. This research is directly relevant to current quantum computing and quantum simulation applications.</p>
                         </div>
                     </div>
                     
-                    <!-- Quantum Mechanics & Numerical Methods (2021-2022) -->
                     <div class="research-card">
                         <div class="research-card-header">
-                            <h3>Solving 1D and 2D Time-Dependent Schrödinger Equation</h3>
-                            <span class="research-year">2022</span>
+                            <h3 id="research-2-title">Solving 1D and 2D Time-Dependent Schrödinger Equation</h3>
+                            <span id="research-2-year" class="research-year">2022</span>
                         </div>
                         <div class="research-card-body">
-                            <p>Applied finite difference method to study eigenvalues and time evolution of eigenvectors from 1D and 2D time-dependent Schrödinger equation for arbitrary potential energy functions.</p>
+                            <p id="research-2-text">Applied finite difference method to study eigenvalues and time evolution of eigenvectors from 1D and 2D time-dependent Schrödinger equation for arbitrary potential energy functions.</p>
                         </div>
                     </div>
 
                     <div class="research-card">
                         <div class="research-card-header">
-                            <h3>Electromagnetically Induced Transparency via Coupled Oscillators</h3>
-                            <span class="research-year">2022</span>
+                            <h3 id="research-3-title">Electromagnetically Induced Transparency via Coupled Oscillators</h3>
+                            <span id="research-3-year" class="research-year">2022</span>
                         </div>
                         <div class="research-card-body">
-                            <p>Reproduced EIT-like behavior by solving coupled simple harmonic oscillator systems using numerical methods and different ODE solvers to analyze oscillator dynamics.</p>
+                            <p id="research-3-text">Reproduced EIT-like behavior by solving coupled simple harmonic oscillator systems using numerical methods and different ODE solvers to analyze oscillator dynamics.</p>
                             <a href="http://dx.doi.org/10.13140/RG.2.2.33199.00164/1" class="doi-link">View Publication →</a>
                         </div>
                     </div>
 
                     <div class="research-card">
                         <div class="research-card-header">
-                            <h3>Monte Carlo Simulation of 2D Ising Model</h3>
-                            <span class="research-year">2022</span>
+                            <h3 id="research-4-title">Monte Carlo Simulation of 2D Ising Model</h3>
+                            <span id="research-4-year" class="research-year">2022</span>
                         </div>
                         <div class="research-card-body">
-                            <p>Investigated physical properties of different sizes of 2D binary alloys using Monte Carlo methods to study phase transitions and critical phenomena in statistical mechanics.</p>
+                            <p id="research-4-text">Investigated physical properties of different sizes of 2D binary alloys using Monte Carlo methods to study phase transitions and critical phenomena in statistical mechanics.</p>
                         </div>
                     </div>
                     
                     <div class="research-card">
                         <div class="research-card-header">
-                            <h3>3D Time-Independent Schrödinger Equation Solver</h3>
-                            <span class="research-year">2021</span>
+                            <h3 id="research-5-title">3D Time-Independent Schrödinger Equation Solver</h3>
+                            <span id="research-5-year" class="research-year">2021</span>
                         </div>
                         <div class="research-card-body">
-                            <p>Developed finite difference method to find eigenvalues and eigenvectors from the 3D time-independent Schrödinger equation for arbitrary potential energy functions.</p>
+                            <p id="research-5-text">Developed finite difference method to find eigenvalues and eigenvectors from the 3D time-independent Schrödinger equation for arbitrary potential energy functions.</p>
                             <a href="http://dx.doi.org/10.13140/RG.2.2.13878.01602/1" class="doi-link">View Publication →</a>
                         </div>
                     </div>
 
                     <div class="research-card">
                         <div class="research-card-header">
-                            <h3>2D Time-Independent Schrödinger Equation Solver</h3>
-                            <span class="research-year">2021</span>
+                            <h3 id="research-6-title">2D Time-Independent Schrödinger Equation Solver</h3>
+                            <span id="research-6-year" class="research-year">2021</span>
                         </div>
                         <div class="research-card-body">
-                            <p>Applied finite difference method to solve 2D time-independent Schrödinger equation for arbitrary potential energy functions, extending 1D numerical approaches.</p>
+                            <p id="research-6-text">Applied finite difference method to solve 2D time-independent Schrödinger equation for arbitrary potential energy functions, extending 1D numerical approaches.</p>
                             <a href="http://dx.doi.org/10.13140/RG.2.2.12835.99360" class="doi-link">View Publication →</a>
                         </div>
                     </div>
 
                     <div class="research-card">
                         <div class="research-card-header">
-                            <h3>1D Time-Independent Schrödinger Equation Solver</h3>
-                            <span class="research-year">2021</span>
+                            <h3 id="research-7-title">1D Time-Independent Schrödinger Equation Solver</h3>
+                            <span id="research-7-year" class="research-year">2021</span>
                         </div>
                         <div class="research-card-body">
-                            <p>Implemented tri-diagonal method to find eigenvalues and eigenvectors from the bounded 1D time-independent Schrödinger equation for arbitrary potential energy functions.</p>
+                            <p id="research-7-text">Implemented tri-diagonal method to find eigenvalues and eigenvectors from the bounded 1D time-independent Schrödinger equation for arbitrary potential energy functions.</p>
                             <a href="http://dx.doi.org/10.13140/RG.2.2.26129.97127" class="doi-link">View Publication →</a>
                         </div>
                     </div>
                     
-                    <!-- University Research Projects (2020-2021) -->
                     <div class="research-card">
                         <div class="research-card-header">
-                            <h3>Topological Photonics</h3>
-                            <span class="research-year">2021 - CUHK</span>
+                            <h3 id="research-8-title">Topological Photonics</h3>
+                            <span id="research-8-year" class="research-year">2021 - CUHK</span>
                         </div>
                         <div class="research-card-body">
-                            <p>Investigated topology in physics using 1D diatomic crystal structures, Berry phase in quantum models, and Integer Quantum Hall effects under supervision of Prof. Daniel H.C. Ong.</p>
+                            <p id="research-8-text">Investigated topology in physics using 1D diatomic crystal structures, Berry phase in quantum models, and Integer Quantum Hall effects under supervision of Prof. Daniel H.C. Ong.</p>
                             <a href="http://dx.doi.org/10.13140/RG.2.2.27651.22560" class="doi-link">View Publication →</a>
                         </div>
                     </div>
 
                     <div class="research-card">
                         <div class="research-card-header">
-                            <h3>Computing Band Structures</h3>
-                            <span class="research-year">2021 - CUHK</span>
+                            <h3 id="research-9-title">Computing Band Structures</h3>
+                            <span id="research-9-year" class="research-year">2021 - CUHK</span>
                         </div>
                         <div class="research-card-body">
-                            <p>Computational study of electronic band structures for different materials using Quantum ESPRESSO based on density functional theory under supervision of Prof. HUI Pak Ming.</p>
+                            <p id="research-9-text">Computational study of electronic band structures for different materials using Quantum ESPRESSO based on density functional theory under supervision of Prof. HUI Pak Ming.</p>
                         </div>
                     </div>
 
                     <div class="research-card">
                         <div class="research-card-header">
-                            <h3>Classical Analog of Electromagnetically Induced Transparency</h3>
-                            <span class="research-year">2021 - CUHK</span>
+                            <h3 id="research-10-title">Classical Analog of Electromagnetically Induced Transparency</h3>
+                            <span id="research-10-year" class="research-year">2021 - CUHK</span>
                         </div>
                         <div class="research-card-body">
-                            <p>Reproduced EIT-like behavior using coupled RLC circuits, demonstrating classical analogies to quantum optical phenomena under supervision of Prof. Daniel H.C. Ong.</p>
+                            <p id="research-10-text">Reproduced EIT-like behavior using coupled RLC circuits, demonstrating classical analogies to quantum optical phenomena under supervision of Prof. Daniel H.C. Ong.</p>
                         </div>
                     </div>
 
                     <div class="research-card">
                         <div class="research-card-header">
-                            <h3>CHSH Inequality and Wave-Particle Duality</h3>
-                            <span class="research-year">2020 - CityU</span>
+                            <h3 id="research-11-title">CHSH Inequality and Wave-Particle Duality</h3>
+                            <span id="research-11-year" class="research-year">2020 - CityU</span>
                         </div>
                         <div class="research-card-body">
-                            <p>Experimental verification using entangled photon pairs and quED/quCR demonstrator to study quantum entanglement, Bell's theorem, and local hidden variable theories under supervision of Prof. Sai Tak CHU.</p>
+                            <p id="research-11-text">Experimental verification using entangled photon pairs and quED/quCR demonstrator to study quantum entanglement, Bell's theorem, and local hidden variable theories under supervision of Prof. Sai Tak CHU.</p>
                         </div>
                     </div>
 
                     <div class="research-card">
                         <div class="research-card-header">
-                            <h3>NP-complete Problems in Combinatorial Optimization</h3>
-                            <span class="research-year">2019 - CityU</span>
+                            <h3 id="research-12-title">NP-complete Problems in Combinatorial Optimization</h3>
+                            <span id="research-12-year" class="research-year">2019 - CityU</span>
                         </div>
                         <div class="research-card-body">
-                            <p>Applied genetic algorithms and self-organizing mapping to solve NP-hard problems, specifically the traveling salesman problem, demonstrating computational physics approaches to optimization.</p>
+                            <p id="research-12-text">Applied genetic algorithms and self-organizing mapping to solve NP-hard problems, specifically the traveling salesman problem, demonstrating computational physics approaches to optimization.</p>
                         </div>
                     </div>
                 </div>
@@ -601,20 +625,20 @@
 
         <section id="contact" class="section">
             <div class="container">
-                <h2 class="section-title">Connect With Me</h2>
+                <h2 id="contact-title" class="section-title">Connect With Me</h2>
                 <div class="social-links">
                     <a href="mailto:kuchrisuk@gmail.com" class="social-link">
-                        📧 Email
+                        <span id="contact-email">📧 Email</span>
                     </a>
                     <a href="https://github.com/kuchris" class="social-link">
-                        💻 GitHub
+                        <span id="contact-github">💻 GitHub</span>
                     </a>
                     <a href="https://www.researchgate.net/profile/Wai-Kui-Wong" class="social-link">
-                        🔬 ResearchGate
+                        <span id="contact-researchgate">🔬 ResearchGate</span>
                     </a>
                 </div>
                 <div style="text-align: center; margin-top: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    <p style="font-size: 1.1rem; color: #666;">
+                    <p id="contact-description" style="font-size: 1.1rem; color: #666;">
                         Interested in collaboration, research opportunities, or discussing the fascinating world of cold atom physics? 
                         I'm always excited to connect with fellow researchers and explore new projects in computational physics.
                     </p>
@@ -625,7 +649,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Chris Wong. Exploring the quantum universe through computation.</p>
+            <p id="footer-text">&copy; 2024 Chris Wong. Exploring the quantum universe through computation.</p>
         </div>
     </footer>
 
@@ -677,6 +701,149 @@
 
         window.addEventListener('scroll', animateOnScroll);
         animateOnScroll(); // Initial check
+
+        // --- NEW: Language Switcher Logic ---
+
+        // Object containing all translations
+        const translations = {
+            'en': {
+                'hero-title': 'Chris Wong',
+                'hero-subtitle': 'Computational Physics | Physics Enthusiast',
+                'hero-description': 'A recent physics graduate from Hong Kong specializing in computational physics and cold atom systems. Using Python and advanced mathematical modeling, I bridge the gap between abstract theory and data-driven insights through numerical simulations. I am eager to apply my analytical skills to new challenges in a technical role or in academic research.',
+                'cta-research': 'Explore My Research',
+                'cta-github': 'View GitHub',
+                'about-title': 'About Me',
+                'about-text': 'I am a physics graduate with a Master\'s from The Chinese University of Hong Kong and a Bachelor\'s from City University of Hong Kong. My expertise is in computational methods and cold atom physics. I specialize in applying theoretical knowledge to simulate complex ultracold quantum systems, with a focus on nonlinear Schrödinger-type equations like the Gross-Pitaevskii equation and the analysis of interactions in various partial waves. My goal is to use simulation and analysis to bridge the gap between abstract quantum phenomena and tangible solutions',
+                'skills-title': 'Technical Expertise',
+                'skill-1-title': '🐍 Python Programming',
+                'skill-1-text': 'Expert in scientific Python ecosystem including NumPy, SciPy, Matplotlib, Pandas, PyTorch, and Numba. Specialized in numerical methods, data analysis, and physics simulations.',
+                'skill-2-title': '🔬 Quantum Physics Simulation',
+                'skill-2-text': 'Extensive experience solving Schrödinger equations (1D, 2D, 3D), quantum mechanics problems, and implementing finite difference methods for quantum systems.',
+                'skill-3-title': '❄️ Cold Atom Physics',
+                'skill-3-text': 'Current focus on ultracold atomic systems, Feshbach resonances, BEC dynamics, and quantum many-body systems relevant to quantum computing applications.',
+                'skill-4-title': '📊 Statistical Physics',
+                'skill-4-text': 'Monte Carlo simulations, Ising models, phase transitions, and statistical mechanics applied to complex physical systems and materials science.',
+                'skill-5-title': '🔧 Laboratory Automation',
+                'skill-5-text': 'Hardware control via GPIB/PyVISA, RS232 communication, optical instrumentation, and automated data acquisition systems.',
+                'skill-6-title': '💻 Scientific Software',
+                'skill-6-text': 'Proficient in MATLAB, LabVIEW, Quantum ESPRESSO for DFT calculations, and various computational physics packages.',
+                'research-title': 'Research Projects',
+                'research-1-title': 'Study of P-wave Feshbach Molecules',
+                'research-1-text': 'Advanced study of ultracold atomic physics including cooling mechanisms, Feshbach resonances, and P-wave contacts. This research is directly relevant to current quantum computing and quantum simulation applications.',
+                'research-2-title': 'Solving 1D and 2D Time-Dependent Schrödinger Equation',
+                'research-2-text': 'Applied finite difference method to study eigenvalues and time evolution of eigenvectors from 1D and 2D time-dependent Schrödinger equation for arbitrary potential energy functions.',
+                'research-3-title': 'Electromagnetically Induced Transparency via Coupled Oscillators',
+                'research-3-text': 'Reproduced EIT-like behavior by solving coupled simple harmonic oscillator systems using numerical methods and different ODE solvers to analyze oscillator dynamics.',
+                'research-4-title': 'Monte Carlo Simulation of 2D Ising Model',
+                'research-4-text': 'Investigated physical properties of different sizes of 2D binary alloys using Monte Carlo methods to study phase transitions and critical phenomena in statistical mechanics.',
+                'research-5-title': '3D Time-Independent Schrödinger Equation Solver',
+                'research-5-text': 'Developed finite difference method to find eigenvalues and eigenvectors from the 3D time-independent Schrödinger equation for arbitrary potential energy functions.',
+                'research-6-title': '2D Time-Independent Schrödinger Equation Solver',
+                'research-6-text': 'Applied finite difference method to solve 2D time-independent Schrödinger equation for arbitrary potential energy functions, extending 1D numerical approaches.',
+                'research-7-title': '1D Time-Independent Schrödinger Equation Solver',
+                'research-7-text': 'Implemented tri-diagonal method to find eigenvalues and eigenvectors from the bounded 1D time-independent Schrödinger equation for arbitrary potential energy functions.',
+                'research-8-title': 'Topological Photonics',
+                'research-8-text': 'Investigated topology in physics using 1D diatomic crystal structures, Berry phase in quantum models, and Integer Quantum Hall effects under supervision of Prof. Daniel H.C. Ong.',
+                'research-9-title': 'Computing Band Structures',
+                'research-9-text': 'Computational study of electronic band structures for different materials using Quantum ESPRESSO based on density functional theory under supervision of Prof. HUI Pak Ming.',
+                'research-10-title': 'Classical Analog of Electromagnetically Induced Transparency',
+                'research-10-text': 'Reproduced EIT-like behavior using coupled RLC circuits, demonstrating classical analogies to quantum optical phenomena under supervision of Prof. Daniel H.C. Ong.',
+                'research-11-title': 'CHSH Inequality and Wave-Particle Duality',
+                'research-11-text': 'Experimental verification using entangled photon pairs and quED/quCR demonstrator to study quantum entanglement, Bell\'s theorem, and local hidden variable theories under supervision of Prof. Sai Tak CHU.',
+                'research-12-title': 'NP-complete Problems in Combinatorial Optimization',
+                'research-12-text': 'Applied genetic algorithms and self-organizing mapping to solve NP-hard problems, specifically the traveling salesman problem, demonstrating computational physics approaches to optimization.',
+                'contact-title': 'Connect With Me',
+                'contact-email': '📧 Email',
+                'contact-github': '💻 GitHub',
+                'contact-researchgate': '🔬 ResearchGate',
+                'contact-description': 'Interested in collaboration, research opportunities, or discussing the fascinating world of cold atom physics? I\'m always excited to connect with fellow researchers and explore new projects in computational physics.',
+                'footer-text': '&copy; 2024 Chris Wong. Exploring the quantum universe through computation.'
+            },
+            'jp': {
+                'hero-title': 'クリス・ウォン',
+                'hero-subtitle': '計算物理学 | 物理学愛好家',
+                'hero-description': '香港出身の物理学卒業生で、計算物理学と冷却原子システムを専門としています。Pythonと高度な数理モデルを用いて、抽象的な理論とデータ駆動型の洞察を数値シミュレーションで結びつけます。分析スキルを活かし、技術職や学術研究での新たな挑戦に取り組みたいと考えています。',
+                'cta-research': '研究実績を見る',
+                'cta-github': 'GitHubを見る',
+                'about-title': '私について',
+                'about-text': '私は香港中文大学で修士号を、香港城市大学で学士号を取得した物理学の卒業生です。私の専門は計算手法と冷却原子物理学です。理論的な知識を応用して、複雑な極低温量子システムをシミュレートすることに特化しており、Gross-Pitaevskii方程式のような非線形シュレディンガー型方程式や、さまざまな部分波での相互作用の分析に焦点を当てています。私の目標は、シミュレーションと分析を通じて、抽象的な量子現象と具体的な解決策との間のギャップを埋めることです。',
+                'skills-title': '技術的専門知識',
+                'skill-1-title': '🐍 Python プログラミング',
+                'skill-1-text': 'NumPy, SciPy, Matplotlib, Pandas, PyTorch, Numbaを含む科学計算Pythonエコシステムに精通しています。数値計算、データ分析、物理シミュレーションを専門としています。',
+                'skill-2-title': '🔬 量子物理シミュレーション',
+                'skill-2-text': '1D、2D、3Dのシュレディンガー方程式、量子力学の問題解決、および量子システムのための有限差分法の実装に豊富な経験があります。',
+                'skill-3-title': '❄️ 冷却原子物理学',
+                'skill-3-text': '現在の焦点は、量子コンピューティングや量子シミュレーションの応用に関連する、極低温原子システム、フェッシュバッハ共鳴、BECダイナミクス、および量子多体システムです。',
+                'skill-4-title': '📊 統計物理学',
+                'skill-4-text': 'モンテカルロシミュレーション、イジングモデル、相転移、および複雑な物理システムや材料科学に適用される統計力学。',
+                'skill-5-title': '🔧 実験室の自動化',
+                'skill-5-text': 'GPIB/PyVISA、RS232通信、光学機器、および自動データ収集システムを介したハードウェア制御。',
+                'skill-6-title': '💻 科学ソフトウェア',
+                'skill-6-text': 'MATLAB、LabVIEW、DFT計算のためのQuantum ESPRESSO、およびさまざまな計算物理学パッケージに習熟しています。',
+                'research-title': '研究プロジェクト',
+                'research-1-title': 'P波フェッシュバッハ分子の研究',
+                'research-1-text': '冷却メカニズム、フェッシュバッハ共鳴、P波接触を含む超低温原子物理学の高度な研究。この研究は、現在の量子コンピューティングと量子シミュレーションの応用に直接関連しています。',
+                'research-2-title': '1次元および2次元の時間依存シュレディンガー方程式の解法',
+                'research-2-text': '任意のポテンシャルエネルギー関数に対する1次元および2次元の時間依存シュレディンガー方程式から、固有値と固有ベクトルの時間発展を研究するために有限差分法を適用しました。',
+                'research-3-title': '結合振動子による電磁誘導透明化',
+                'research-3-text': '数値手法と異なるODEソルバーを使用して、結合した単振動子システムを解くことにより、振動子のダイナミクスを分析し、EITのような振る舞いを再現しました。',
+                'research-4-title': '2次元イジングモデルのモンテカルロシミュレーション',
+                'research-4-text': 'モンテカルロ法を用いて、異なるサイズの2次元二元合金の物理的特性を調査し、統計力学における相転移と臨界現象を研究しました。',
+                'research-5-title': '3次元時間非依存シュレディンガー方程式ソルバー',
+                'research-5-text': '任意のポテンシャルエネルギー関数に対する3次元時間非依存シュレディンガー方程式から、固有値と固有ベクトルを見つけるための有限差分法を開発しました。',
+                'research-6-title': '2次元時間非依存シュレディンガー方程式ソルバー',
+                'research-6-text': '任意のポテンシャルエネルギー関数に対して2次元時間非依存シュレディンガー方程式を解くために有限差分法を適用し、1次元の数値的アプローチを拡張しました。',
+                'research-7-title': '1次元時間非依存シュレディンガー方程式ソルバー',
+                'research-7-text': '任意のポテンシャルエネルギー関数に対する境界を持つ1次元時間非依存シュレディンガー方程式から、固有値と固有ベクトルを見つけるために三対角行列法を実装しました。',
+                'research-8-title': 'トポロジカルフォトニクス',
+                'research-8-text': 'Prof. Daniel H.C. Ongの指導の下、1次元二原子結晶構造、量子モデルにおけるベリー位相、整数量子ホール効果を用いて物理学におけるトポロジーを調査しました。',
+                'research-9-title': 'バンド構造の計算',
+                'research-9-text': 'Prof. HUI Pak Mingの指導の下、密度汎関数理論に基づき、Quantum ESPRESSOを用いて異なる材料の電子バンド構造を計算的に研究しました。',
+                'research-10-title': '電磁誘導透明化の古典的アナログ',
+                'research-10-text': 'Prof. Daniel H.C. Ongの指導の下、結合RLC回路を用いてEITのような振る舞いを再現し、量子光学現象の古典的な類推を実証しました。',
+                'research-11-title': 'CHSH不等式と波動・粒子二重性',
+                'research-11-text': 'Prof. Sai Tak CHUの指導の下、絡み合った光子ペアとquED/quCRデモンストレーターを用いて、量子もつれ、ベルの定理、局所隠れた変数理論を研究するための実験的検証を行いました。',
+                'research-12-title': '組合せ最適化におけるNP完全問題',
+                'research-12-text': '巡回セールスマン問題といったNP困難な問題を解決するために遺伝的アルゴリズムと自己組織化マッピングを適用し、最適化に対する計算物理学のアプローチを実証しました。',
+                'contact-title': '私とつながる',
+                'contact-email': '📧 メール',
+                'contact-github': '💻 GitHub',
+                'contact-researchgate': '🔬 ResearchGate',
+                'contact-description': 'コラボレーション、研究機会、または冷却原子物理学の魅力的な世界について議論することに興味がありますか？私は常に、研究者仲間とつながり、計算物理学の新しいプロジェクトを探求することを楽しみにしています。',
+                'footer-text': '&copy; 2024 Chris Wong. 計算を通して量子宇宙を探求します。'
+            }
+        };
+
+        // Function to switch the page language
+        function switchLanguage(lang) {
+            // Update all elements with content from the translations object
+            for (const key in translations[lang]) {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.innerHTML = translations[lang][key];
+                }
+            }
+            
+            // Set the active button state and update the html lang attribute
+            document.documentElement.lang = lang;
+            document.querySelectorAll('.btn-language').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.btn-language[onclick="switchLanguage('${lang}')"]`).classList.add('active');
+
+            // Save language preference to local storage
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        // Check for a saved language preference on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLang');
+            const defaultLang = 'en';
+            
+            if (savedLang) {
+                switchLanguage(savedLang);
+            } else {
+                switchLanguage(defaultLang);
+            }
+        });
     </script>
 </body>
 </html>
