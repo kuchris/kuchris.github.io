@@ -726,11 +726,21 @@
             if (!container) return; // Exit if container not found
 
             try {
-                const response = await fetch('projects.json'); // Fetch the JSON file
+                // Generate a unique timestamp for cache busting
+                const timestamp = new Date().getTime();
+                const response = await fetch(`projects.json?v=${timestamp}`); // Fetch the JSON file with a dynamic version parameter
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                const projects = await response.json(); // Parse JSON data
+                let projects = await response.json(); // Parse JSON data
+
+                // Sort projects by year in descending order (most recent first)
+                projects.sort((a, b) => {
+                    // Handle cases where year might be a range (e.g., "2024 - Present")
+                    const yearA = parseInt(a.year.split(' ')[0]);
+                    const yearB = parseInt(b.year.split(' ')[0]);
+                    return yearB - yearA; // Descending order
+                });
 
                 // Clear existing projects (if any, though they should be removed from HTML)
                 container.innerHTML = ''; 
