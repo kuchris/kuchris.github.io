@@ -773,6 +773,18 @@
             // Generate the list of highlights
             const highlightsList = item.highlights[currentLang].map(highlight => `<li>${highlight}</li>`).join('');
             
+            // Generate the list of responsibilities if present
+            let responsibilitySection = '';
+            if (item.responsibility && item.responsibility[currentLang]) {
+                const responsibilityList = item.responsibility[currentLang].map(res => `<li>${res}</li>`).join('');
+                responsibilitySection = `
+                    <div style="margin-top: 1rem;">
+                        <strong>${currentLang === 'en' ? 'Job Responsibility' : '職務経歴'}</strong>
+                        <ul class="text-base text-gray-700 leading-relaxed">${responsibilityList}</ul>
+                    </div>
+                `;
+            }
+            
             container.innerHTML = `
                 <div class="timeline-dot"></div>
                 <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200 ${contentMarginClasses} flex flex-col sm:flex-row items-start sm:items-center gap-6">
@@ -784,6 +796,7 @@
                         <p class="text-md text-gray-600 mb-3">${item.institution[currentLang]}</p>
                         <!-- Render highlights as a bulleted list -->
                         <ul class="text-base text-gray-700 leading-relaxed">${highlightsList}</ul>
+                        ${responsibilitySection}
                     </div>
                 </div>
             `;
