@@ -762,10 +762,6 @@
             const container = document.createElement('div');
             container.classList.add('timeline-item', 'relative');
             
-            // Generate a local image path based on the item type.
-            // Assumes images exist in 'images/timeline-icons/' with names like 'education.png'.
-            const imagePath = `images/timeline-icons/${item.type.toLowerCase()}.png`;
-
             // Adjust the image size and container padding for a larger image
             const imageSizeClasses = 'w-24 h-24 md:w-28 md:h-28';
             const contentMarginClasses = 'ml-10 md:ml-12';
@@ -776,8 +772,8 @@
             container.innerHTML = `
                 <div class="timeline-dot"></div>
                 <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200 ${contentMarginClasses} flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                    <!-- Updated image source to use local path -->
-                    <img src="${imagePath}" alt="${item.title[currentLang]} icon" class="${imageSizeClasses} object-cover border-2 border-blue-200 flex-shrink-0 rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/120x120/999/fff?text=${item.type[0]}';">
+                    <!-- Use the explicit image path from the JSON data -->
+                    <img src="${item.image}" alt="${item.title[currentLang]} icon" class="${imageSizeClasses} object-cover border-2 border-blue-200 flex-shrink-0 rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/120x120/999/fff?text=ICON';">
                     <div class="flex-grow">
                         <p class="text-sm font-semibold text-blue-600 mb-1">${item.dates}</p>
                         <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-1">${item.title[currentLang]}</h3>
