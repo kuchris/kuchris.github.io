@@ -358,6 +358,15 @@
             justify-content: center;
             gap: 2rem;
             margin-top: 2rem;
+            flex-wrap: wrap; /* Add this for wrapping on all screens */
+        }
+
+        @media (max-width: 640px) {
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
         }
 
         .social-link {
