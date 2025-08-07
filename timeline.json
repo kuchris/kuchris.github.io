@@ -81,6 +81,22 @@
                 "産業環境で計算スキルを応用し、高度な光学およびレーザー技術に取り組みました。GPIB/PyVISAを使用してハードウェア制御システムを実装し、Pythonでデータ分析パイプラインを開発しました。"
             ]
         },
+        "responsibility": {
+            "en": [
+                "RMA report",
+                "Data analysis",
+                "Testing component using Light Sources Power Meter, Optical Spectrum Analyzer, Multi-Wavelength Meter, etc.",
+                "Develop program to communicate with laser modules via RS232",
+                "Develop python script for automate data extraction via GPIB"
+            ],
+            "jp": [
+                "RMAレポート",
+                "データ分析",
+                "製品の製造前に材料をテストし",
+                "RS232経由でレーザーモジュールと通信するプログラムを開発しました。",
+                "GPIB経由でデータ抽出を自動化するためのPythonスクリプトも開発しました"
+            ]
+        },
         "image": "images/amonics.png"
     },
     {
