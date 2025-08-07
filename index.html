@@ -512,7 +512,7 @@
             <div class="nav-right-group">
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
-                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#timeline">Journey</a></li>
                     <li><a href="#projects">Research</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -643,6 +643,7 @@
 
         const textContent = {
             'en': {
+                'skillsTitle': 'Technical Skills',
                 'timelineTitle': 'My Academic & Professional Journey',
                 'projectsTitle': 'Research Projects',
                 'aboutText': "I am a physics graduate with a Master's from The Chinese University of Hong Kong and a Bachelor's from City University of Hong Kong. My expertise is in computational methods and cold atom physics. I specialize in applying theoretical knowledge to simulate complex ultracold quantum systems, with a focus on nonlinear Schrödinger-type equations like the Gross-Pitaevskii equation and the analysis of interactions in various partial waves. My goal is to use simulation and analysis to bridge the gap between abstract quantum phenomena and tangible solutions",
@@ -654,6 +655,7 @@
                 'ctaGithub': 'View GitHub',
             },
             'jp': {
+                'skillsTitle': '技術スキル',
                 'timelineTitle': '私の学術的・専門的な道のり',
                 'projectsTitle': '研究プロジェクト',
                 'aboutText': '香港中文大学で修士号を、香港城市大学で学士号を取得した物理学の卒業生です。私の専門は計算物理学と冷却原子物理学です。Pythonと高度な数学モデリングを用いて、非線形シュレディンガー型方程式（グロス・ピタエフスキー方程式など）のシミュレーションや、様々な部分波における相互作用の解析に焦点を当て、抽象的な理論とデータ駆動型の洞察を結びつけることを得意としています。技術的な役割や学術研究において、私の分析スキルを新しい課題に応用することを熱望しています。',
@@ -696,7 +698,10 @@
          * Renders all research project cards from the projectsData array into the DOM.
          */
         function renderResearchProjects() {
-            if (!projectsContainer) return;
+            if (!projectsContainer) {
+                console.error("Projects container not found.");
+                return;
+            }
             projectsContainer.innerHTML = ''; // Clear loading indicator
             const data = projectsData;
             data.forEach(project => {
@@ -713,10 +718,14 @@
             const container = document.createElement('div');
             container.classList.add('timeline-item', 'relative');
             
+            // Adjust the image size and container padding for a larger image
+            const imageSizeClasses = 'w-24 h-24 md:w-28 md:h-28';
+            const contentMarginClasses = 'ml-10 md:ml-12';
+            
             container.innerHTML = `
                 <div class="timeline-dot"></div>
-                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200 ml-6 md:ml-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                    <img src="${item.image}" alt="${item.title} icon" class="w-16 h-16 md:w-20 md:h-20 object-cover border-2 border-blue-200 flex-shrink-0 rounded-md">
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200 ${contentMarginClasses} flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                    <img src="${item.image.replace('80x80', '120x120')}" alt="${item.title[`${currentLang}`]} icon" class="${imageSizeClasses} object-cover border-2 border-blue-200 flex-shrink-0 rounded-md">
                     <div class="flex-grow">
                         <p class="text-sm font-semibold text-blue-600 mb-1">${item.dates}</p>
                         <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-1">${item.title[`${currentLang}`]}</h3>
@@ -756,13 +765,20 @@
          * Renders all timeline items based on the current language.
          */
         function renderTimeline() {
-            if (!timelineContainer) return;
+            if (!timelineContainer) {
+                console.error("Timeline container not found.");
+                return;
+            }
             timelineContainer.innerHTML = ''; // Clear loading indicator
             const data = timelineData[currentLang];
-            data.forEach(item => {
-                timelineContainer.appendChild(createTimelineItem(item));
-            });
-            animateOnScroll(); // Trigger animation after rendering
+            if (data && data.length > 0) {
+                 data.forEach(item => {
+                    timelineContainer.appendChild(createTimelineItem(item));
+                });
+                animateOnScroll(); // Trigger animation after rendering
+            } else {
+                timelineContainer.innerHTML = '<p style="text-align: center; color: #e74c3c;">No timeline data available.</p>';
+            }
         }
         
         /**
@@ -793,6 +809,7 @@
             document.getElementById('cta-github').textContent = textContent[lang].ctaGithub;
             document.getElementById('about-title').textContent = textContent[lang].aboutTitle;
             document.getElementById('about-text').textContent = textContent[lang].aboutText;
+            document.getElementById('skills-title').textContent = textContent[lang].skillsTitle;
             document.getElementById('timeline-title').textContent = textContent[lang].timelineTitle;
             document.getElementById('projects-title').textContent = textContent[lang].projectsTitle;
         }
