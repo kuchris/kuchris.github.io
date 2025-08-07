@@ -773,7 +773,7 @@
                 <div class="timeline-dot"></div>
                 <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200 ${contentMarginClasses} flex flex-col sm:flex-row items-start sm:items-center gap-6">
                     <!-- Use the explicit image path from the JSON data -->
-                    <img src="${item.image}" alt="${item.title[currentLang]} icon" class="${imageSizeClasses} object-cover border-2 border-blue-200 flex-shrink-0 rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/120x120/999/fff?text=ICON';">
+                    <img src="${item.image}" alt="${item.title[currentLang]} icon" class="${imageSizeClasses} object-cover flex-shrink-0 rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/120x120/999/fff?text=ICON';">
                     <div class="flex-grow">
                         <p class="text-sm font-semibold text-blue-600 mb-1">${item.dates}</p>
                         <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-1">${item.title[currentLang]}</h3>
