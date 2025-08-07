@@ -22,6 +22,7 @@
     <!-- NEW SEO META TAGS END HERE -->
     
     <title>Chris Wong - Computational Physics & Cold Atom Research</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
         /* Global Reset & Body Styles */
@@ -48,9 +49,7 @@
 
         /* Header Styles */
         header {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: #1a202c; /* Reverted to solid dark color */
             position: fixed;
             width: 100%;
             top: 0;
@@ -61,7 +60,7 @@
         /* Navigation Bar Styles */
         nav {
             display: flex;
-            justify-content: space-between; /* Pushes logo to left, nav-right-group to right */
+            justify-content: space-between;
             align-items: center;
             padding: 1rem 0;
         }
@@ -78,7 +77,7 @@
         .nav-right-group {
             display: flex;
             align-items: center;
-            gap: 2rem; /* Space between nav links and language buttons */
+            gap: 2rem;
         }
 
         /* Navigation Links Styles */
@@ -399,8 +398,12 @@
         }
 
         @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         /* Responsive Design */
@@ -408,16 +411,16 @@
             .hero h1 {
                 font-size: 2rem;
             }
-            
+
             .hero-subtitle {
                 font-size: 1.2rem;
             }
-            
+
             /* Hide nav links on small screens, keep language buttons */
             .nav-links {
                 display: none;
             }
-            
+
             /* Adjust language buttons for mobile if needed */
             .language-buttons {
                 margin-left: auto; /* Push to right if nav-links are hidden */
@@ -428,7 +431,7 @@
                 align-items: center;
             }
         }
-
+        
         /* Particle Animation (Background Element) */
         .particle {
             position: absolute;
@@ -440,21 +443,78 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        /* Timeline-specific styles from the user's code */
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 2px;
+            background-color: #e2e8f0; /* Tailwind gray-200 */
+        }
+
+        .timeline-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            margin-bottom: 2.5rem; /* Equivalent to mb-10 */
+        }
+
+        .timeline-item.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -10px;
+            width: 22px;
+            height: 22px;
+            background-color: #3b82f6; /* Tailwind blue-500 */
+            border: 4px solid #ffffff;
+            border-radius: 9999px; /* Tailwind rounded-full */
+            top: -2px; /* Adjust to align with the top of the timeline item */
+            box-shadow: 0 0 0 4px #dbeafe; /* Tailwind ring-4 ring-blue-100 */
+        }
+
+        @media (max-width: 640px) {
+            .timeline {
+                padding-left: 20px;
+            }
+        }
+        
+        #loading-indicator {
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2rem;
+            color: #667eea;
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 font-sans antialiased text-gray-800">
     <header>
         <nav class="container">
             <a href="#" class="logo">Chris Wong</a>
-            
             <div class="nav-right-group">
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#research">Research</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#timeline">Journey</a></li>
+                    <li><a href="#projects">Research</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="language-buttons">
@@ -464,7 +524,6 @@
             </div>
         </nav>
     </header>
-
     <main>
         <section class="hero">
             <div class="container">
@@ -475,19 +534,13 @@
                     </div>
                     <h1 id="hero-title">Chris Wong</h1>
                     <p id="hero-subtitle" class="hero-subtitle">Computational Physics | Physics Enthusiast</p>
-                    <p id="hero-description" class="hero-description">
-                        A recent physics graduate from Hong Kong specializing in computational physics and cold atom systems.
-                        Using Python and advanced mathematical modeling, 
-                        I bridge the gap between abstract theory and data-driven insights through numerical simulations.
-                        I am eager to apply my analytical skills to new challenges in a technical role or in academic research.
-                    </p>
+                    <p id="hero-description" class="hero-description"> A recent physics graduate from Hong Kong specializing in computational physics and cold atom systems. Using Python and advanced mathematical modeling, I bridge the gap between abstract theory and data-driven insights through numerical simulations. I am eager to apply my analytical skills to new challenges in a technical role or in academic research. </p>
                     <div class="cta-buttons">
-                        <a id="cta-research" href="#research" class="btn btn-primary">Explore My Research</a>
-                        <a id="cta-github" href="https://github.com/kuchris" class="btn btn-secondary">View GitHub</a>
+                        <a id="cta-research" href="#projects" class="btn btn-primary">Explore My Research</a>
+                        <a id="cta-github" href="https://github.com/kuchris" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View GitHub</a>
                     </div>
                 </div>
             </div>
-            
             <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
             <div class="particle" style="top: 30%; left: 80%; animation-delay: 2s;"></div>
             <div class="particle" style="top: 60%; left: 15%; animation-delay: 4s;"></div>
@@ -499,499 +552,281 @@
             <div class="container">
                 <h2 id="about-title" class="section-title">About Me</h2>
                 <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 1.8;">
-                    <p id="about-text">I am a physics graduate with a Master's from The Chinese University of Hong Kong and a Bachelor's from City University of Hong Kong. 
-                        My expertise is in computational methods and cold atom physics. 
-                        I specialize in applying theoretical knowledge to simulate complex ultracold quantum systems, 
-                        with a focus on nonlinear Schrödinger-type equations like the Gross-Pitaevskii equation and the analysis of interactions in various partial waves. 
-                        My goal is to use simulation and analysis to bridge the gap between abstract quantum phenomena and tangible solutions</p>
+                    <p id="about-text">I am a physics graduate with a Master's from The Chinese University of Hong Kong and a Bachelor's from City University of Hong Kong. My expertise is in computational methods and cold atom physics. I specialize in applying theoretical knowledge to simulate complex ultracold quantum systems, with a focus on nonlinear Schrödinger-type equations like the Gross-Pitaevskii equation and the analysis of interactions in various partial waves. My goal is to use simulation and analysis to bridge the gap between abstract quantum phenomena and tangible solutions</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Technical Expertise Section -->
+        <section id="expertise" class="section">
+            <div class="container">
+                <h2 class="section-title">Technical Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Programming & Tools</h3>
+                        <p>Python (NumPy, SciPy), C++, Fortran, Mathematica, MATLAB, Git</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Computational Methods</h3>
+                        <p>Finite Difference Method, Monte Carlo, Genetic Algorithms, Machine Learning</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Physics Domains</h3>
+                        <p>Quantum Mechanics, Cold Atom Physics, Quantum Optics, Condensed Matter Physics</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Equations & Theories</h3>
+                        <p>Schrödinger Equation, Gross-Pitaevskii Equation, Feshbach Resonances, Bell's Theorem</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Experimental Skills</h3>
+                        <p>GPIB/PyVISA Hardware Control, Optical & Laser Systems, Data Acquisition & Analysis</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Languages</h3>
+                        <p>English, Cantonese, Japanese (JLPT N2)</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="timeline" class="section">
             <div class="container">
-                <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Academic & Professional Journey</title>
-                    <!-- Tailwind CSS CDN for styling -->
-                    <script src="https://cdn.tailwindcss.com"></script>
-                    <style>
-                        /* Custom CSS to create the vertical line for the timeline */
-                        .timeline {
-                            position: relative;
-                            padding-left: 20px;
-                        }
-
-                        .timeline:before {
-                            content: '';
-                            position: absolute;
-                            top: 0;
-                            bottom: 0;
-                            left: 0;
-                            width: 2px;
-                            background-color: #e2e8f0; /* Tailwind gray-200 */
-                        }
-
-                        /* Animate the card into view on scroll */
-                        .timeline-item {
-                            opacity: 0;
-                            transform: translateY(20px);
-                            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-                            margin-bottom: 2.5rem; /* Equivalent to mb-10 */
-                        }
-
-                        .timeline-item.in-view {
-                            opacity: 1;
-                            transform: translateY(0);
-                        }
-
-                        .timeline-dot {
-                            position: absolute;
-                            left: -10px;
-                            width: 22px;
-                            height: 22px;
-                            background-color: #3b82f6; /* Tailwind blue-500 */
-                            border: 4px solid #ffffff;
-                            border-radius: 9999px; /* Tailwind rounded-full */
-                            top: -2px; /* Adjust to align with the top of the timeline item */
-                            box-shadow: 0 0 0 4px #dbeafe; /* Tailwind ring-4 ring-blue-100 */
-                        }
-
-                        /* Ensure the timeline is responsive on small screens */
-                        @media (max-width: 640px) {
-                            .timeline {
-                                padding-left: 20px;
-                            }
-                        }
-                    </style>
-                </head>
-                <body class="bg-gray-50 font-sans antialiased text-gray-800">
-
-                    <main class="container mx-auto px-4 py-16">
-                        <section id="journey" class="max-w-4xl mx-auto">
-                            <h2 id="journey-title" class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-gray-900 leading-tight">
-                                My Academic & Professional Journey
-                            </h2>
-                            
-                            <!-- Language switch button -->
-                            <div class="flex justify-center mb-8">
-                                <button id="lang-toggle-btn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition-colors duration-200">
-                                    日本語
-                                </button>
-                            </div>
-
-                            <!-- The main timeline container -->
-                            <div id="timeline-container" class="timeline relative pl-10 sm:pl-12">
-                                <!-- Timeline items will be injected here by JavaScript -->
-                            </div>
-                        </section>
-                    </main>
-
-                    <script>
-                        let currentLang = 'en';
-                        let timelineData = null; // Variable to hold the fetched data
-
-                        // Function to create and append timeline items for a given language
-                        function createTimelineItem(item) {
-                            const container = document.createElement('div');
-                            container.classList.add('timeline-item', 'relative');
-                            
-                            container.innerHTML = `
-                                <!-- The small dot on the timeline line -->
-                                <div class="timeline-dot"></div>
-                                
-                                <!-- The content card for the timeline item, now with an image -->
-                                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200 ml-6 md:ml-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                                    <img src="${item.image}" alt="${item.title} icon" class="w-16 h-16 md:w-20 md:h-20 object-cover border-2 border-blue-200 flex-shrink-0 rounded-md">
-                                    <div class="flex-grow">
-                                        <p class="text-sm font-semibold text-blue-600 mb-1">${item.dates}</p>
-                                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-1">${item.title}</h3>
-                                        <p class="text-md text-gray-600 mb-3">${item.institution}</p>
-                                        <p class="text-base text-gray-700 leading-relaxed">${item.highlights}</p>
-                                    </div>
-                                </div>
-                            `;
-                            return container;
-                        }
-
-                        // Function to handle the scroll animation
-                        function animateOnScroll() {
-                            const observerOptions = {
-                                root: null, // use the viewport
-                                rootMargin: '0px',
-                                threshold: 0.2 // Trigger when 20% of the item is visible
-                            };
-
-                            const observer = new IntersectionObserver((entries, observer) => {
-                                entries.forEach(entry => {
-                                    if (entry.isIntersecting) {
-                                        entry.target.classList.add('in-view');
-                                        observer.unobserve(entry.target); // Stop observing once it's in view
-                                    }
-                                });
-                            }, observerOptions);
-
-                            // Observe each timeline item
-                            document.querySelectorAll('.timeline-item').forEach(item => {
-                                observer.observe(item);
-                            });
-                        }
-                        
-                        // This function will render the timeline for the specified language
-                        function renderTimeline(lang) {
-                            const timelineContainer = document.getElementById('timeline-container');
-                            const journeyTitle = document.getElementById('journey-title');
-                            if (!timelineContainer || !timelineData) return;
-
-                            // Clear existing timeline items
-                            timelineContainer.innerHTML = '';
-                            
-                            // Set the section title
-                            if (lang === 'en') {
-                                journeyTitle.textContent = 'My Academic & Professional Journey';
-                            } else {
-                                journeyTitle.textContent = '私の学術的・専門的な道のり';
-                            }
-
-                            // Render new items
-                            timelineData[lang].forEach(item => {
-                                const timelineItem = createTimelineItem(item);
-                                timelineContainer.appendChild(timelineItem);
-                            });
-
-                            // Start the animation after the items are in the DOM
-                            animateOnScroll();
-                        }
-
-                        // Function to fetch the JSON data
-                        async function loadTimelineData() {
-                            try {
-                                const response = await fetch('timeline.json');
-                                if (!response.ok) {
-                                    throw new Error(`HTTP error! status: ${response.status}`);
-                                }
-                                timelineData = await response.json();
-                                renderTimeline(currentLang);
-                            } catch (error) {
-                                console.error('Error loading timeline data:', error);
-                                const timelineContainer = document.getElementById('timeline-container');
-                                timelineContainer.innerHTML = '<p style="text-align: center; color: #e74c3c;">Failed to load timeline projects. Please try again later.</p>';
-                            }
-                        }
-                        
-                        // Language toggle functionality
-                        document.addEventListener('DOMContentLoaded', () => {
-                            const langToggleBtn = document.getElementById('lang-toggle-btn');
-                            
-                            // Initial load of data
-                            loadTimelineData();
-
-                            langToggleBtn.addEventListener('click', () => {
-                                if (currentLang === 'en') {
-                                    currentLang = 'jp';
-                                    langToggleBtn.textContent = 'English';
-                                } else {
-                                    currentLang = 'en';
-                                    langToggleBtn.textContent = '日本語';
-                                }
-                                renderTimeline(currentLang);
-                            });
-                        });
-
-                    </script>
-                </body>
-                </html>
+                <h2 id="timeline-title" class="section-title">My Academic & Professional Journey</h2>
+                <div id="timeline-container" class="timeline relative pl-10 sm:pl-12">
+                    <div id="loading-indicator">Loading timeline...</div>
+                </div>
             </div>
         </section>
-
-        <section id="skills" class="section">
+        
+        <section id="projects" class="section">
             <div class="container">
-                <h2 id="skills-title" class="section-title">Technical Expertise</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h3 id="skill-1-title">🐍 Python Programming</h3>
-                        <p id="skill-1-text">Expert in scientific Python ecosystem including NumPy, SciPy, Matplotlib, Pandas, PyTorch, and Numba. Specialized in numerical methods, data analysis, and physics simulations.</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3 id="skill-2-title">🔬 Quantum Physics Simulation</h3>
-                        <p id="skill-2-text">Extensive experience solving Schrödinger equations (1D, 2D, 3D), quantum mechanics problems, and implementing finite difference methods for quantum systems.</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3 id="skill-3-title">❄️ Cold Atom Physics</h3>
-                        <p id="skill-3-text">Current focus on ultracold atomic systems, Feshbach resonances, BEC dynamics, and quantum many-body systems relevant to quantum computing applications.</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3 id="skill-4-title">📊 Statistical Physics</h3>
-                        <p id="skill-4-text">Monte Carlo simulations, Ising models, phase transitions, and statistical mechanics applied to complex physical systems and materials science.</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3 id="skill-5-title">🔧 Laboratory Automation</h3>
-                        <p id="skill-5-text">Hardware control via GPIB/PyVISA, RS232 communication, optical instrumentation, and automated data acquisition systems.</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3 id="skill-6-title">💻 Scientific Software</h3>
-                        <p id="skill-6-text">Proficient in MATLAB, LabVIEW, Quantum ESPRESSO for DFT calculations, and various computational physics packages.</p>
-                    </div>
+                <h2 id="projects-title" class="section-title">Research Projects</h2>
+                <div id="projects-container" class="research-grid">
+                    <div id="loading-indicator">Loading research projects...</div>
                 </div>
             </div>
         </section>
 
-        <section id="research" class="section">
-            <div class="container">
-                <h2 id="research-title" class="section-title">Research Projects</h2>
-                <div id="research-projects-container" class="research-grid">
-                    <!-- Research projects will be dynamically loaded here -->
-                </div>
-            </div>
-        </section>
-
+        <!-- Connect with Me Section -->
         <section id="contact" class="section">
             <div class="container">
-                <h2 id="contact-title" class="section-title">Connect With Me</h2>
+                <h2 class="section-title">Connect with Me</h2>
                 <div class="social-links">
-                    <a href="mailto:kuchrisuk@gmail.com" class="social-link">
-                        <span id="contact-email">📧 Email</span>
+                    <a href="https://github.com/kuchris" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <img src="https://simpleicons.org/github.svg" alt="GitHub" width="24" height="24">
+                        <span>GitHub</span>
                     </a>
-                    <a href="https://github.com/kuchris" class="social-link">
-                        <span id="contact-github">💻 GitHub</span>
+                    <a href="#" class="social-link">
+                        <img src="https://simpleicons.org/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                        <span>LinkedIn</span>
                     </a>
-                    <a href="https://www.researchgate.net/profile/Wai-Kui-Wong" class="social-link">
-                        <span id="contact-researchgate">🔬 ResearchGate</span>
-                    </a>
-                </div>
-                <div style="text-align: center; margin-top: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    <p id="contact-description" style="font-size: 1.1rem; color: #666;">
-                        I am actively seeking research opportunities in academia and jobs. Please feel free to reach out to me for collaborations or to discuss potential roles.
-                    </p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container">
-            <p id="footer-text">&copy; 2025 Chris Wong. Exploring the quantum universe through computation.</p>
-        </div>
+        <p>&copy; 2024 Chris Wong. All rights reserved.</p>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+        let currentLang = 'en';
+        let projectsData = [];
+        let timelineData = {};
 
-        // Header background on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(44, 62, 80, 0.95)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.1)';
-            }
-        });
-
-        // Add floating animation to cards on scroll
-        function animateOnScroll() {
-            const cards = document.querySelectorAll('.skill-card, .research-card');
-            cards.forEach(card => {
-                const cardTop = card.getBoundingClientRect().top;
-                const cardVisible = 150;
-                
-                if (cardTop < window.innerHeight - cardVisible) {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }
-            });
-        }
-
-        // Initialize cards as hidden
-        document.querySelectorAll('.skill-card, .research-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s ease';
-        });
-
-        window.addEventListener('scroll', animateOnScroll);
-        animateOnScroll(); // Initial check
-
-        // --- Language Switcher Logic ---
-
-        // Object containing all translations
-        const translations = {
+        const textContent = {
             'en': {
-                'hero-title': 'Chris Wong',
-                'hero-subtitle': 'Computational Physics | Physics Enthusiast',
-                'hero-description': 'A recent physics graduate from Hong Kong specializing in computational physics and cold atom systems. Using Python and advanced mathematical modeling, I bridge the gap between abstract theory and data-driven insights through numerical simulations. I am eager to apply my analytical skills to new challenges in a technical role or in academic research.',
-                'cta-research': 'Explore My Research',
-                'cta-github': 'View GitHub',
-                'about-title': 'About Me',
-                'about-text': 'I am a physics graduate with a Master\'s from The Chinese University of Hong Kong and a Bachelor\'s from City University of Hong Kong. My expertise is in computational methods and cold atom physics. I specialize in applying theoretical knowledge to simulate complex ultracold quantum systems, with a focus on nonlinear Schrödinger-type equations like the Gross-Pitaevskii equation and the analysis of interactions in various partial waves. My goal is to use simulation and analysis to bridge the gap between abstract quantum phenomena and tangible solutions',
-                'skills-title': 'Technical Expertise',
-                'skill-1-title': '🐍 Python Programming',
-                'skill-1-text': 'Expert in scientific Python ecosystem including NumPy, SciPy, Matplotlib, Pandas, PyTorch, and Numba. Specialized in numerical methods, data analysis, and physics simulations.',
-                'skill-2-title': '🔬 Quantum Physics Simulation',
-                'skill-2-text': 'Extensive experience solving Schrödinger equations (1D, 2D, 3D), quantum mechanics problems, and implementing finite difference methods for quantum systems.',
-                'skill-3-title': '❄️ Cold Atom Physics',
-                'skill-3-text': 'Current focus on ultracold atomic systems, Feshbach resonances, BEC dynamics, and quantum many-body systems relevant to quantum computing applications.',
-                'skill-4-title': '📊 Statistical Physics',
-                'skill-4-text': 'Monte Carlo simulations, Ising models, phase transitions, and statistical mechanics applied to complex physical systems and materials science.',
-                'skill-5-text': 'Hardware control via GPIB/PyVISA, RS232 communication, optical instrumentation, and automated data acquisition systems.',
-                'skill-6-text': 'Proficient in MATLAB, LabVIEW, Quantum ESPRESSO for DFT calculations, and various computational physics packages.',
-                'research-title': 'Research Projects',
-                // Removed redundant research project translations here as they are loaded from projects.json
-                'contact-title': 'Connect With Me',
-                'contact-email': '📧 Email',
-                'contact-github': '💻 GitHub',
-                'contact-researchgate': '🔬 ResearchGate',
-                'contact-description': 'I am actively seeking research opportunities in academia and jobs. Please feel free to reach out to me for collaborations or to discuss potential roles.',
-                'footer-text': '&copy; 2025 Chris Wong. Exploring the quantum universe through computation.'
+                'timelineTitle': 'My Academic & Professional Journey',
+                'projectsTitle': 'Research Projects',
+                'aboutText': "I am a physics graduate with a Master's from The Chinese University of Hong Kong and a Bachelor's from City University of Hong Kong. My expertise is in computational methods and cold atom physics. I specialize in applying theoretical knowledge to simulate complex ultracold quantum systems, with a focus on nonlinear Schrödinger-type equations like the Gross-Pitaevskii equation and the analysis of interactions in various partial waves. My goal is to use simulation and analysis to bridge the gap between abstract quantum phenomena and tangible solutions",
+                'aboutTitle': 'About Me',
+                'heroTitle': 'Chris Wong',
+                'heroSubtitle': 'Computational Physics | Physics Enthusiast',
+                'heroDescription': 'A recent physics graduate from Hong Kong specializing in computational physics and cold atom systems. Using Python and advanced mathematical modeling, I bridge the gap between abstract theory and data-driven insights through numerical simulations. I am eager to apply my analytical skills to new challenges in a technical role or in academic research.',
+                'ctaResearch': 'Explore My Research',
+                'ctaGithub': 'View GitHub',
             },
             'jp': {
-                'hero-title': 'クリス・ウォン',
-                'hero-subtitle': '計算物理学 | 物理学愛好家',
-                'hero-description': '香港出身の物理学卒業生で、計算物理学と冷却原子システムを専門としています。Pythonと高度な数理モデルを用いて、抽象的な理論とデータ駆動型の洞察を数値シミュレーションで結びつけます。分析スキルを活かし、技術職や学術研究での新たな挑戦に取り組みたいと考えています。',
-                'cta-research': '研究実績を見る',
-                'cta-github': 'GitHubを見る',
-                'about-title': '私について',
-                'about-text': '私は香港中文大学で修士号を、香港城市大学で学士号を取得した物理学の卒業生です。私の専門は計算手法と冷却原子物理学です。理論的な知識を応用して、複雑な極低温量子システムをシミュレートすることに特化しており、Gross-Pitaevskii方程式のような非線形シュレディンガー型方程式や、さまざまな部分波での相互作用の分析に焦点を当てています。私の目標は、シミュレーションと分析を通じて、抽象的な量子現象と具体的な解決策との間のギャップを埋めることです。',
-                'skills-title': '技術的専門知識',
-                'skill-1-title': '🐍 Python プログラミング',
-                'skill-1-text': 'NumPy, SciPy, Matplotlib, Pandas, PyTorch, Numbaを含む科学計算Pythonエコシステムに精通しています。数値計算、データ分析、物理シミュレーションを専門としています。',
-                'skill-2-title': '🔬 量子物理シミュレーション',
-                'skill-2-text': '1D、2D、3Dのシュレディンガー方程式、量子力学の問題解決、および量子システムのための有限差分法の実装に豊富な経験があります。',
-                'skill-3-title': '❄️ 冷たい原子物理学',
-                'skill-3-text': '現在の焦点は、量子コンピューティングや量子シミュレーションの応用に関連する、極低温原子システム、フェッシュバッハ共鳴、BECダイナミクス、および量子多体システムです。',
-                'skill-4-text': 'モンテカルロシミュレーション、イジングモデル、相転移、および複雑な物理システムや材料科学に適用される統計力学。',
-                'skill-5-text': 'GPIB/PyVISA、RS232通信、光学機器、および自動データ収集システムを介したハードウェア制御。',
-                'skill-6-text': 'MATLAB、LabVIEW、DFT計算のためのQuantum ESPRESSO、およびさまざまな計算物理学パッケージに習熟しています。',
-                'research-title': '研究プロジェクト',
-                // Removed redundant research project translations here as they are loaded from projects.json
-                'contact-title': '私とつながる',
-                'contact-email': '📧 メール',
-                'contact-github': '💻 GitHub',
-                'contact-researchgate': '🔬 ResearchGate',
-                'contact-description': 'アカデミアでの研究職や就職機会を積極的に探しています。共同研究や職務についてご相談がありましたら、お気軽にご連絡ください。',
-                'footer-text': '&copy; 2025 クリス・ウォン. 計算を通して量子宇宙を探求します。'
+                'timelineTitle': '私の学術的・専門的な道のり',
+                'projectsTitle': '研究プロジェクト',
+                'aboutText': '香港中文大学で修士号を、香港城市大学で学士号を取得した物理学の卒業生です。私の専門は計算物理学と冷却原子物理学です。Pythonと高度な数学モデリングを用いて、非線形シュレディンガー型方程式（グロス・ピタエフスキー方程式など）のシミュレーションや、様々な部分波における相互作用の解析に焦点を当て、抽象的な理論とデータ駆動型の洞察を結びつけることを得意としています。技術的な役割や学術研究において、私の分析スキルを新しい課題に応用することを熱望しています。',
+                'aboutTitle': '私について',
+                'heroTitle': 'クリス・ウォン',
+                'heroSubtitle': '計算物理学 | 物理学愛好家',
+                'heroDescription': '香港出身の物理学の卒業生で、計算物理学と冷却原子システムを専門としています。Pythonと高度な数学モデリングを用いて、数値シミュレーションを通じて抽象的な理論とデータ駆動型の洞察を結びつけることを得意としています。技術的な役割や学術研究において、私の分析スキルを新しい課題に応用することを熱望しています。',
+                'ctaResearch': '私の研究を見る',
+                'ctaGithub': 'GitHubを見る',
             }
         };
 
-        // Function to switch the page language
-        function switchLanguage(lang) {
-            // Update all elements with content from the translations object
-            for (const key in translations[lang]) {
-                const element = document.getElementById(key);
-                if (element) {
-                    element.innerHTML = translations[lang][key];
-                }
-            }
-            
-            // Set the active button state and update the html lang attribute
-            document.documentElement.lang = lang;
-            document.querySelectorAll('.btn-language').forEach(btn => btn.classList.remove('active'));
-            document.querySelector(`.btn-language[onclick="switchLanguage('${lang}')"]`).classList.add('active');
-
-            // Save language preference to local storage
-            localStorage.setItem('preferredLang', lang);
-
-            // Re-load research projects with the new language
-            loadResearchProjects();
+        const timelineContainer = document.getElementById('timeline-container');
+        const projectsContainer = document.getElementById('projects-container');
+        const languageButtons = document.querySelectorAll('.btn-language');
+        
+        /**
+         * Creates an HTML element for a single research project card.
+         * @param {object} project - The data object for the research project.
+         * @returns {HTMLElement} The created HTML div element.
+         */
+        function createResearchCard(project) {
+            const card = document.createElement('div');
+            card.className = 'research-card';
+            const doiLinkHtml = project.doi ? `<a href="https://doi.org/${project.doi}" target="_blank" rel="noopener noreferrer" class="doi-link">View on DOI</a>` : '';
+            card.innerHTML = `
+                <div class="research-card-header">
+                    <h3>${project[`title_${currentLang}`]}</h3>
+                    <p class="research-year">${project.year}</p>
+                </div>
+                <div class="research-card-body">
+                    <p>${project[`text_${currentLang}`]}</p>
+                    ${doiLinkHtml}
+                </div>
+            `;
+            return card;
         }
 
-        // Function to load research projects from JSON
-        async function loadResearchProjects() {
-            const container = document.getElementById('research-projects-container');
-            if (!container) return; // Exit if container not found
+        /**
+         * Renders all research project cards from the projectsData array into the DOM.
+         */
+        function renderResearchProjects() {
+            if (!projectsContainer) return;
+            projectsContainer.innerHTML = ''; // Clear loading indicator
+            const data = projectsData;
+            data.forEach(project => {
+                projectsContainer.appendChild(createResearchCard(project));
+            });
+        }
+        
+        /**
+         * Creates an HTML element for a single timeline item.
+         * @param {object} item - The data object for the timeline item.
+         * @returns {HTMLElement} The created HTML div element.
+         */
+        function createTimelineItem(item) {
+            const container = document.createElement('div');
+            container.classList.add('timeline-item', 'relative');
+            
+            container.innerHTML = `
+                <div class="timeline-dot"></div>
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200 ml-6 md:ml-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                    <img src="${item.image}" alt="${item.title} icon" class="w-16 h-16 md:w-20 md:h-20 object-cover border-2 border-blue-200 flex-shrink-0 rounded-md">
+                    <div class="flex-grow">
+                        <p class="text-sm font-semibold text-blue-600 mb-1">${item.dates}</p>
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-1">${item.title[`${currentLang}`]}</h3>
+                        <p class="text-md text-gray-600 mb-3">${item.institution[`${currentLang}`]}</p>
+                        <p class="text-base text-gray-700 leading-relaxed">${item.highlights[`${currentLang}`]}</p>
+                    </div>
+                </div>
+            `;
+            return container;
+        }
 
-            try {
-                // Generate a unique timestamp for cache busting
-                const timestamp = new Date().getTime();
-                const response = await fetch(`projects.json?v=${timestamp}`); // Fetch the JSON file with a dynamic version parameter
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                let projects = await response.json(); // Parse JSON data
+        /**
+         * Sets up the IntersectionObserver to animate timeline items on scroll.
+         */
+        function animateOnScroll() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2
+            };
 
-                // Sort projects by year in DESCENDING order (newest first)
-                projects.sort((a, b) => {
-                    const yearA = parseInt(a.year.split(' ')[0]);
-                    const yearB = parseInt(b.year.split(' ')[0]);
-                    return yearB - yearA; // Descending order (newest year first)
-                });
-
-                // Get the current active language
-                const currentLang = document.documentElement.lang || 'en'; // Default to 'en' if not set
-
-                // Clear existing projects
-                container.innerHTML = ''; 
-
-                projects.forEach(project => {
-                    const card = document.createElement('div');
-                    card.className = 'research-card';
-                    card.id = project.id; // Assign ID from JSON
-
-                    // Select title and text based on current language
-                    // Use the correct language-specific fields from your JSON
-                    const projectTitle = project[`title_${currentLang}`] || project.title_en;
-                    const projectText = project[`text_${currentLang}`] || project.text_en;
-
-                    let doiLinkHtml = '';
-                    if (project.doi) {
-                        doiLinkHtml = `<a href="${project.doi}" class="doi-link">View Publication →</a>`;
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        observer.unobserve(entry.target);
                     }
+                });
+            }, observerOptions);
 
-                    card.innerHTML = `
-                        <div class="research-card-header">
-                            <h3>${projectTitle}</h3>
-                            <span class="research-year">${project.year}</span>
-                        </div>
-                        <div class="research-card-body">
-                            <p>${projectText}</p>
-                            ${doiLinkHtml}
-                        </div>
-                    `;
-                    container.appendChild(card);
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                observer.observe(item);
+            });
+        }
+        
+        /**
+         * Renders all timeline items based on the current language.
+         */
+        function renderTimeline() {
+            if (!timelineContainer) return;
+            timelineContainer.innerHTML = ''; // Clear loading indicator
+            const data = timelineData[currentLang];
+            data.forEach(item => {
+                timelineContainer.appendChild(createTimelineItem(item));
+            });
+            animateOnScroll(); // Trigger animation after rendering
+        }
+        
+        /**
+         * Switches the language of the entire page content.
+         * @param {string} lang - The language to switch to ('en' or 'jp').
+         */
+        function switchLanguage(lang) {
+            currentLang = lang;
+            updatePageText(currentLang);
+            renderTimeline();
+            renderResearchProjects();
+            
+            languageButtons.forEach(button => {
+                button.classList.toggle('active', button.textContent.toLowerCase() === lang);
+            });
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        /**
+         * Updates all static text content on the page based on the current language.
+         * @param {string} lang - The language to switch to.
+         */
+        function updatePageText(lang) {
+            document.getElementById('hero-title').textContent = textContent[lang].heroTitle;
+            document.getElementById('hero-subtitle').textContent = textContent[lang].heroSubtitle;
+            document.getElementById('hero-description').textContent = textContent[lang].heroDescription;
+            document.getElementById('cta-research').textContent = textContent[lang].ctaResearch;
+            document.getElementById('cta-github').textContent = textContent[lang].ctaGithub;
+            document.getElementById('about-title').textContent = textContent[lang].aboutTitle;
+            document.getElementById('about-text').textContent = textContent[lang].aboutText;
+            document.getElementById('timeline-title').textContent = textContent[lang].timelineTitle;
+            document.getElementById('projects-title').textContent = textContent[lang].projectsTitle;
+        }
+        
+        // Asynchronous function to fetch JSON data
+        async function loadData() {
+            try {
+                const [projectsResponse, timelineResponse] = await Promise.all([
+                    fetch('projects.json'),
+                    fetch('timeline.json')
+                ]);
+                
+                if (!projectsResponse.ok || !timelineResponse.ok) {
+                    throw new Error('Failed to load JSON data.');
+                }
+                
+                projectsData = await projectsResponse.json();
+                timelineData = await timelineResponse.json();
+                
+                const savedLang = localStorage.getItem('preferredLang');
+                const defaultLang = 'en';
+                currentLang = savedLang || defaultLang;
+
+                languageButtons.forEach(button => {
+                    button.classList.remove('active');
+                    if (button.textContent.toLowerCase() === currentLang) {
+                        button.classList.add('active');
+                    }
                 });
 
-                // Re-apply animation logic to newly added cards
-                document.querySelectorAll('.research-card').forEach(card => {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(30px)';
-                    card.style.transition = 'all 0.6s ease';
-                });
-                animateOnScroll(); // Trigger initial animation check for new cards
+                switchLanguage(currentLang);
 
             } catch (error) {
-                console.error('Error loading research projects:', error);
-                container.innerHTML = '<p style="text-align: center; color: #e74c3c;">Failed to load research projects. Please try again later.</p>';
+                console.error('Error loading data:', error);
+                if (projectsContainer) projectsContainer.innerHTML = '<p style="text-align: center; color: #e74c3c;">Failed to load research projects. Please try again later.</p>';
+                if (timelineContainer) timelineContainer.innerHTML = '<p style="text-align: center; color: #e74c3c;">Failed to load timeline data. Please try again later.</p>';
             }
         }
-
-        // Call loadResearchProjects when the DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('preferredLang');
-            const defaultLang = 'en';
-            
-            if (savedLang) {
-                switchLanguage(savedLang);
-            } else {
-                switchLanguage(defaultLang);
-            }
-
-            // Initial load of projects (will be re-called by switchLanguage if needed)
-            // loadResearchProjects(); // Removed as switchLanguage now calls it
-        });
+        
+        document.addEventListener('DOMContentLoaded', loadData);
     </script>
 </body>
 </html>
