@@ -1,90 +1,128 @@
-{
-    "en": [
-        {
-            "dates": "2015 - 2017",
-            "title": "Higher Diploma in Mechanical Engineering",
-            "institution": "Hong Kong Institute of Vocational Education",
-            "highlights": "Built a strong foundation in analytical thinking and problem-solving through engineering coursework. Gained hands-on experience with technical systems that proved invaluable for later physics studies.",
-            "image": "images/hd.png"
+[
+    {
+        "id": "timeline-1",
+        "title": {
+            "en": "Higher Diploma in Mechanical Engineering",
+            "jp": "機械工学高等専門士"
         },
-        {
-            "dates": "2018 - 2020",
-            "title": "BSc in Applied Physics",
-            "institution": "City University of Hong Kong",
-            "highlights": "A pivotal shift into physics, where I first learned computational methods for solving physical problems. Completed research projects on NP-complete problems and quantum entanglement experiments.",
-            "image": "images/cityu.png"
+        "institution": {
+            "en": "Hong Kong Institute of Vocational Education",
+            "jp": "香港職業訓練局"
         },
-        {
-            "dates": "2020 - 2021",
-            "title": "MSc in Physics",
-            "institution": "The Chinese University of Hong Kong",
-            "highlights": "Specialized in advanced quantum physics and computational methods. Developed numerical solvers for Schrödinger equations in 1D, 2D, and 3D, and investigated topological physics and quantum optics.",
-            "image": "images/cu.png"
+        "dates": "2015 - 2017",
+        "highlights": {
+            "en": [
+                "Built a strong foundation in analytical thinking and problem-solving through engineering coursework. Gained hands-on experience with technical systems that proved invaluable for later physics studies."
+            ],
+            "jp": [
+                "機械工学のカリキュラムを通じて、分析的思考と問題解決能力の強力な基礎を築きました。後の物理学研究に不可欠な技術システムの実践的な経験を積みました。"
+            ]
         },
-        {
-            "dates": "2021 - 2023",
-            "title": "Assistant Research Engineer",
-            "institution": "Amonics Ltd.",
-            "highlights": "Applied my computational skills in an industrial setting, working on advanced optical and laser technologies. Implemented hardware control systems using GPIB/PyVISA and developed data analysis pipelines in Python.",
-            "image": "images/amonics.png"
+        "image": "images/hd.png"
+    },
+    {
+        "id": "timeline-2",
+        "title": {
+            "en": "BSc in Applied Physics",
+            "jp": "応用物理学学士"
         },
-        {
-            "dates": "2023 - 2024",
-            "title": "Working Holiday Experience",
-            "institution": "Japan",
-            "highlights": "A transformative year focused on cultural immersion, which improved my Japanese language skills and broadened my international perspective. This experience enhanced my adaptability and resilience.",
-            "image": "images/japan.png"
+        "institution": {
+            "en": "City University of Hong Kong",
+            "jp": "香港城市大学"
         },
-        {
-            "dates": "2025 - Present",
-            "title": "Japanese Language Studies",
-            "institution": "MANABI Japanese Language Institute",
-            "highlights": "Currently pursuing advanced fluency in Japanese to facilitate future international research collaborations. Continuing to independently work on research projects related to cold atom physics and Gross-Pitaevskii equations.",
-            "image": "images/manabi.png"
-        }
-    ],
-    "jp": [
-        {
-            "dates": "2015 - 2017",
-            "title": "機械工学高等専門士",
-            "institution": "香港職業訓練局",
-            "highlights": "機械工学のカリキュラムを通じて、分析的思考と問題解決能力の強力な基礎を築きました。後の物理学研究に不可欠な技術システムの実践的な経験を積みました。",
-            "image": "images/hd.png"
+        "dates": "2018 - 2020",
+        "highlights": {
+            "en": [
+                "A pivotal shift into physics, where I first learned computational methods for solving physical problems. Completed research projects on NP-complete problems and quantum entanglement experiments."
+            ],
+            "jp": [
+                "物理学への決定的な転換期で、物理的問題を解決するための計算手法を初めて学びました。NP完全問題と量子もつれに関する研究プロジェクトを完了しました。"
+            ]
         },
-        {
-            "dates": "2018 - 2020",
-            "title": "応用物理学学士",
-            "institution": "香港城市大学",
-            "highlights": "物理学への決定的な転換期で、物理的問題を解決するための計算手法を初めて学びました。NP完全問題と量子もつれに関する研究プロジェクトを完了しました。",
-            "image": "images/cityu.png"
+        "image": "images/cityu.png"
+    },
+    {
+        "id": "timeline-3",
+        "title": {
+            "en": "MSc in Physics",
+            "jp": "物理学修士"
         },
-        {
-            "dates": "2020 - 2021",
-            "title": "物理学修士",
-            "institution": "香港中文大学",
-            "highlights": "高度な量子物理学と計算手法を専門としました。1次元、2次元、3次元のシュレディンガー方程式の数値ソルバーを開発し、トポロジカル物理学と量子光学を研究しました。",
-            "image": "images/cu.png"
+        "institution": {
+            "en": "The Chinese University of Hong Kong",
+            "jp": "香港中文大学"
         },
-        {
-            "dates": "2021 - 2023",
-            "title": "アシスタントリサーチエンジニア",
-            "institution": "Amonics社",
-            "highlights": "産業環境で計算スキルを応用し、高度な光学およびレーザー技術に取り組みました。GPIB/PyVISAを使用してハードウェア制御システムを実装し、Pythonでデータ分析パイプラインを開発しました。",
-            "image": "images/are.png"
+        "dates": "2020 - 2021",
+        "highlights": {
+            "en": [
+                "Specialized in advanced quantum physics and computational methods. Developed numerical solvers for Schrödinger equations in 1D, 2D, and 3D, and investigated topological physics and quantum optics."
+            ],
+            "jp": [
+                "高度な量子物理学と計算手法を専門としました。1次元、2次元、3次元のシュレディンガー方程式の数値ソルバーを開発し、トポロジカル物理学と量子光学を研究しました。"
+            ]
         },
-        {
-            "dates": "2023 - 2024",
-            "title": "ワーキングホリデー",
-            "institution": "日本",
-            "highlights": "文化に浸ることに焦点を当てた変革の年で、日本語能力が向上し、国際的な視野が広がりました。この経験は私の適応力と回復力を高めました。",
-            "image": "images/amonics.png"
+        "image": "images/cu.png"
+    },
+    {
+        "id": "timeline-4",
+        "title": {
+            "en": "Assistant Research Engineer",
+            "jp": "アシスタントリサーチエンジニア"
         },
-        {
-            "dates": "2025 - 現在",
-            "title": "日本語学習",
-            "institution": "MANABI日本語学校",
-            "highlights": "将来の国際的な研究協力に備え、日本語の高度な流暢さを追求しています。冷たい原子物理学やグロス-ピタエフスキー方程式に関連する研究プロジェクトに引き続き自主的に取り組んでいます。",
-            "image": "images/manabi.png"
-        }
-    ]
-}
+        "institution": {
+            "en": "Amonics Ltd.",
+            "jp": "Amonics社"
+        },
+        "dates": "2021 - 2023",
+        "highlights": {
+            "en": [
+                "Applied my computational skills in an industrial setting, working on advanced optical and laser technologies. Implemented hardware control systems using GPIB/PyVISA and developed data analysis pipelines in Python."
+            ],
+            "jp": [
+                "産業環境で計算スキルを応用し、高度な光学およびレーザー技術に取り組みました。GPIB/PyVISAを使用してハードウェア制御システムを実装し、Pythonでデータ分析パイプラインを開発しました。"
+            ]
+        },
+        "image": "images/amonics.png"
+    },
+    {
+        "id": "timeline-5",
+        "title": {
+            "en": "Working Holiday Experience",
+            "jp": "ワーキングホリデー"
+        },
+        "institution": {
+            "en": "Japan",
+            "jp": "日本"
+        },
+        "dates": "2023 - 2024",
+        "highlights": {
+            "en": [
+                "A transformative year focused on cultural immersion, which improved my Japanese language skills and broadened my international perspective. This experience enhanced my adaptability and resilience."
+            ],
+            "jp": [
+                "文化に浸ることに焦点を当てた変革の年で、日本語能力が向上し、国際的な視野が広がりました。この経験は私の適応力と回復力を高めました。"
+            ]
+        },
+        "image": "images/japan.png"
+    },
+    {
+        "id": "timeline-6",
+        "title": {
+            "en": "Japanese Language Studies",
+            "jp": "日本語学習"
+        },
+        "institution": {
+            "en": "MANABI Japanese Language Institute",
+            "jp": "MANABI日本語学校"
+        },
+        "dates": "2025 - Present",
+        "highlights": {
+            "en": [
+                "Currently pursuing advanced fluency in Japanese to facilitate future international research collaborations. Continuing to independently work on research projects related to cold atom physics and Gross-Pitaevskii equations."
+            ],
+            "jp": [
+                "将来の国際的な研究協力に備え、日本語の高度な流暢さを追求しています。冷たい原子物理学やグロス-ピタエフスキー方程式に関連する研究プロジェクトに引き続き自主的に取り組んでいます。"
+            ]
+        },
+        "image": "images/manabi.png"
+    }
+]
