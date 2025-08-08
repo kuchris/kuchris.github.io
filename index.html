@@ -358,15 +358,6 @@
             justify-content: center;
             gap: 2rem;
             margin-top: 2rem;
-            flex-wrap: wrap; /* Add this for wrapping on all screens */
-        }
-
-        @media (max-width: 640px) {
-            .social-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
         }
 
         .social-link {
@@ -393,6 +384,36 @@
             color: white;
             text-align: center;
             padding: 2rem 0;
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #f39c12, #e74c3c);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .back-to-top.visible {
+            display: flex;
         }
 
         /* Quantum Animation (Background Element) */
@@ -425,9 +446,53 @@
                 font-size: 1.2rem;
             }
 
-            /* Hide nav links on small screens, keep language buttons */
+            /* Mobile navigation */
             .nav-links {
                 display: none;
+            }
+            
+            /* Mobile menu button */
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+                padding: 0.5rem;
+            }
+            
+            .mobile-menu {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: #1a202c;
+                padding: 1rem;
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+            
+            .mobile-menu.active {
+                transform: translateY(0);
+            }
+            
+            .mobile-menu ul {
+                list-style: none;
+                padding: 0;
+            }
+            
+            .mobile-menu li {
+                margin: 1rem 0;
+            }
+            
+            .mobile-menu a {
+                color: white;
+                text-decoration: none;
+                font-size: 1.1rem;
+                display: block;
+                padding: 0.5rem 0;
             }
 
             /* Adjust language buttons for mobile if needed */
@@ -438,6 +503,14 @@
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
             }
         }
         
@@ -522,6 +595,32 @@
             font-size: 1.2rem;
             color: #667eea;
         }
+        
+        /* Loading spinner */
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(102, 126, 234, 0.3);
+            border-radius: 50%;
+            border-top-color: #667eea;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Fade in animation for content */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.6s ease-in forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans antialiased text-gray-800">
@@ -540,8 +639,18 @@
                     <button class="btn-language active" onclick="switchLanguage('en')">EN</button>
                     <button class="btn-language" onclick="switchLanguage('jp')">JP</button>
                 </div>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
             </div>
         </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+                <li><a href="#skills" onclick="closeMobileMenu()">Skills</a></li>
+                <li><a href="#timeline" onclick="closeMobileMenu()">Journey</a></li>
+                <li><a href="#projects" onclick="closeMobileMenu()">Research</a></li>
+                <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+            </ul>
+        </div>
     </header>
     <main>
         <section class="hero">
@@ -613,7 +722,10 @@
             <div class="container">
                 <h2 id="timeline-title" class="section-title"></h2>
                 <div id="timeline-container" class="timeline relative pl-10 sm:pl-12">
-                    <div id="loading-indicator">Loading timeline...</div>
+                    <div id="loading-indicator">
+                        <div class="loading-spinner"></div>
+                        Loading timeline...
+                    </div>
                 </div>
             </div>
         </section>
@@ -622,7 +734,10 @@
             <div class="container">
                 <h2 id="projects-title" class="section-title"></h2>
                 <div id="projects-container" class="research-grid">
-                    <div id="loading-indicator">Loading research projects...</div>
+                    <div id="loading-indicator">
+                        <div class="loading-spinner"></div>
+                        Loading research projects...
+                    </div>
                 </div>
             </div>
         </section>
@@ -648,6 +763,8 @@
         </section>
     </main>
 
+    <button class="back-to-top" onclick="scrollToTop()" title="Back to top">↑</button>
+    
     <footer>
         <p id="footer-text"></p>
     </footer>
@@ -761,8 +878,11 @@
             }
             projectsContainer.innerHTML = ''; // Clear loading indicator
             const data = projectsData;
-            data.forEach(project => {
-                projectsContainer.appendChild(createResearchCard(project));
+            data.forEach((project, index) => {
+                const card = createResearchCard(project);
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.classList.add('fade-in');
+                projectsContainer.appendChild(card);
             });
         }
         
@@ -944,9 +1064,60 @@
 
             } catch (error) {
                 console.error('Error loading data:', error);
-                if (projectsContainer) projectsContainer.innerHTML = '<p style="text-align: center; color: #e74c3c;">Failed to load research projects. Please try again later.</p>';
-                if (timelineContainer) timelineContainer.innerHTML = '<p style="text-align: center; color: #e74c3c;">Failed to load timeline data. Please try again later.</p>';
+                if (projectsContainer) projectsContainer.innerHTML = `
+                    <div style="text-align: center; color: #e74c3c; padding: 2rem;">
+                        <p style="margin-bottom: 1rem;">Failed to load research projects.</p>
+                        <button onclick="loadData()" class="btn btn-primary" style="font-size: 0.9rem; padding: 8px 16px;">Retry</button>
+                    </div>`;
+                if (timelineContainer) timelineContainer.innerHTML = `
+                    <div style="text-align: center; color: #e74c3c; padding: 2rem;">
+                        <p style="margin-bottom: 1rem;">Failed to load timeline data.</p>
+                        <button onclick="loadData()" class="btn btn-primary" style="font-size: 0.9rem; padding: 8px 16px;">Retry</button>
+                    </div>`;
             }
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Show/hide back to top button based on scroll position
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            mobileMenu.classList.toggle('active');
+        }
+        
+        function closeMobileMenu() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            mobileMenu.classList.remove('active');
         }
         
         document.addEventListener('DOMContentLoaded', loadData);
