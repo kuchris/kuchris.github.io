@@ -36,7 +36,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: white; /* Changed to white to prevent blue overflow */
             min-height: 100vh;
         }
 
@@ -105,6 +105,7 @@
         /* Main Content Area */
         main {
             margin-top: 80px; /* Offset for fixed header */
+            background: white; /* Ensure main content has white background */
         }
 
         /* Hero Section Styles */
@@ -115,6 +116,7 @@
             background: url('images/hero-background.jpg') center/cover;
             background-attachment: fixed;
             position: relative;
+            margin-top: 0; /* Ensure no gap between header and hero */
         }
 
         .hero::before {
