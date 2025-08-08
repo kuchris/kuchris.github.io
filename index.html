@@ -104,7 +104,7 @@
 
         /* Main Content Area */
         main {
-            margin-top: 80px; /* Offset for fixed header */
+            margin-top: 0; /* Remove gap between header and hero */
             background: white; /* Ensure main content has white background */
         }
 
@@ -116,7 +116,7 @@
             background: url('images/hero-background.jpg') center/cover;
             background-attachment: fixed;
             position: relative;
-            margin-top: 0; /* Ensure no gap between header and hero */
+            margin-top: 80px; /* Account for fixed header height */
         }
 
         .hero::before {
