@@ -115,5 +115,14 @@
         "text_en": "This project focuses on the numerical solution of the Gross-Pitaevskii equation to analyze the ground state properties and dynamic behavior of Bose-Einstein condensates.",
         "text_jp": "このプロジェクトは、ボーズ・アインシュタイン凝縮体の基底状態特性と動的挙動を解析するために、グロス-ピタエフスキー方程式の数値解法に焦点を当てています。",
         "doi": null
+    },
+    {
+    "id": "research-14",
+    "title_en": "Quantum Wavepacket Dynamics in a 2D Lattice with Defects",
+    "title_jp": "欠陥を含む2次元格子における量子波束ダイナミクス",
+    "year": "2025",
+    "text_en": "This project simulates the time evolution of a quantum mechanical wavepacket in a two-dimensional tight-binding model. The simulation utilizes the Crank-Nicolson method to ensure stable and accurate propagation. The lattice includes configurable defect sites with a specified potential, allowing for the study of scattering and localization phenomena. The code generates visualizations of the Hamiltonian structure, wavepacket probability density, and phase evolution over time.",
+    "text_jp": "このプロジェクトは、2次元タイトバインディングモデルにおける量子力学的な波束の時間発展をシミュレーションします。シミュレーションには、安定的かつ正確な伝播を保証するためにクランク・ニコルソン法を利用しています。格子には指定されたポテンシャルを持つ設定可能な欠陥サイトが含まれており、散乱や局在といった現象の研究を可能にします。このコードは、ハミルトニアンの構造、波束の確率密度、そして時間経過に伴う位相の進化を可視化します。",
+    "doi": null
     }
 ]
