@@ -117,12 +117,21 @@
         "doi": null
     },
     {
-    "id": "research-14",
-    "title_en": "Quantum Wavepacket Dynamics in a 2D Lattice with Defects",
-    "title_jp": "欠陥を含む2次元格子における量子波束ダイナミクス",
-    "year": "2025",
-    "text_en": "This project simulates the time evolution of a quantum mechanical wavepacket in a two-dimensional tight-binding model. The simulation utilizes the Crank-Nicolson method to ensure stable and accurate propagation. The lattice includes configurable defect sites with a specified potential, allowing for the study of scattering and localization phenomena. The code generates visualizations of the Hamiltonian structure, wavepacket probability density, and phase evolution over time.",
-    "text_jp": "このプロジェクトは、2次元タイトバインディングモデルにおける量子力学的な波束の時間発展をシミュレーションします。シミュレーションには、安定的かつ正確な伝播を保証するためにクランク・ニコルソン法を利用しています。格子には指定されたポテンシャルを持つ設定可能な欠陥サイトが含まれており、散乱や局在といった現象の研究を可能にします。このコードは、ハミルトニアンの構造、波束の確率密度、そして時間経過に伴う位相の進化を可視化します。",
-    "doi": null
+        "id": "research-14",
+        "title_en": "Quantum Wavepacket Dynamics in a 2D Lattice with Defects",
+        "title_jp": "欠陥を含む2次元格子における量子波束ダイナミクス",
+        "year": "2025",
+        "text_en": "This project simulates the time evolution of a quantum mechanical wavepacket in a two-dimensional tight-binding model. The simulation utilizes the Crank-Nicolson method to ensure stable and accurate propagation. The lattice includes configurable defect sites with a specified potential, allowing for the study of scattering and localization phenomena. The code generates visualizations of the Hamiltonian structure, wavepacket probability density, and phase evolution over time.",
+        "text_jp": "このプロジェクトは、2次元タイトバインディングモデルにおける量子力学的な波束の時間発展をシミュレーションします。シミュレーションには、安定的かつ正確な伝播を保証するためにクランク・ニコルソン法を利用しています。格子には指定されたポテンシャルを持つ設定可能な欠陥サイトが含まれており、散乱や局在といった現象の研究を可能にします。このコードは、ハミルトニアンの構造、波束の確率密度、そして時間経過に伴う位相の進化を可視化します。",
+        "doi": null
+    },
+    {
+        "id": "research-15",
+        "title_en": "Simulating and Visualizing 1D Laser Cooling of Rubidium-87",
+        "title_jp": "ルビジウム-87の1次元レーザー冷却のシミュレーションと可視化",
+        "year": "2025",
+        "text_en": "This project simulates the one-dimensional laser cooling of a Rubidium-87 atom using Doppler cooling with counter-propagating laser beams. By modeling velocity-dependent forces and stochastic photon interactions, it reveals how atomic motion slows and temperature decreases. Implemented in Python, it delivers a dynamic visualization to explore ultracold atomic physics. The simulation lays a foundation for advanced studies, with potential extensions to multi-dimensional or multi-atom systems.",
+        "text_jp": "このプロジェクトは、対向伝播するレーザービームを用いたドップラー冷却によるルビジウム-87原子の1次元レーザー冷却をシミュレートします。速度依存力と確率的な光子相互作用をモデル化することで、原子の運動がどのように減速し、温度が低下するかを明らかにします。Pythonで実装され、超低温原子物理学を探求するための動的可視化を提供します。このシミュレーションは高度な研究の基盤となり、多次元や多原子系への拡張の可能性があります。",
+        "doi": null
     }
 ]
