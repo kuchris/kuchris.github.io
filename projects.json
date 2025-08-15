@@ -133,5 +133,14 @@
         "text_en": "This project simulates the one-dimensional laser cooling of a Rubidium-87 atom using Doppler cooling with counter-propagating laser beams. By modeling velocity-dependent forces and stochastic photon interactions, it reveals how atomic motion slows and temperature decreases. Implemented in Python, it delivers a dynamic visualization to explore ultracold atomic physics. The simulation lays a foundation for advanced studies, with potential extensions to multi-dimensional or multi-atom systems.",
         "text_jp": "このプロジェクトは、対向伝播するレーザービームを用いたドップラー冷却によるルビジウム-87原子の1次元レーザー冷却をシミュレートします。速度依存力と確率的な光子相互作用をモデル化することで、原子の運動がどのように減速し、温度が低下するかを明らかにします。Pythonで実装され、超低温原子物理学を探求するための動的可視化を提供します。このシミュレーションは高度な研究の基盤となり、多次元や多原子系への拡張の可能性があります。",
         "doi": null
+    },
+    {
+        "id": "research-16",
+        "title_en": "Simulating and Visualizing 2D Laser Cooling of Rubidium-87 with Magneto-Optical Trap",
+        "title_jp": "磁気光学トラップを用いたルビジウム87の2次元レーザー冷却のシミュレーションと可視化",
+        "year": "2025",
+        "text_en": "This project simulates the 2D laser cooling of atoms within a Magneto-Optical Trap (MOT). It models the forces acting on atoms (Doppler cooling and magnetic trapping), including spontaneous emission and recoil. The simulation visualizes the atomic motion and cooling process, generating a plot of final atom positions and speed distribution, and an animated GIF of the MOT dynamics, specifically for Rubidium-87 atoms.",
+        "text_jp": "このプロジェクトは、磁気光学トラップ（MOT）内での原子の2次元レーザー冷却をシミュレートします。原子に作用する力（ドップラー冷却と磁気トラッピング）を、自然放出と反跳を含めてモデル化します。このシミュレーションは、原子の動きと冷却プロセスを視覚化し、最終的な原子の位置と速度分布のプロット、およびMOTダイナミクスのアニメーションGIFを生成します。特にルビジウム87原子を対象としています。",
+        "doi": null
     }
 ]
