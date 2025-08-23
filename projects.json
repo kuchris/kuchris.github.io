@@ -142,5 +142,14 @@
         "text_en": "This project simulates the 2D laser cooling of atoms within a Magneto-Optical Trap (MOT). It models the forces acting on atoms (Doppler cooling and magnetic trapping), including spontaneous emission and recoil. The simulation visualizes the atomic motion and cooling process, generating a plot of final atom positions and speed distribution, and an animated GIF of the MOT dynamics, specifically for Rubidium-87 atoms.",
         "text_jp": "このプロジェクトは、磁気光学トラップ（MOT）内での原子の2次元レーザー冷却をシミュレートします。原子に作用する力（ドップラー冷却と磁気トラッピング）を、自然放出と反跳を含めてモデル化します。このシミュレーションは、原子の動きと冷却プロセスを視覚化し、最終的な原子の位置と速度分布のプロット、およびMOTダイナミクスのアニメーションGIFを生成します。特にルビジウム87原子を対象としています。",
         "doi": null
+    },
+    {
+        "id": "research-17",
+        "title_en": "1D Schrödinger Equation Solver and Visualizer in C++",
+        "title_jp": "C++による1次元シュレーディンガー方程式のソルバーと可視化",
+        "year": "2025",
+        "text_en": "This project is an object-oriented C++ application designed to simulate the quantum-mechanical behavior of a 1D particle by numerically solving the time-dependent Schrödinger equation. The computational core, which leverages STL components like std::vector and std::complex for data management, is architecturally separated from the GUI to ensure modularity. The application implements two sophisticated numerical methods: 1) The Crank-Nicolson finite-difference scheme, which constructs and solves large sparse-matrix equations using the high-performance Eigen library, and 2) The Split-Step Fourier method, which utilizes the industry-standard FFTW library to efficiently transform the wave function between position and momentum space. The user-facing front-end is a responsive GUI built with the Qt 5 framework, allowing for parameter configuration and real-time visualization of the wave function's probability density via Qt Charts.",
+        "text_jp": "このプロジェクトは、オブジェクト指向設計に基づいたC++アプリケーションであり、時間依存シュレーディンガー方程式を数値的に解くことで1次元粒子の量子力学的な振る舞いをシミュレーションします。データ管理にstd::vectorやstd::complexといったSTLコンテナを活用する計算コアは、モジュール性を確保するためにGUIからアーキテクチャ的に分離されています。本アプリケーションは、二つの高度な数値計算手法を実装しています。①クランク・ニコルソン有限差分法：高性能なEigenライブラリを用いて大規模な疎行列方程式を構築し、解を求めます。②スプリットステップ・フーリエ法：業界標準のFFTWライブラリを利用し、波動関数を位置空間と運動量空間の間で効率的に変換します。ユーザー向けのフロントエンドはQt 5フレームワークで構築された応答性の高いGUIであり、パラメータ設定や、波動関数の確率密度のリアルタイムな可視化をQt Chartsで行います。",
+        "doi": null
     }
 ]
