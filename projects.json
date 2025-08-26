@@ -151,5 +151,14 @@
         "text_en": "This project is an object-oriented C++ application designed to simulate the quantum-mechanical behavior of a 1D particle by numerically solving the time-dependent Schrödinger equation. The computational core, which leverages STL components like std::vector and std::complex for data management, is architecturally separated from the GUI to ensure modularity. The application implements two sophisticated numerical methods: 1) The Crank-Nicolson finite-difference scheme, which constructs and solves large sparse-matrix equations using the high-performance Eigen library, and 2) The Split-Step Fourier method, which utilizes the industry-standard FFTW library to efficiently transform the wave function between position and momentum space. The user-facing front-end is a responsive GUI built with the Qt 5 framework, allowing for parameter configuration and real-time visualization of the wave function's probability density via Qt Charts.",
         "text_jp": "このプロジェクトは、オブジェクト指向設計に基づいたC++アプリケーションであり、時間依存シュレーディンガー方程式を数値的に解くことで1次元粒子の量子力学的な振る舞いをシミュレーションします。データ管理にstd::vectorやstd::complexといったSTLコンテナを活用する計算コアは、モジュール性を確保するためにGUIからアーキテクチャ的に分離されています。本アプリケーションは、二つの高度な数値計算手法を実装しています。①クランク・ニコルソン有限差分法：高性能なEigenライブラリを用いて大規模な疎行列方程式を構築し、解を求めます。②スプリットステップ・フーリエ法：業界標準のFFTWライブラリを利用し、波動関数を位置空間と運動量空間の間で効率的に変換します。ユーザー向けのフロントエンドはQt 5フレームワークで構築された応答性の高いGUIであり、パラメータ設定や、波動関数の確率密度のリアルタイムな可視化をQt Chartsで行います。",
         "doi": null
+    },
+    {
+        "id": "project-18",
+        "title_en": "Full-Stack Twitch Clip Audio Extractor with Video Preview & Time Selection",
+        "title_jp": "ビデオプレビューと時間選択機能付きフルスタックTwitchクリップ音声抽出器",
+        "year": "2025",
+        "text_en": "Developed a full-stack web application for downloading Twitch clips and converting them to trimmed MP3 files. Built a responsive frontend with HTML5 video preview and precise time selection controls using vanilla HTML, CSS, and JavaScript. Created a Node.js/Express backend that integrates with Twitch's GraphQL API to fetch video URLs and uses FFmpeg for server-side video processing and MP3 conversion. Features include internationalization (English/Japanese), error handling, and demonstrates proficiency in full-stack development, API integration, and multimedia processing.",
+        "text_jp": "TwitchクリップをダウンロードしてトリミングされたMP3ファイルに変換するフルスタックWebアプリケーションを開発しました。バニラHTML、CSS、JavaScriptを使用して、HTML5ビデオプレビューと精密な時間選択コントロールを備えたレスポンシブなフロントエンドを構築しました。TwitchのGraphQL APIと統合してビデオURLを取得し、FFmpegを使用してサーバーサイドでのビデオ処理とMP3変換を行うNode.js/Expressバックエンドを作成しました。機能には国際化（英語/日本語）、エラーハンドリングが含まれ、フルスタック開発、API統合、マルチメディア処理における熟練度を示しています。",
+        "doi": null
     }
 ]
