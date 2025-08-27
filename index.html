@@ -23,6 +23,7 @@
     
     <title>Chris Wong - Computational Physics & Cold Atom Research</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     
     <style>
         /* Global Reset & Body Styles */
@@ -535,7 +536,8 @@
             font-size: 1.2rem;
             color: #667eea;
         }
-    </style>
+        </style>
+    <link rel="stylesheet" href="skills.css">
 </head>
 <body class="bg-gray-50 font-sans antialiased text-gray-800">
     <header>
@@ -593,32 +595,7 @@
         <section id="skills" class="section">
             <div class="container">
                 <h2 id="skills-title" class="section-title"></h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h3 id="skill-1-title"></h3>
-                        <p id="skill-1-text"></p>
-                    </div>
-                    <div class="skill-card">
-                        <h3 id="skill-2-title"></h3>
-                        <p id="skill-2-text"></p>
-                    </div>
-                    <div class="skill-card">
-                        <h3 id="skill-3-title"></h3>
-                        <p id="skill-3-text"></p>
-                    </div>
-                    <div class="skill-card">
-                        <h3 id="skill-4-title"></h3>
-                        <p id="skill-4-text"></p>
-                    </div>
-                    <div class="skill-card">
-                        <h3 id="skill-5-title"></h3>
-                        <p id="skill-5-text"></p>
-                    </div>
-                    <div class="skill-card">
-                        <h3 id="skill-6-title"></h3>
-                        <p id="skill-6-text"></p>
-                    </div>
-                </div>
+                <div id="skills-graph" style="width: 100%; height: 600px;"></div>
             </div>
         </section>
 
@@ -683,18 +660,6 @@
                 'about-title': 'About Me',
                 'about-text': 'I am a physics graduate with a Master\'s from The Chinese University of Hong Kong and a Bachelor\'s from City University of Hong Kong. My expertise is in computational methods and cold atom physics. I specialize in applying theoretical knowledge to simulate complex ultracold quantum systems, with a focus on nonlinear Schrödinger-type equations like the Gross-Pitaevskii equation and the analysis of interactions in various partial waves. My goal is to use simulation and analysis to bridge the gap between abstract quantum phenomena and tangible solutions',
                 'skills-title': 'Technical Expertise',
-                'skill-1-title': '🐍 Python Programming',
-                'skill-1-text': 'Expert in scientific Python ecosystem including NumPy, SciPy, Matplotlib, Pandas, PyTorch, and Numba. Specialized in numerical methods, data analysis, and physics simulations.',
-                'skill-2-title': '🔬 Quantum Physics Simulation',
-                'skill-2-text': 'Extensive experience solving Schrödinger equations (1D, 2D, 3D), quantum mechanics problems, and implementing finite difference methods for quantum systems.',
-                'skill-3-title': '❄️ Cold Atom Physics',
-                'skill-3-text': 'Current focus on ultracold atomic systems, Feshbach resonances, BEC dynamics, and quantum many-body systems relevant to quantum computing applications.',
-                'skill-4-title': '📊 Statistical Physics',
-                'skill-4-text': 'Monte Carlo simulations, Ising models, phase transitions, and statistical mechanics applied to complex physical systems and materials science.',
-                'skill-5-title': '⚙️ Hardware Control & Data Acquisition',
-                'skill-5-text': 'Hardware control via GPIB/PyVISA, RS232 communication, optical instrumentation, and automated data acquisition systems.',
-                'skill-6-title': '💻 Software & Tools',
-                'skill-6-text': 'Proficient in MATLAB, LabVIEW, Quantum ESPRESSO for DFT calculations, and various computational physics packages.',
                 'timeline-title': 'My Academic & Professional Journey',
                 'projects-title': 'Research Projects',
                 'contact-title': 'Connect With Me',
@@ -714,18 +679,6 @@
                 'about-title': '私について',
                 'about-text': '私は香港中文大学で修士号を、香港城市大学で学士号を取得した物理学の卒業生です。私の専門は計算手法と冷却原子物理学です。理論的な知識を応用して、複雑な極低温量子システムをシミュレートすることに特化しており、Gross-Pitaevskii方程式のような非線形シュレディンガー型方程式や、さまざまな部分波での相互作用の分析に焦点を当てています。私の目標は、シミュレーションと分析を通じて、抽象的な量子現象と具体的な解決策との間のギャップを埋めることです。',
                 'skills-title': '技術的専門知識',
-                'skill-1-title': '🐍 Python プログラミング',
-                'skill-1-text': 'NumPy, SciPy, Matplotlib, Pandas, PyTorch, Numbaを含む科学計算Pythonエコシステムに精通しています。数値計算、データ分析、物理シミュレーションを専門としています。',
-                'skill-2-title': '🔬 量子物理シミュレーション',
-                'skill-2-text': '1D、2D、3Dのシュレディンガー方程式、量子力学の問題解決、および量子システムのための有限差分法の実装に豊富な経験があります。',
-                'skill-3-title': '❄️ 冷たい原子物理学',
-                'skill-3-text': '現在の焦点は、量子コンピューティングや量子シミュレーションの応用に関連する、極低温原子システム、フェッシュバッハ共鳴、BECダイナミクス、および量子多体システムです。',
-                'skill-4-title': '📊 統計物理学',
-                'skill-4-text': 'モンテカルロシミュレーション、イジングモデル、相転移、および複雑な物理システムや材料科学に適用される統計力学。',
-                'skill-5-title': '⚙️ ハードウェア制御とデータ取得',
-                'skill-5-text': 'GPIB/PyVISA、RS232通信、光学機器、および自動データ収集システムを介したハードウェア制御。',
-                'skill-6-title': '💻 ソフトウェアとツール',
-                'skill-6-text': 'MATLAB、LabVIEW、DFT計算のためのQuantum ESPRESSO、およびさまざまな計算物理学パッケージに習熟しています。',
                 'timeline-title': '私の学術的・専門的な道のり',
                 'projects-title': '研究プロジェクト',
                 'contact-title': '私とつながる',
@@ -902,18 +855,6 @@
             
             // Skills section
             document.getElementById('skills-title').textContent = translations[lang]['skills-title'];
-            document.getElementById('skill-1-title').textContent = translations[lang]['skill-1-title'];
-            document.getElementById('skill-1-text').textContent = translations[lang]['skill-1-text'];
-            document.getElementById('skill-2-title').textContent = translations[lang]['skill-2-title'];
-            document.getElementById('skill-2-text').textContent = translations[lang]['skill-2-text'];
-            document.getElementById('skill-3-title').textContent = translations[lang]['skill-3-title'];
-            document.getElementById('skill-3-text').textContent = translations[lang]['skill-3-text'];
-            document.getElementById('skill-4-title').textContent = translations[lang]['skill-4-title'];
-            document.getElementById('skill-4-text').textContent = translations[lang]['skill-4-text'];
-            document.getElementById('skill-5-title').textContent = translations[lang]['skill-5-title'];
-            document.getElementById('skill-5-text').textContent = translations[lang]['skill-5-text'];
-            document.getElementById('skill-6-title').textContent = translations[lang]['skill-6-title'];
-            document.getElementById('skill-6-text').textContent = translations[lang]['skill-6-text'];
             
             document.getElementById('timeline-title').textContent = translations[lang]['timeline-title'];
             document.getElementById('projects-title').textContent = translations[lang]['projects-title'];
@@ -956,6 +897,7 @@
                 });
 
                 switchLanguage(currentLang);
+                loadSkills();
 
             } catch (error) {
                 console.error('Error loading data:', error);
@@ -963,12 +905,107 @@
                 if (timelineContainer) timelineContainer.innerHTML = '<p style="text-align: center; color: #e74c3c;">Failed to load timeline data. Please try again later.</p>';
             }
         }
-        
 
-        
+        async function loadSkills() {
+            try {
+                const response = await fetch('skills.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load skills.json');
+                }
+                const data = await response.json();
+                renderSkillsGraph(data);
+            } catch (error) {
+                console.error('Error loading skills data:', error);
+                const skillsGraph = document.getElementById('skills-graph');
+                if (skillsGraph) {
+                    skillsGraph.innerHTML = '<p style="text-align: center; color: #e74c3c;">Failed to load skills graph. Please try again later.</p>';
+                }
+            }
+        }
 
-        
+        function renderSkillsGraph(data) {
+            const width = document.getElementById('skills-graph').clientWidth;
+            const height = document.getElementById('skills-graph').clientHeight;
 
+            const svg = d3.select("#skills-graph").append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .attr("viewBox", [-width / 2, -height / 2, width, height]);
+
+            const simulation = d3.forceSimulation(data.nodes)
+                .force("link", d3.forceLink(data.links).id(d => d.id).distance(100))
+                .force("charge", d3.forceManyBody().strength(-150))
+                .force("center", d3.forceCenter());
+
+            const link = svg.append("g")
+                .attr("stroke", "#999")
+                .attr("stroke-opacity", 0.6)
+                .selectAll("line")
+                .data(data.links)
+                .join("line")
+                .attr("stroke-width", d => Math.sqrt(d.value));
+
+            const node = svg.append("g")
+                .attr("stroke", "#fff")
+                .attr("stroke-width", 1.5)
+                .selectAll("circle")
+                .data(data.nodes)
+                .join("circle")
+                .attr("r", d => d.group === 0 ? 20 : (d.id.length > 15 ? 12 : (d.id.length > 10 ? 10 : 8)))
+                .attr("fill", d => d3.schemeCategory10[d.group])
+                .call(drag(simulation));
+
+            node.append("title")
+                .text(d => d.id);
+
+            const labels = svg.append("g")
+                .attr("class", "labels")
+                .selectAll("text").data(data.nodes)
+                .enter().append("text")
+                .attr("class", "label")
+                .attr("font-size", "10px")
+                .text(d => d.id);
+
+            simulation.on("tick", () => {
+                link
+                    .attr("x1", d => d.source.x)
+                    .attr("y1", d => d.source.y)
+                    .attr("x2", d => d.target.x)
+                    .attr("y2", d => d.target.y);
+
+                node
+                    .attr("cx", d => d.x)
+                    .attr("cy", d => d.y);
+
+                labels
+                    .attr("x", d => d.x + 12)
+                    .attr("y", d => d.y + 4);
+            });
+
+            function drag(simulation) {
+                function dragstarted(event) {
+                    if (!event.active) simulation.alphaTarget(0.3).restart();
+                    event.subject.fx = event.subject.x;
+                    event.subject.fy = event.subject.y;
+                }
+
+                function dragged(event) {
+                    event.subject.fx = event.x;
+                    event.subject.fy = event.y;
+                }
+
+                function dragended(event) {
+                    if (!event.active) simulation.alphaTarget(0);
+                    event.subject.fx = null;
+                    event.subject.fy = null;
+                }
+
+                return d3.drag()
+                    .on("start", dragstarted)
+                    .on("drag", dragged)
+                    .on("end", dragended);
+            }
+        }
         
         document.addEventListener('DOMContentLoaded', loadData);
     </script>
