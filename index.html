@@ -595,7 +595,7 @@
         <section id="skills" class="section">
             <div class="container">
                 <h2 id="skills-title" class="section-title"></h2>
-                <div id="skills-graph" style="width: 100%; height: 600px;"></div>
+                <div id="skills-graph" style="width: 100%; height: 800px;"></div>
             </div>
         </section>
 
@@ -678,7 +678,7 @@
                 'cta-github': 'GitHubを見る',
                 'about-title': '私について',
                 'about-text': '私は香港中文大学で修士号を、香港城市大学で学士号を取得した物理学の卒業生です。私の専門は計算手法と冷却原子物理学です。理論的な知識を応用して、複雑な極低温量子システムをシミュレートすることに特化しており、Gross-Pitaevskii方程式のような非線形シュレディンガー型方程式や、さまざまな部分波での相互作用の分析に焦点を当てています。私の目標は、シミュレーションと分析を通じて、抽象的な量子現象と具体的な解決策との間のギャップを埋めることです。',
-                'skills-title': '技術的専門知識',
+                                'skills-title': '技術スキル','
                 'timeline-title': '私の学術的・専門的な道のり',
                 'projects-title': '研究プロジェクト',
                 'contact-title': '私とつながる',
@@ -938,19 +938,19 @@
                 .force("center", d3.forceCenter());
 
             const link = svg.append("g")
-                .attr("stroke", "#999")
-                .attr("stroke-opacity", 0.6)
+                .attr("class", "links")
                 .selectAll("line")
                 .data(data.links)
                 .join("line")
+                .attr("class", "link")
                 .attr("stroke-width", d => Math.sqrt(d.value));
 
             const node = svg.append("g")
-                .attr("stroke", "#fff")
-                .attr("stroke-width", 1.5)
+                .attr("class", "nodes")
                 .selectAll("circle")
                 .data(data.nodes)
                 .join("circle")
+                .attr("class", "node")
                 .attr("r", d => d.group === 0 ? 20 : (d.id.length > 15 ? 12 : (d.id.length > 10 ? 10 : 8)))
                 .attr("fill", d => d3.schemeCategory10[d.group])
                 .call(drag(simulation));
@@ -963,7 +963,6 @@
                 .selectAll("text").data(data.nodes)
                 .enter().append("text")
                 .attr("class", "label")
-                .attr("font-size", "10px")
                 .text(d => d.id);
 
             simulation.on("tick", () => {

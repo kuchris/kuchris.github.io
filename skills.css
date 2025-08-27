@@ -1,5 +1,25 @@
+.node {
+    stroke: #fff;
+    stroke-width: 1.5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.node:hover {
+    transform: scale(1.2);
+    stroke: #f39c12;
+}
+
+.link {
+    stroke: #999;
+    stroke-opacity: 0.6;
+}
+
 .label {
-    font-family: sans-serif;
-    font-size: 10px;
-    fill: #333;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    fill: #2c3e50;
+    pointer-events: none;
+    text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
 }
