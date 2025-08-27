@@ -595,7 +595,7 @@
         <section id="skills" class="section">
             <div class="container">
                 <h2 id="skills-title" class="section-title"></h2>
-                <div id="skills-graph" style="width: 100%; height: 800px;"></div>
+                <div id="skills-graph"></div>
             </div>
         </section>
 
@@ -659,7 +659,7 @@
                 'cta-github': 'View GitHub',
                 'about-title': 'About Me',
                 'about-text': 'I am a physics graduate with a Master\'s from The Chinese University of Hong Kong and a Bachelor\'s from City University of Hong Kong. My expertise is in computational methods and cold atom physics. I specialize in applying theoretical knowledge to simulate complex ultracold quantum systems, with a focus on nonlinear Schrödinger-type equations like the Gross-Pitaevskii equation and the analysis of interactions in various partial waves. My goal is to use simulation and analysis to bridge the gap between abstract quantum phenomena and tangible solutions',
-                'skills-title': 'Technical Expertise',
+                'skills-title': 'Technical Skills',
                 'timeline-title': 'My Academic & Professional Journey',
                 'projects-title': 'Research Projects',
                 'contact-title': 'Connect With Me',
@@ -924,86 +924,97 @@
         }
 
         function renderSkillsGraph(data) {
-            const width = document.getElementById('skills-graph').clientWidth;
-            const height = document.getElementById('skills-graph').clientHeight;
+            const container = document.getElementById('skills-graph');
 
-            const svg = d3.select("#skills-graph").append("svg")
-                .attr("width", width)
-                .attr("height", height)
-                .attr("viewBox", [-width / 2, -height / 2, width, height]);
+            function drawGraph() {
+                // Clear previous graph
+                d3.select(container).select("svg").remove();
 
-            const simulation = d3.forceSimulation(data.nodes)
-                .force("link", d3.forceLink(data.links).id(d => d.id).distance(100))
-                .force("charge", d3.forceManyBody().strength(-150))
-                .force("center", d3.forceCenter());
+                const width = container.clientWidth;
+                const height = container.clientHeight;
 
-            const link = svg.append("g")
-                .attr("class", "links")
-                .selectAll("line")
-                .data(data.links)
-                .join("line")
-                .attr("class", "link")
-                .attr("stroke-width", d => Math.sqrt(d.value));
+                const svg = d3.select(container).append("svg")
+                    .attr("width", width)
+                    .attr("height", height)
+                    .attr("viewBox", [-width / 2, -height / 2, width, height]);
 
-            const node = svg.append("g")
-                .attr("class", "nodes")
-                .selectAll("circle")
-                .data(data.nodes)
-                .join("circle")
-                .attr("class", "node")
-                .attr("r", d => d.group === 0 ? 20 : (d.id.length > 15 ? 12 : (d.id.length > 10 ? 10 : 8)))
-                .attr("fill", d => d3.schemeCategory10[d.group])
-                .call(drag(simulation));
+                const simulation = d3.forceSimulation(data.nodes)
+                    .force("link", d3.forceLink(data.links).id(d => d.id).distance(100))
+                    .force("charge", d3.forceManyBody().strength(-150))
+                    .force("center", d3.forceCenter());
 
-            node.append("title")
-                .text(d => d.id);
+                const link = svg.append("g")
+                    .attr("class", "links")
+                    .selectAll("line")
+                    .data(data.links)
+                    .join("line")
+                    .attr("class", "link")
+                    .attr("stroke-width", d => Math.sqrt(d.value));
 
-            const labels = svg.append("g")
-                .attr("class", "labels")
-                .selectAll("text").data(data.nodes)
-                .enter().append("text")
-                .attr("class", "label")
-                .text(d => d.id);
+                const node = svg.append("g")
+                    .attr("class", "nodes")
+                    .selectAll("circle")
+                    .data(data.nodes)
+                    .join("circle")
+                    .attr("class", "node")
+                    .attr("r", d => d.group === 0 ? 20 : (d.id.length > 15 ? 12 : (d.id.length > 10 ? 10 : 8)))
+                    .attr("fill", d => d3.schemeCategory10[d.group])
+                    .call(drag(simulation));
 
-            simulation.on("tick", () => {
-                link
-                    .attr("x1", d => d.source.x)
-                    .attr("y1", d => d.source.y)
-                    .attr("x2", d => d.target.x)
-                    .attr("y2", d => d.target.y);
+                node.append("title")
+                    .text(d => d.id);
 
-                node
-                    .attr("cx", d => d.x)
-                    .attr("cy", d => d.y);
+                const labels = svg.append("g")
+                    .attr("class", "labels")
+                    .selectAll("text").data(data.nodes)
+                    .enter().append("text")
+                    .attr("class", "label")
+                    .text(d => d.id);
 
-                labels
-                    .attr("x", d => d.x + 12)
-                    .attr("y", d => d.y + 4);
-            });
+                simulation.on("tick", () => {
+                    link
+                        .attr("x1", d => d.source.x)
+                        .attr("y1", d => d.source.y)
+                        .attr("x2", d => d.target.x)
+                        .attr("y2", d => d.target.y);
 
-            function drag(simulation) {
-                function dragstarted(event) {
-                    if (!event.active) simulation.alphaTarget(0.3).restart();
-                    event.subject.fx = event.subject.x;
-                    event.subject.fy = event.subject.y;
+                    node
+                        .attr("cx", d => d.x)
+                        .attr("cy", d => d.y);
+
+                    labels
+                        .attr("x", d => d.x + 12)
+                        .attr("y", d => d.y + 4);
+                });
+
+                function drag(simulation) {
+                    function dragstarted(event) {
+                        if (!event.active) simulation.alphaTarget(0.3).restart();
+                        event.subject.fx = event.subject.x;
+                        event.subject.fy = event.subject.y;
+                    }
+
+                    function dragged(event) {
+                        event.subject.fx = event.x;
+                        event.subject.fy = event.y;
+                    }
+
+                    function dragended(event) {
+                        if (!event.active) simulation.alphaTarget(0);
+                        event.subject.fx = null;
+                        event.subject.fy = null;
+                    }
+
+                    return d3.drag()
+                        .on("start", dragstarted)
+                        .on("drag", dragged)
+                        .on("end", dragended);
                 }
-
-                function dragged(event) {
-                    event.subject.fx = event.x;
-                    event.subject.fy = event.y;
-                }
-
-                function dragended(event) {
-                    if (!event.active) simulation.alphaTarget(0);
-                    event.subject.fx = null;
-                    event.subject.fy = null;
-                }
-
-                return d3.drag()
-                    .on("start", dragstarted)
-                    .on("drag", dragged)
-                    .on("end", dragended);
             }
+
+            drawGraph();
+
+            window.addEventListener('resize', drawGraph);
         }
         
         document.addEventListener('DOMContentLoaded', loadData);
