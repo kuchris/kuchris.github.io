@@ -938,13 +938,13 @@
                     .parentId(d => data.links.find(l => l.target === d.id)?.source)
                     (data.nodes);
                 
-                const treeLayout = d3.tree().size([height, width - 200]);
+                const treeLayout = d3.tree().size([height * 0.8, width * 0.8]);
                 treeLayout(root);
 
                 // Set initial positions from the tree layout
                 root.descendants().forEach(d => {
                     d.x = d.x - height / 2;
-                    d.y = d.y - width / 2 + 100;
+                    d.y = d.y - width / 2;
                 });
 
                 const svg = d3.select(container).append("svg")
@@ -953,8 +953,8 @@
                     .attr("viewBox", [-width / 2, -height / 2, width, height]);
 
                 const simulation = d3.forceSimulation(root.descendants())
-                    .force("link", d3.forceLink(root.links()).id(d => d.id).distance(50).strength(1))
-                    .force("charge", d3.forceManyBody().strength(-150))
+                    .force("link", d3.forceLink(root.links()).id(d => d.id).distance(70).strength(1.2))
+                    .force("charge", d3.forceManyBody().strength(-200))
                     .force("center", d3.forceCenter());
 
                 const link = svg.append("g")
@@ -967,14 +967,14 @@
                 // Function to determine node size based on group and whether it's a category or item
                 function getNodeSize(group, id) {
                     // Group 0 (Technical Expertise) - Root node: largest
-                    if (group === 0) return 20;
+                    if (group === 0) return 15;
                     
                     // Second level categories (category names like "Languages", "Libraries", etc.)
                     const isCategory = data.links.some(link => link.source === "Technical Expertise" && link.target === id);
-                    if (isCategory) return 16;  // Medium-large for categories
+                    if (isCategory) return 12;  // Medium-large for categories
                     
                     // Individual items (Python, NumPy, React, etc.): smallest
-                    return 8;
+                    return 6;
                 }
 
                 const node = svg.append("g")
@@ -1009,8 +1009,8 @@
                         .attr("cy", d => d.y);
 
                     labels
-                        .attr("x", d => d.x + getNodeSize(d.data.group, d.data.id) + 8)
-                        .attr("y", d => d.y + 4);
+                        .attr("x", d => d.x + getNodeSize(d.data.group, d.data.id) + 6)
+                        .attr("y", d => d.y + 3);
                 });
 
                 function drag(simulation) {
