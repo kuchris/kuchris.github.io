@@ -953,7 +953,7 @@
                     .attr("viewBox", [-width / 2, -height / 2, width, height]);
 
                 const simulation = d3.forceSimulation(root.descendants())
-                    .force("link", d3.forceLink(root.links()).id(d => d.id).distance(50).strength(1))
+                    .force("link", d3.forceLink(root.links()).id(d => d.id).distance(50).strength(0.8))
                     .force("charge", d3.forceManyBody().strength(-150))
                     .force("center", d3.forceCenter());
 
@@ -1020,6 +1020,12 @@
                     function dragged(event, d) {
                         d.fx = event.x;
                         d.fy = event.y;
+                        // Update link positions immediately during drag for responsiveness
+                        link
+                            .attr("x1", l => l.source === d ? event.x : l.source.x)
+                            .attr("y1", l => l.source === d ? event.y : l.source.y)
+                            .attr("x2", l => l.target === d ? event.x : l.target.x)
+                            .attr("y2", l => l.target === d ? event.y : l.target.y);
                     }
 
                     function dragended(event, d) {
