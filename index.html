@@ -926,6 +926,7 @@
         function renderSkillsGraph(data) {
             const container = document.getElementById('skills-graph');
             let simulation;
+            let resizeObserver;
 
             function drawGraph() {
                 // Clear previous graph
@@ -940,8 +941,10 @@
                     (data.nodes);
                 
                 const svg = d3.select(container).append("svg")
-                    .attr("width", width)
-                    .attr("height", height);
+                    .attr("width", "100%")
+                    .attr("height", "100%")
+                    .attr("viewBox", `0 0 ${width} ${height}`)
+                    .attr("preserveAspectRatio", "xMidYMid meet");
 
                 // Preserve current positions if they exist, otherwise initialize with random positions
                 root.descendants().forEach(d => {
@@ -1058,8 +1061,28 @@
                 }, 10);
             }
 
+            // Set up resize observer for better zoom handling
+            if (window.ResizeObserver) {
+                resizeObserver = new ResizeObserver(handleResize);
+                resizeObserver.observe(container);
+            } else {
+                // Fallback to window resize event
+                window.addEventListener('resize', handleResize);
+            }
+
             drawGraph();
-            window.addEventListener('resize', handleResize);
+            
+            // Return cleanup function
+            return function cleanup() {
+                if (resizeObserver) {
+                    resizeObserver.disconnect();
+                } else {
+                    window.removeEventListener('resize', handleResize);
+                }
+                if (simulation) {
+                    simulation.stop();
+                }
+            };
         }
         
         document.addEventListener('DOMContentLoaded', loadData);
