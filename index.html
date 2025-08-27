@@ -933,46 +933,56 @@
                 const width = container.clientWidth;
                 const height = container.clientHeight;
 
+                const root = d3.stratify()
+                    .id(d => d.id)
+                    .parentId(d => data.links.find(l => l.target === d.id)?.source)
+                    (data.nodes);
+                
+                const treeLayout = d3.tree().size([height, width - 200]);
+                treeLayout(root);
+
+                // Set initial positions from the tree layout
+                root.descendants().forEach(d => {
+                    d.x = d.x - height / 2;
+                    d.y = d.y - width / 2 + 100;
+                });
+
                 const svg = d3.select(container).append("svg")
                     .attr("width", width)
                     .attr("height", height)
                     .attr("viewBox", [-width / 2, -height / 2, width, height]);
 
-                const simulation = d3.forceSimulation(data.nodes)
-                    .force("link", d3.forceLink(data.links).id(d => d.id).distance(100))
+                const simulation = d3.forceSimulation(root.descendants())
+                    .force("link", d3.forceLink(root.links()).id(d => d.id).distance(50).strength(1))
                     .force("charge", d3.forceManyBody().strength(-150))
-                    .force("center", d3.forceCenter())
-                    .force("x", d3.forceX())
-                    .force("y", d3.forceY())
-                    .force("collide", d3.forceCollide().radius(d => (d.group === 0 ? 20 : (d.id.length > 15 ? 12 : (d.id.length > 10 ? 10 : 8))) + 5));
+                    .force("center", d3.forceCenter());
 
                 const link = svg.append("g")
                     .attr("class", "links")
                     .selectAll("line")
-                    .data(data.links)
+                    .data(root.links())
                     .join("line")
-                    .attr("class", "link")
-                    .attr("stroke-width", d => Math.sqrt(d.value));
+                    .attr("class", "link");
 
                 const node = svg.append("g")
                     .attr("class", "nodes")
                     .selectAll("circle")
-                    .data(data.nodes)
+                    .data(root.descendants())
                     .join("circle")
                     .attr("class", "node")
-                    .attr("r", d => d.group === 0 ? 20 : (d.id.length > 15 ? 12 : (d.id.length > 10 ? 10 : 8)))
-                    .attr("fill", d => d3.schemeCategory10[d.group])
+                    .attr("r", d => d.data.group === 0 ? 10 : (d.data.id.length > 15 ? 8 : (d.data.id.length > 10 ? 6 : 4)))
+                    .attr("fill", d => d3.schemeCategory10[d.data.group])
                     .call(drag(simulation));
 
                 node.append("title")
-                    .text(d => d.id);
+                    .text(d => d.data.id);
 
                 const labels = svg.append("g")
                     .attr("class", "labels")
-                    .selectAll("text").data(data.nodes)
+                    .selectAll("text").data(root.descendants())
                     .enter().append("text")
                     .attr("class", "label")
-                    .text(d => d.id);
+                    .text(d => d.data.id);
 
                 simulation.on("tick", () => {
                     link
@@ -991,21 +1001,21 @@
                 });
 
                 function drag(simulation) {
-                    function dragstarted(event) {
+                    function dragstarted(event, d) {
                         if (!event.active) simulation.alphaTarget(0.3).restart();
-                        event.subject.fx = event.subject.x;
-                        event.subject.fy = event.subject.y;
+                        d.fx = d.x;
+                        d.fy = d.y;
                     }
 
-                    function dragged(event) {
-                        event.subject.fx = event.x;
-                        event.subject.fy = event.y;
+                    function dragged(event, d) {
+                        d.fx = event.x;
+                        d.fy = event.y;
                     }
 
-                    function dragended(event) {
+                    function dragended(event, d) {
                         if (!event.active) simulation.alphaTarget(0);
-                        event.subject.fx = null;
-                        event.subject.fy = null;
+                        d.fx = null;
+                        d.fy = null;
                     }
 
                     return d3.drag()
@@ -1016,7 +1026,6 @@
             }
 
             drawGraph();
-
             window.addEventListener('resize', drawGraph);
         }
         
