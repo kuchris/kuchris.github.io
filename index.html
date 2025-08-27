@@ -997,7 +997,7 @@
 
                 // Fit to canvas
                 const bounds = g.node().getBBox();
-                const padding = 0.3;
+                const padding = 0.5;
                 const scale = Math.min(width / (bounds.width * (1 + padding)), height / (bounds.height * (1 + padding)));
                 const transform = `translate(${width / 2 - (bounds.x + bounds.width / 2) * scale}, ${height / 2 - (bounds.y + bounds.height / 2) * scale}) scale(${scale})`;
                 g.attr("transform", transform);
