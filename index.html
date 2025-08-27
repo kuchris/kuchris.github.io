@@ -941,10 +941,8 @@
                     (data.nodes);
                 
                 const svg = d3.select(container).append("svg")
-                    .attr("width", "100%")
-                    .attr("height", "100%")
-                    .attr("viewBox", `0 0 ${width} ${height}`)
-                    .attr("preserveAspectRatio", "xMidYMid meet");
+                    .attr("width", width)
+                    .attr("height", height);
 
                 // Preserve current positions if they exist, otherwise initialize with random positions
                 root.descendants().forEach(d => {
@@ -1029,18 +1027,34 @@
                     function dragged(event, d) {
                         d.fx = event.x;
                         d.fy = event.y;
-                        // Update link positions immediately during drag for responsiveness
-                        link
-                            .attr("x1", l => l.source === d ? event.x : l.source.x)
-                            .attr("y1", l => l.source === d ? event.y : l.source.y)
-                            .attr("x2", l => l.target === d ? event.x : l.target.x)
-                            .attr("y2", l => l.target === d ? event.y : l.target.y);
+                        // Update only the links connected to this specific node
+                        root.links().forEach(link => {
+                            if (link.source === d) {
+                                link.source.fx = event.x;
+                                link.source.fy = event.y;
+                            }
+                            if (link.target === d) {
+                                link.target.fx = event.x;
+                                link.target.fy = event.y;
+                            }
+                        });
                     }
 
                     function dragended(event, d) {
                         if (!event.active) simulation.alphaTarget(0);
                         d.fx = null;
                         d.fy = null;
+                        // Also clear fixed positions for links
+                        root.links().forEach(link => {
+                            if (link.source === d) {
+                                link.source.fx = null;
+                                link.source.fy = null;
+                            }
+                            if (link.target === d) {
+                                link.target.fx = null;
+                                link.target.fy = null;
+                            }
+                        });
                     }
 
                     return d3.drag()
