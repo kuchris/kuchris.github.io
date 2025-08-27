@@ -964,26 +964,13 @@
                     .join("line")
                     .attr("class", "link");
 
-                // Function to determine node size based on group and whether it's a category or item
-                function getNodeSize(group, id) {
-                    // Group 0 (Technical Expertise) - Root node: largest
-                    if (group === 0) return 20;
-                    
-                    // Second level categories (category names like "Languages", "Libraries", etc.)
-                    const isCategory = data.links.some(link => link.source === "Technical Expertise" && link.target === id);
-                    if (isCategory) return 16;  // Medium-large for categories
-                    
-                    // Individual items (Python, NumPy, React, etc.): smallest
-                    return 8;
-                }
-
                 const node = svg.append("g")
                     .attr("class", "nodes")
                     .selectAll("circle")
                     .data(root.descendants())
                     .join("circle")
                     .attr("class", "node")
-                    .attr("r", d => getNodeSize(d.data.group, d.data.id))
+                    .attr("r", d => d.data.group === 0 ? 10 : (d.data.id.length > 15 ? 8 : (d.data.id.length > 10 ? 6 : 4)))
                     .attr("fill", d => d3.schemeCategory10[d.data.group])
                     .call(drag(simulation));
 
@@ -1009,7 +996,7 @@
                         .attr("cy", d => d.y);
 
                     labels
-                        .attr("x", d => d.x + getNodeSize(d.data.group, d.data.id) + 8)
+                        .attr("x", d => d.x + 12)
                         .attr("y", d => d.y + 4);
                 });
 
@@ -1023,12 +1010,6 @@
                     function dragged(event, d) {
                         d.fx = event.x;
                         d.fy = event.y;
-                        // Update link positions immediately during drag for responsiveness
-                        link
-                            .attr("x1", l => l.source === d ? event.x : l.source.x)
-                            .attr("y1", l => l.source === d ? event.y : l.source.y)
-                            .attr("x2", l => l.target === d ? event.x : l.target.x)
-                            .attr("y2", l => l.target === d ? event.y : l.target.y);
                     }
 
                     function dragended(event, d) {

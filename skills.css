@@ -1,12 +1,17 @@
 #skills-graph {
     width: 100%;
     height: 80vh; /* 80% of the viewport height */
+    border: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: #fafafa;
 }
 
 .node {
     stroke: #fff;
-    stroke-width: 1.5px;
+    stroke-width: 2px;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .node:hover {
@@ -14,16 +19,42 @@
     stroke-width: 3px;
 }
 
+.node.dragging {
+    stroke: #f39c12;
+    stroke-width: 3px;
+}
+
 .link {
     stroke: #999;
     stroke-opacity: 0.6;
+    stroke-width: 1.5px;
 }
 
 .label {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
     fill: #2c3e50;
     pointer-events: none;
     text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+    transition: all 0.2s ease;
+}
+
+.label:hover {
+    font-size: 11px;
+    fill: #e74c3c;
+}
+
+@media (max-width: 768px) {
+    .label {
+        font-size: 8px;
+    }
+    
+    .label:hover {
+        font-size: 9px;
+    }
+    
+    #skills-graph {
+        height: 60vh;
+    }
 }
