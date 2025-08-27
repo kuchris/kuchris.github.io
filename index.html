@@ -938,24 +938,23 @@
                     .parentId(d => data.links.find(l => l.target === d.id)?.source)
                     (data.nodes);
                 
-                const treeLayout = d3.tree().size([height - 50, width - 50]);
+                const treeLayout = d3.tree().size([height - 20, width - 20]);
                 treeLayout(root);
 
                 // Set initial positions from the tree layout
                 root.descendants().forEach(d => {
-                    d.x = d.x - height / 2 + 25;
-                    d.y = d.y - width / 2 + 25;
+                    d.x = d.x - height / 2 + 10;
+                    d.y = d.y - width / 2 + 10;
                 });
 
                 const svg = d3.select(container).append("svg")
                     .attr("width", width)
-                    .attr("height", height)
-                    .attr("viewBox", [-width / 2, -height / 2, width, height]);
+                    .attr("height", height);
 
                 const simulation = d3.forceSimulation(root.descendants())
-                    .force("link", d3.forceLink(root.links()).id(d => d.id).distance(60).strength(1.2))
-                    .force("charge", d3.forceManyBody().strength(-250))
-                    .force("center", d3.forceCenter());
+                    .force("link", d3.forceLink(root.links()).id(d => d.id).distance(40).strength(1.5))
+                    .force("charge", d3.forceManyBody().strength(-300))
+                    .force("center", d3.forceCenter(width/2, height/2));
 
                 const link = svg.append("g")
                     .attr("class", "links")
@@ -970,7 +969,7 @@
                     .data(root.descendants())
                     .join("circle")
                     .attr("class", "node")
-                    .attr("r", d => d.data.group === 0 ? 8 : (d.data.id.length > 15 ? 6 : (d.data.id.length > 10 ? 5 : 4)))
+                    .attr("r", d => d.data.group === 0 ? 12 : (d.data.id.length > 15 ? 8 : (d.data.id.length > 10 ? 6 : 5)))
                     .attr("fill", d => d3.schemeCategory10[d.data.group])
                     .call(drag(simulation));
 
@@ -996,7 +995,7 @@
                         .attr("cy", d => d.y);
 
                     labels
-                        .attr("x", d => d.x + 12)
+                        .attr("x", d => d.x + 15)
                         .attr("y", d => d.y + 4);
                 });
 
@@ -1010,6 +1009,12 @@
                     function dragged(event, d) {
                         d.fx = event.x;
                         d.fy = event.y;
+                        // Update link positions immediately during drag for responsiveness
+                        link
+                            .attr("x1", l => l.source === d ? event.x : l.source.x)
+                            .attr("y1", l => l.source === d ? event.y : l.source.y)
+                            .attr("x2", l => l.target === d ? event.x : l.target.x)
+                            .attr("y2", l => l.target === d ? event.y : l.target.y);
                     }
 
                     function dragended(event, d) {
