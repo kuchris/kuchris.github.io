@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- NEW SEO META TAGS START HERE -->
+    <!-- <meta name="description" content="Chris Wong - Computational Physics researcher from Hong Kong specializing in cold atom systems, quantum simulations, and Python-based physics modeling. Expert in Schrödinger equations, Gross-Pitaevskii equations, and quantum many-body systems.">
+    <meta name="keywords" content="computational physics, cold atom physics, Python simulation, quantum mechanics, Schrödinger equation, Gross-Pitaevskii equation, Feshbach resonances, BEC dynamics, quantum computing, CUHK, Hong Kong physics">
+    <meta name="author" content="Chris Wong">
+    <link rel="canonical" href="https://kuchris.github.io">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chris Wong - Computational Physics & Cold Atom Research">
+    <meta property="og:description" content="Physics researcher from Hong Kong specializing in computational methods, cold atom systems, and quantum simulations. Expert in Python-based physics modeling and quantum mechanics.">
+    <meta property="og:url" content="https://kuchris.github.io">
+    <meta property="og:site_name" content="Chris Wong - Physics Research">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Chris Wong - Computational Physics & Cold Atom Research">
+    <meta name="twitter:description" content="Physics researcher specializing in computational methods and cold atom systems"> -->
+    <!-- NEW SEO META TAGS END HERE -->
+    
+    <title>Chris Wong - Computational Physics & Cold Atom Research</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Global Reset & Body Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white; /* Changed to white to prevent blue overflow */
+            min-height: 100vh;
+        }
+
+        /* Container for content width */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1a202c; /* Solid dark color */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            overflow: hidden;
+        }
+
+        /* Logo Styles */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Group for navigation links and language buttons */
+        .nav-right-group {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            overflow: hidden;
+        }
+
+        /* Navigation Links Styles */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #f39c12;
+        }
+
+        /* Main Content Area */
+        main {
+            margin-top: 0; /* Remove gap between header and hero */
+            background: white; /* Ensure main content has white background */
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            text-align: center;
+            padding: 4rem 0 6rem;
+            color: white;
+            background: url('images/hero-background.jpg') center/cover;
+            background-attachment: fixed;
+            position: relative;
+            margin-top: 0; /* Remove gap */
+            padding-top: 80px; /* Account for header height */
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); 
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Profile Image Styles */
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-img-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #f39c12, #e74c3c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        /* Hero Text Styles */
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #f39c12);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        /* Call to Action Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #f39c12, #e74c3c);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Language button styling */
+        .btn-language {
+            background: none;
+            color: white;
+            border: 1px solid white;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 5px;
+            opacity: 0.7;
+            transition: all 0.2s ease;
+            margin-left: 0.5rem; /* Small margin between buttons */
+        }
+
+        .btn-language:hover {
+            opacity: 1;
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-language.active {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.4);
+            font-weight: 700;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        /* Skills Grid Styles */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .skill-card h3 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Research Grid Styles */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .research-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .research-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .research-card-header {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .research-card-content {
+            background: white;
+        }
+
+        .research-card-body {
+            padding: 2rem;
+        }
+
+        .research-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .research-year {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .doi-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .doi-link:hover {
+            color: #c0392b;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap; /* Add this for wrapping on all screens */
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: white;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #2c3e50;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+
+
+        /* Quantum Animation (Background Element) */
+        .quantum-animation {
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            width: 200px;
+            height: 200px;
+            opacity: 0.1;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            /* Hide nav links on small screens, keep language buttons */
+            .nav-links {
+                display: none;
+            }
+
+            /* Adjust language buttons for mobile if needed */
+            .language-buttons {
+                margin-left: auto; /* Push to right if nav-links are hidden */
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            /* Mobile social links */
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .social-link {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Particle Animation (Background Element) */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        /* Timeline-specific styles from the user's code */
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 2px;
+            background-color: #e2e8f0; /* Tailwind gray-200 */
+        }
+
+        .timeline-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            margin-bottom: 2.5rem; /* Equivalent to mb-10 */
+        }
+
+        .timeline-item.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -10px;
+            width: 22px;
+            height: 22px;
+            background-color: #3b82f6; /* Tailwind blue-500 */
+            border: 4px solid #ffffff;
+            border-radius: 9999px; /* Tailwind rounded-full */
+            top: -2px; /* Adjust to align with the top of the timeline item */
+            box-shadow: 0 0 0 4px #dbeafe; /* Tailwind ring-4 ring-blue-100 */
+        }
+        
+        .timeline-item ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .timeline-item li {
+            margin-bottom: 0.25rem;
+        }
+
+        @media (max-width: 640px) {
+            .timeline {
+                padding-left: 20px;
+            }
+        }
+        
+        #loading-indicator {
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2rem;
+            color: #667eea;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans antialiased text-gray-800">
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Chris Wong</a>
+            <div class="nav-right-group">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#timeline">Journey</a></li>
+                    <li><a href="#projects">Research</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="language-buttons">
+                    <button class="btn-language active" onclick="switchLanguage('en')">EN</button>
+                    <button class="btn-language" onclick="switchLanguage('jp')">JP</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="profile-img">
+                        <img src="images/profile.jpg" alt="Chris Wong" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="profile-img-placeholder" style="display: none;">CW</div>
+                    </div>
+                    <h1 id="hero-title"></h1>
+                    <p id="hero-subtitle" class="hero-subtitle"></p>
+                    <p id="hero-description" class="hero-description"></p>
+                    <div class="cta-buttons">
+                        <a id="cta-research" href="#projects" class="btn btn-primary"></a>
+                        <a id="cta-github" href="https://github.com/kuchris" class="btn btn-secondary" target="_blank" rel="noopener noreferrer"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="top: 30%; left: 80%; animation-delay: 2s;"></div>
+            <div class="particle" style="top: 60%; left: 15%; animation-delay: 4s;"></div>
+            <div class="particle" style="top: 70%; left: 85%; animation-delay: 1s;"></div>
+            <div class="particle" style="top: 40%; left: 70%; animation-delay: 3s;"></div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 id="about-title" class="section-title"></h2>
+                <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 1.8;">
+                    <p id="about-text"></p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Technical Expertise Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 id="skills-title" class="section-title"></h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3 id="skill-1-title"></h3>
+                        <p id="skill-1-text"></p>
+                    </div>
+                    <div class="skill-card">
+                        <h3 id="skill-2-title"></h3>
+                        <p id="skill-2-text"></p>
+                    </div>
+                    <div class="skill-card">
+                        <h3 id="skill-3-title"></h3>
+                        <p id="skill-3-text"></p>
+                    </div>
+                    <div class="skill-card">
+                        <h3 id="skill-4-title"></h3>
+                        <p id="skill-4-text"></p>
+                    </div>
+                    <div class="skill-card">
+                        <h3 id="skill-5-title"></h3>
+                        <p id="skill-5-text"></p>
+                    </div>
+                    <div class="skill-card">
+                        <h3 id="skill-6-title"></h3>
+                        <p id="skill-6-text"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline" class="section">
+            <div class="container">
+                <h2 id="timeline-title" class="section-title"></h2>
+                <div id="timeline-container" class="timeline relative pl-10 sm:pl-12">
+                    <div id="loading-indicator">Loading timeline...</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 id="projects-title" class="section-title"></h2>
+                <div id="projects-container" class="research-grid">
+                    <div id="loading-indicator">Loading research projects...</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 id="contact-title" class="section-title"></h2>
+                <div class="social-links">
+                    <a href="mailto:kuchrisuk@gmail.com" class="social-link">
+                        <span id="contact-email"></span>
+                    </a>
+                    <a href="https://github.com/kuchris" class="social-link">
+                        <span id="contact-github"></span>
+                    </a>
+                    <a href="https://www.researchgate.net/profile/Wai-Kui-Wong" class="social-link">
+                        <span id="contact-researchgate"></span>
+                    </a>
+                </div>
+                <div style="text-align: center; margin-top: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    <p id="contact-description" style="font-size: 1.1rem; color: #666;"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    
+    <footer>
+        <p id="footer-text"></p>
+    </footer>
+
+    <script>
+        let currentLang = 'en';
+        let projectsData = [];
+        let timelineData = []; 
+        
+        // Object containing all translations
+        const translations = {
+            'en': {
+                'hero-title': 'Chris Wong',
+                'hero-subtitle': 'Computational Physics | Physics Enthusiast',
+                'hero-description': 'A recent physics graduate from Hong Kong specializing in computational physics and cold atom systems. Using Python and advanced mathematical modeling, I bridge the gap between abstract theory and data-driven insights through numerical simulations. I am eager to apply my analytical skills to new challenges in a technical role or in academic research.',
+                'cta-research': 'Explore My Research',
+                'cta-github': 'View GitHub',
+                'about-title': 'About Me',
+                'about-text': 'I am a physics graduate with a Master\'s from The Chinese University of Hong Kong and a Bachelor\'s from City University of Hong Kong. My expertise is in computational methods and cold atom physics. I specialize in applying theoretical knowledge to simulate complex ultracold quantum systems, with a focus on nonlinear Schrödinger-type equations like the Gross-Pitaevskii equation and the analysis of interactions in various partial waves. My goal is to use simulation and analysis to bridge the gap between abstract quantum phenomena and tangible solutions',
+                'skills-title': 'Technical Expertise',
+                'skill-1-title': '🐍 Python Programming',
+                'skill-1-text': 'Expert in scientific Python ecosystem including NumPy, SciPy, Matplotlib, Pandas, PyTorch, and Numba. Specialized in numerical methods, data analysis, and physics simulations.',
+                'skill-2-title': '🔬 Quantum Physics Simulation',
+                'skill-2-text': 'Extensive experience solving Schrödinger equations (1D, 2D, 3D), quantum mechanics problems, and implementing finite difference methods for quantum systems.',
+                'skill-3-title': '❄️ Cold Atom Physics',
+                'skill-3-text': 'Current focus on ultracold atomic systems, Feshbach resonances, BEC dynamics, and quantum many-body systems relevant to quantum computing applications.',
+                'skill-4-title': '📊 Statistical Physics',
+                'skill-4-text': 'Monte Carlo simulations, Ising models, phase transitions, and statistical mechanics applied to complex physical systems and materials science.',
+                'skill-5-title': '⚙️ Hardware Control & Data Acquisition',
+                'skill-5-text': 'Hardware control via GPIB/PyVISA, RS232 communication, optical instrumentation, and automated data acquisition systems.',
+                'skill-6-title': '💻 Software & Tools',
+                'skill-6-text': 'Proficient in MATLAB, LabVIEW, Quantum ESPRESSO for DFT calculations, and various computational physics packages.',
+                'timeline-title': 'My Academic & Professional Journey',
+                'projects-title': 'Research Projects',
+                'contact-title': 'Connect With Me',
+                'contact-email': '📧 Email',
+                'contact-github': '💻 GitHub',
+                'contact-researchgate': '🔬 ResearchGate',
+                'contact-description': 'I am actively seeking research opportunities in academia and jobs. Please feel free to reach out to me for collaborations or to discuss potential roles.',
+                'footer-text': '&copy; 2025 Chris Wong. Exploring the quantum universe through computation.',
+                'read-more': 'Read More'
+            },
+            'jp': {
+                'hero-title': 'クリス・ウォン',
+                'hero-subtitle': '計算物理学 | 物理学愛好家',
+                'hero-description': '香港出身の物理学卒業生で、計算物理学と冷却原子システムを専門としています。Pythonと高度な数理モデルを用いて、抽象的な理論とデータ駆動型の洞察を数値シミュレーションで結びつけます。分析スキルを活かし、技術職や学術研究での新たな挑戦に取り組みたいと考えています。',
+                'cta-research': '研究実績を見る',
+                'cta-github': 'GitHubを見る',
+                'about-title': '私について',
+                'about-text': '私は香港中文大学で修士号を、香港城市大学で学士号を取得した物理学の卒業生です。私の専門は計算手法と冷却原子物理学です。理論的な知識を応用して、複雑な極低温量子システムをシミュレートすることに特化しており、Gross-Pitaevskii方程式のような非線形シュレディンガー型方程式や、さまざまな部分波での相互作用の分析に焦点を当てています。私の目標は、シミュレーションと分析を通じて、抽象的な量子現象と具体的な解決策との間のギャップを埋めることです。',
+                'skills-title': '技術的専門知識',
+                'skill-1-title': '🐍 Python プログラミング',
+                'skill-1-text': 'NumPy, SciPy, Matplotlib, Pandas, PyTorch, Numbaを含む科学計算Pythonエコシステムに精通しています。数値計算、データ分析、物理シミュレーションを専門としています。',
+                'skill-2-title': '🔬 量子物理シミュレーション',
+                'skill-2-text': '1D、2D、3Dのシュレディンガー方程式、量子力学の問題解決、および量子システムのための有限差分法の実装に豊富な経験があります。',
+                'skill-3-title': '❄️ 冷たい原子物理学',
+                'skill-3-text': '現在の焦点は、量子コンピューティングや量子シミュレーションの応用に関連する、極低温原子システム、フェッシュバッハ共鳴、BECダイナミクス、および量子多体システムです。',
+                'skill-4-title': '📊 統計物理学',
+                'skill-4-text': 'モンテカルロシミュレーション、イジングモデル、相転移、および複雑な物理システムや材料科学に適用される統計力学。',
+                'skill-5-title': '⚙️ ハードウェア制御とデータ取得',
+                'skill-5-text': 'GPIB/PyVISA、RS232通信、光学機器、および自動データ収集システムを介したハードウェア制御。',
+                'skill-6-title': '💻 ソフトウェアとツール',
+                'skill-6-text': 'MATLAB、LabVIEW、DFT計算のためのQuantum ESPRESSO、およびさまざまな計算物理学パッケージに習熟しています。',
+                'timeline-title': '私の学術的・専門的な道のり',
+                'projects-title': '研究プロジェクト',
+                'contact-title': '私とつながる',
+                'contact-email': '📧 メール',
+                'contact-github': '💻 GitHub',
+                'contact-researchgate': '🔬 ResearchGate',
+                'contact-description': 'アカデミアでの研究職や就職機会を積極的に探しています。共同研究や職務についてご相談がありましたら、お気軽にご連絡ください。',
+                'footer-text': '&copy; 2025 クリス・ウォン. 計算を通して量子宇宙を探求します。',
+                'read-more': '続きを読む'
+            }
+        };
+
+        const timelineContainer = document.getElementById('timeline-container');
+        const projectsContainer = document.getElementById('projects-container');
+        const languageButtons = document.querySelectorAll('.btn-language');
+        
+        /**
+         * Creates an HTML element for a single research project card.
+         * @param {object} project - The data object for the research project.
+         * @returns {HTMLElement} The created HTML div element.
+         */
+        function createResearchCard(project) {
+            const card = document.createElement('div');
+            card.className = 'research-card';
+            const doiLinkHtml = project.doi
+                ? `<a href="https://doi.org/${project.doi}" target="_blank" rel="noopener noreferrer" class="doi-link">${translations[currentLang]['read-more']}</a>`
+                : '';
+            card.innerHTML = `
+                <div class="research-card-header">
+                    <h3>${project[`title_${currentLang}`]}</h3>
+                    <p class="research-year">${project.year}</p>
+                </div>
+                <div class="research-card-body">
+                    <p>${project[`text_${currentLang}`]}</p>
+                    ${doiLinkHtml}
+                </div>
+            `;
+            return card;
+        }
+
+        /**
+         * Renders all research project cards from the projectsData array into the DOM.
+         */
+        function renderResearchProjects() {
+            if (!projectsContainer) {
+                console.error("Projects container not found.");
+                return;
+            }
+            projectsContainer.innerHTML = ''; // Clear loading indicator
+            const data = projectsData;
+            data.forEach(project => {
+                projectsContainer.appendChild(createResearchCard(project));
+            });
+        }
+        
+        /**
+         * Creates an HTML element for a single timeline item.
+         * @param {object} item - The data object for the timeline item.
+         * @returns {HTMLElement} The created HTML div element.
+         */
+        function createTimelineItem(item) {
+            const container = document.createElement('div');
+            container.classList.add('timeline-item', 'relative');
+            
+            // Adjust the image size and container padding for a larger image
+            const imageSizeClasses = 'max-w-[112px] max-h-[112px] md:max-w-[128px] md:max-h-[128px] object-contain bg-white';
+            const contentMarginClasses = 'ml-10 md:ml-12';
+            
+            // Generate the list of highlights
+            const highlightsList = item.highlights[currentLang].map(highlight => `<li>${highlight}</li>`).join('');
+
+            // Generate the list of responsibilities if present
+            let responsibilitySection = '';
+            if (item.responsibility && item.responsibility[currentLang]) {
+                const responsibilityList = item.responsibility[currentLang].map(res => `<li>${res}</li>`).join('');
+                responsibilitySection = `
+                    <div style="margin-top: 1rem;">
+                        <strong>${currentLang === 'en' ? 'Job Responsibility' : '職務経歴'}</strong>
+                        <ul class="text-base text-gray-700 leading-relaxed">${responsibilityList}</ul>
+                    </div>
+                `;
+            }
+            
+            container.innerHTML = `
+                <div class="timeline-dot"></div>
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200 ${contentMarginClasses} flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                    <!-- Use the explicit image path from the JSON data -->
+                    <img src="${item.image}" alt="${item.title[currentLang]} icon" class="${imageSizeClasses} object-cover flex-shrink-0 rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/120x120/999/fff?text=ICON';">
+                    <div class="flex-grow">
+                        <p class="text-sm font-semibold text-blue-600 mb-1">${item.dates}</p>
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-1">${item.title[currentLang]}</h3>
+                        <p class="text-md text-gray-600 mb-3">${item.institution[currentLang]}</p>
+                        <!-- Render highlights as a bulleted list -->
+                        <ul class="text-base text-gray-700 leading-relaxed">${highlightsList}</ul>
+                        ${responsibilitySection}
+                    </div>
+                </div>
+            `;
+            return container;
+        }
+
+        /**
+         * Sets up the IntersectionObserver to animate timeline items on scroll.
+         */
+        function animateOnScroll() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                observer.observe(item);
+            });
+        }
+        
+        /**
+         * Renders all timeline items based on the current language.
+         */
+        function renderTimeline() {
+            if (!timelineContainer) {
+                console.error("Timeline container not found.");
+                return;
+            }
+            timelineContainer.innerHTML = ''; // Clear loading indicator
+            // Use the single timelineData array now
+            if (timelineData && timelineData.length > 0) {
+                 timelineData.forEach(item => {
+                    timelineContainer.appendChild(createTimelineItem(item));
+                });
+                animateOnScroll(); // Trigger animation after rendering
+            } else {
+                timelineContainer.innerHTML = '<p style="text-align: center; color: #e74c3c;">No timeline data available.</p>';
+            }
+        }
+        
+        /**
+         * Switches the language of the entire page content.
+         * @param {string} lang - The language to switch to ('en' or 'jp').
+         */
+        function switchLanguage(lang) {
+            currentLang = lang;
+            updatePageText(currentLang);
+            renderTimeline();
+            renderResearchProjects();
+            
+            languageButtons.forEach(button => {
+                button.classList.toggle('active', button.textContent.toLowerCase() === lang);
+            });
+            localStorage.setItem('preferredLang', lang);
+        }
+        
+        /**
+         * Updates all static text content on the page based on the current language.
+         * @param {string} lang - The language to switch to.
+         */
+        function updatePageText(lang) {
+            document.getElementById('hero-title').textContent = translations[lang]['hero-title'];
+            document.getElementById('hero-subtitle').textContent = translations[lang]['hero-subtitle'];
+            document.getElementById('hero-description').textContent = translations[lang]['hero-description'];
+            document.getElementById('cta-research').textContent = translations[lang]['cta-research'];
+            document.getElementById('cta-github').textContent = translations[lang]['cta-github'];
+            document.getElementById('about-title').textContent = translations[lang]['about-title'];
+            document.getElementById('about-text').textContent = translations[lang]['about-text'];
+            
+            // Skills section
+            document.getElementById('skills-title').textContent = translations[lang]['skills-title'];
+            document.getElementById('skill-1-title').textContent = translations[lang]['skill-1-title'];
+            document.getElementById('skill-1-text').textContent = translations[lang]['skill-1-text'];
+            document.getElementById('skill-2-title').textContent = translations[lang]['skill-2-title'];
+            document.getElementById('skill-2-text').textContent = translations[lang]['skill-2-text'];
+            document.getElementById('skill-3-title').textContent = translations[lang]['skill-3-title'];
+            document.getElementById('skill-3-text').textContent = translations[lang]['skill-3-text'];
+            document.getElementById('skill-4-title').textContent = translations[lang]['skill-4-title'];
+            document.getElementById('skill-4-text').textContent = translations[lang]['skill-4-text'];
+            document.getElementById('skill-5-title').textContent = translations[lang]['skill-5-title'];
+            document.getElementById('skill-5-text').textContent = translations[lang]['skill-5-text'];
+            document.getElementById('skill-6-title').textContent = translations[lang]['skill-6-title'];
+            document.getElementById('skill-6-text').textContent = translations[lang]['skill-6-text'];
+            
+            document.getElementById('timeline-title').textContent = translations[lang]['timeline-title'];
+            document.getElementById('projects-title').textContent = translations[lang]['projects-title'];
+            
+            // Contact section
+            document.getElementById('contact-title').textContent = translations[lang]['contact-title'];
+            document.getElementById('contact-email').textContent = translations[lang]['contact-email'];
+            document.getElementById('contact-github').textContent = translations[lang]['contact-github'];
+            document.getElementById('contact-researchgate').textContent = translations[lang]['contact-researchgate'];
+            document.getElementById('contact-description').textContent = translations[lang]['contact-description'];
+            
+            // Footer text
+            document.getElementById('footer-text').innerHTML = translations[lang]['footer-text'];
+        }
+        
+        // Asynchronous function to fetch JSON data
+        async function loadData() {
+            try {
+                const [projectsResponse, timelineResponse] = await Promise.all([
+                    fetch('projects.json'),
+                    fetch('timeline.json')
+                ]);
+                
+                if (!projectsResponse.ok || !timelineResponse.ok) {
+                    throw new Error('Failed to load JSON data.');
+                }
+                
+                projectsData = await projectsResponse.json();
+                timelineData = await timelineResponse.json(); // Load the new unified JSON format
+                
+                const savedLang = localStorage.getItem('preferredLang');
+                const defaultLang = 'en';
+                currentLang = savedLang || defaultLang;
+
+                languageButtons.forEach(button => {
+                    button.classList.remove('active');
+                    if (button.textContent.toLowerCase() === currentLang) {
+                        button.classList.add('active');
+                    }
+                });
+
+                switchLanguage(currentLang);
+
+            } catch (error) {
+                console.error('Error loading data:', error);
+                if (projectsContainer) projectsContainer.innerHTML = '<p style="text-align: center; color: #e74c3c;">Failed to load research projects. Please try again later.</p>';
+                if (timelineContainer) timelineContainer.innerHTML = '<p style="text-align: center; color: #e74c3c;">Failed to load timeline data. Please try again later.</p>';
+            }
+        }
+        
+
+        
+
+        
+
+        
+        document.addEventListener('DOMContentLoaded', loadData);
+    </script>
+</body>
+</html>
