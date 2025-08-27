@@ -939,25 +939,26 @@
                     .parentId(d => data.links.find(l => l.target === d.id)?.source)
                     (data.nodes);
                 
-                const treeLayout = d3.tree().size([height * 0.95, width * 0.95]);
-                treeLayout(root);
-
-                // Set initial positions from the tree layout
-                root.descendants().forEach(d => {
-                    d.x = d.x - height / 2;
-                    d.y = d.y - width / 2;
-                });
-
                 const svg = d3.select(container).append("svg")
                     .attr("width", width)
-                    .attr("height", height)
-                    .attr("viewBox", [-width / 2, -height / 2, width, height]);
+                    .attr("height", height);
 
+                // Preserve current positions if they exist, otherwise initialize with random positions
+                root.descendants().forEach(d => {
+                    if (!d.x || !d.y) {
+                        // Initial positioning - more spread out
+                        d.x = Math.random() * (width - 100) + 50;
+                        d.y = Math.random() * (height - 100) + 50;
+                    }
+                });
+
+                // Create force simulation
                 simulation = d3.forceSimulation(root.descendants())
-                    .force("link", d3.forceLink(root.links()).id(d => d.id).distance(50).strength(1.8))
-                    .force("charge", d3.forceManyBody().strength(-400))
-                    .force("center", d3.forceCenter())
-                    .velocityDecay(0.3);
+                    .force("link", d3.forceLink(root.links()).id(d => d.id).distance(80).strength(1))
+                    .force("charge", d3.forceManyBody().strength(-300))
+                    .force("center", d3.forceCenter(width / 2, height / 2))
+                    .force("collision", d3.forceCollide().radius(d => getNodeSize(d.data.group, d.data.id) + 5))
+                    .velocityDecay(0.2);
 
                 const link = svg.append("g")
                     .attr("class", "links")
@@ -1046,13 +1047,15 @@
                 }
             }
 
-            // Improved resize handling
+            // Improved resize handling - preserve current positions
             function handleResize() {
-                // Restart the simulation with new dimensions
                 if (simulation) {
                     simulation.stop();
                 }
-                drawGraph();
+                // Use a small delay to ensure container has updated size
+                setTimeout(() => {
+                    drawGraph();
+                }, 10);
             }
 
             drawGraph();

@@ -9,6 +9,45 @@
 
 .node {
     stroke: #fff;
+    stroke-width: 1.5px;
+    cursor: pointer;
+}
+
+.node:hover {
+    stroke: #f39c12;
+    stroke-width: 2px;
+}
+
+.link {
+    stroke: #999;
+    stroke-opacity: 0.6;
+}
+
+.label {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    fill: #2c3e50;
+    pointer-events: none;
+    text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+}
+
+@media (max-width: 768px) {
+    #skills-graph {
+        height: 70vh;
+    }
+    
+    .label {
+        font-size: 8px;
+    }
+    
+    .node {
+        stroke-width: 1px;
+    }
+}
+
+.node {
+    stroke: #fff;
     stroke-width: 2px;
     cursor: pointer;
     transition: all 0.2s ease;
