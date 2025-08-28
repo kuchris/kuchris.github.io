@@ -931,8 +931,7 @@
             links: null,
             labels: null,
             width: 0,
-            height: 0,
-            physicsEnabled: true
+            height: 0
         };
 
         function renderSkillsGraph(data) {
@@ -979,33 +978,6 @@
                 .style("font-size", "12px")
                 .text("Reset")
                 .on("click", resetSkillsGraph);
-
-            controlsDiv.append("button")
-                .attr("class", "control-btn")
-                .attr("id", "physics-btn")
-                .style("background", "#667eea")
-                .style("color", "white")
-                .style("border", "none")
-                .style("padding", "6px 10px")
-                .style("margin", "2px")
-                .style("border-radius", "4px")
-                .style("cursor", "pointer")
-                .style("font-size", "12px")
-                .text("Pause")
-                .on("click", toggleSkillsPhysics);
-
-            controlsDiv.append("button")
-                .attr("class", "control-btn")
-                .style("background", "#667eea")
-                .style("color", "white")
-                .style("border", "none")
-                .style("padding", "6px 10px")
-                .style("margin", "2px")
-                .style("border-radius", "4px")
-                .style("cursor", "pointer")
-                .style("font-size", "12px")
-                .text("Fit")
-                .on("click", fitSkillsToScreen);
 
             // Add tooltip
             const tooltip = d3.select(container)
@@ -1254,38 +1226,6 @@
                 d.fy = null;
             });
             skillsGraph.simulation.alpha(1).restart();
-        }
-
-        function toggleSkillsPhysics() {
-            const btn = document.getElementById('physics-btn');
-            if (skillsGraph.physicsEnabled) {
-                skillsGraph.simulation.stop();
-                btn.textContent = 'Resume';
-                btn.style.background = '#f39c12';
-            } else {
-                skillsGraph.simulation.restart();
-                btn.textContent = 'Pause';
-                btn.style.background = '#667eea';
-            }
-            skillsGraph.physicsEnabled = !skillsGraph.physicsEnabled;
-        }
-
-        function fitSkillsToScreen() {
-            const bounds = skillsGraph.svg.select(".graph-group").node().getBBox();
-            const padding = 40;
-            const scale = Math.min(
-                skillsGraph.width / (bounds.width + padding),
-                skillsGraph.height / (bounds.height + padding)
-            ) * 0.8;
-
-            const translateX = (skillsGraph.width - bounds.width * scale) / 2 - bounds.x * scale;
-            const translateY = (skillsGraph.height - bounds.height * scale) / 2 - bounds.y * scale;
-
-            skillsGraph.svg.transition()
-                .duration(750)
-                .call(skillsGraph.svg.__zoom.transform, d3.zoomIdentity
-                    .translate(translateX, translateY)
-                    .scale(scale));
         }
 
         function handleResize(container, data) {
