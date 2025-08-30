@@ -833,6 +833,7 @@
             updatePageText(currentLang);
             renderTimeline();
             renderResearchProjects();
+            loadSkills();
             
             languageButtons.forEach(button => {
                 button.classList.toggle('active', button.textContent.toLowerCase() === lang);
@@ -1054,7 +1055,7 @@
                 .style("text-anchor", "middle")
                 .style("dominant-baseline", "middle")
                 .style("text-shadow", "0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff")
-                .text(d => d.id);
+                .text(d => d[currentLang] || d.id);
 
             // Initialize simulation
             skillsGraph.simulation = d3.forceSimulation(data.nodes)
