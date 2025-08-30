@@ -1,6 +1,6 @@
 {
   "nodes": [
-    { "id": "Technical Expertise", "group": 0 },
+    { "id": "Technical Skills", "group": 0 },
     { "id": "Languages", "group": 1 },
     { "id": "Python", "group": 1 },
     { "id": "Julia", "group": 1 },
