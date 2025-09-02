@@ -22,10 +22,15 @@
     { "id": "STL", "jp": "STL", "group": 2 },
     { "id": "Eigen", "jp": "Eigen", "group": 2 },
     { "id": "FFTW3", "jp": "FFTW3", "group": 2 },
+    { "id": "Faiss-CP", "jp": "Faiss-CP", "group": 2 },
+    { "id": "Annoy", "jp": "Annoy", "group": 2 },
+    { "id": "Sentence-transformers", "jp": "Sentence-transformers", "group": 2 },
+
     { "id": "Frameworks", "jp": "フレームワーク", "group": 3 },
     { "id": "React", "jp": "React", "group": 3 },
     { "id": "Vite", "jp": "Vite", "group": 3 },
     { "id": "Qt 5", "jp": "Qt 5", "group": 3 },
+
     { "id": "Software", "jp": "ソフトウェア", "group": 4 },
     { "id": "MATLAB", "jp": "MATLAB", "group": 4 },
     { "id": "LabVIEW", "jp": "LabVIEW", "group": 4 },
@@ -36,17 +41,21 @@
     { "id": "Sequator", "jp": "Sequator", "group": 4 },
     { "id": "AutoCAD", "jp": "AutoCAD", "group": 4 },
     { "id": "MSVC", "jp": "MSVC", "group": 4 },
+
     { "id": "Simulation/Computation", "jp": "シミュレーション/計算", "group": 5 },
     { "id": "Numerical Analysis", "jp": "数値解析", "group": 5 },
     { "id": "Schrödinger Equation", "jp": "シュレーディンガー方程式", "group": 5 },
     { "id": "Monte Carlo", "jp": "モンテカルロ", "group": 5 },
     { "id": "OOD", "jp": "オブジェクト指向設計", "group": 5 },
     { "id": "EM Modeling", "jp": "電磁モデリング", "group": 5 },
+
     { "id": "Infrastructure", "jp": "インフラストラクチャ", "group": 6 },
     { "id": "Docker", "jp": "Docker", "group": 6 },
     { "id": "Render", "jp": "Render", "group": 6 },
+
     { "id": "CI/Testing", "jp": "CI/テスト", "group": 7 },
     { "id": "GitHub", "jp": "GitHub", "group": 7 },
+
     { "id": "AI Tools", "jp": "AIツール", "group": 8 },
     { "id": "ChatGPT", "jp": "ChatGPT", "group": 8 },
     { "id": "Claude Code", "jp": "Claude Code", "group": 8 },
@@ -55,11 +64,14 @@
     { "id": "Ollama", "jp": "Ollama", "group": 8 },
     { "id": "LM Studio", "jp": "LM Studio", "group": 8 },
     { "id": "MCP integration", "jp": "MCP統合", "group": 8 },
+
     { "id": "Methodology", "jp": "方法論", "group": 9 },
     { "id": "Scientific Computing", "jp": "科学計算", "group": 9 },
     { "id": "Simulation", "jp": "シミュレーション", "group": 9 },
     { "id": "Automation Scripts", "jp": "自動化スクリプト", "group": 9 },
     { "id": "Data Analysis", "jp": "データ分析", "group": 9 },
+    { "id": "RAG", "jp": "検索拡張生成", "group": 9 },
+
     { "id": "IDE", "jp": "IDE", "group": 10 },
     { "id": "Visual Studio Code", "jp": "Visual Studio Code", "group": 10 },
     { "id": "Jupyter Notebook", "jp": "Jupyter Notebook", "group": 10 },
@@ -76,12 +88,14 @@
     { "source": "Technical Skills", "target": "AI Tools" },
     { "source": "Technical Skills", "target": "Methodology" },
     { "source": "Technical Skills", "target": "IDE" },
+
     { "source": "Languages", "target": "Python" },
     { "source": "Languages", "target": "Julia" },
     { "source": "Languages", "target": "JavaScript" },
     { "source": "Languages", "target": "HTML" },
     { "source": "Languages", "target": "CSS" },
     { "source": "Languages", "target": "C++" },
+
     { "source": "Libraries", "target": "NumPy" },
     { "source": "Libraries", "target": "Pandas" },
     { "source": "Libraries", "target": "SciPy" },
@@ -95,9 +109,14 @@
     { "source": "Libraries", "target": "STL" },
     { "source": "Libraries", "target": "Eigen" },
     { "source": "Libraries", "target": "FFTW3" },
+    { "source": "Libraries", "target": "Faiss-CP" },
+    { "source": "Libraries", "target": "Annoy" },
+    { "source": "Libraries", "target": "Sentence-transformers" },
+
     { "source": "Frameworks", "target": "React" },
     { "source": "Frameworks", "target": "Vite" },
     { "source": "Frameworks", "target": "Qt 5" },
+
     { "source": "Software", "target": "MATLAB" },
     { "source": "Software", "target": "LabVIEW" },
     { "source": "Software", "target": "Scilab" },
@@ -107,14 +126,18 @@
     { "source": "Software", "target": "Sequator" },
     { "source": "Software", "target": "AutoCAD" },
     { "source": "Software", "target": "MSVC" },
+
     { "source": "Simulation/Computation", "target": "Numerical Analysis" },
     { "source": "Simulation/Computation", "target": "Schrödinger Equation" },
     { "source": "Simulation/Computation", "target": "Monte Carlo" },
     { "source": "Simulation/Computation", "target": "OOD" },
     { "source": "Simulation/Computation", "target": "EM Modeling" },
+
     { "source": "Infrastructure", "target": "Docker" },
     { "source": "Infrastructure", "target": "Render" },
+
     { "source": "CI/Testing", "target": "GitHub" },
+
     { "source": "AI Tools", "target": "ChatGPT" },
     { "source": "AI Tools", "target": "Claude Code" },
     { "source": "AI Tools", "target": "Gemini CLI" },
@@ -122,10 +145,13 @@
     { "source": "AI Tools", "target": "Ollama" },
     { "source": "AI Tools", "target": "LM Studio" },
     { "source": "AI Tools", "target": "MCP integration" },
+
     { "source": "Methodology", "target": "Scientific Computing" },
     { "source": "Methodology", "target": "Simulation" },
     { "source": "Methodology", "target": "Automation Scripts" },
     { "source": "Methodology", "target": "Data Analysis" },
+    { "source": "Methodology", "target": "RAG" },
+
     { "source": "IDE", "target": "Visual Studio Code" },
     { "source": "IDE", "target": "Jupyter Notebook" },
     { "source": "IDE", "target": "Cursor" }
