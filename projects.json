@@ -163,7 +163,7 @@
     },
     {
         "id": "project-19",
-        "title_en": "A Private local Retrieval-Augmented Generation (RAG) pipeline using MinerU, Annoy/FAISS, and LM Studio.",
+        "title_en": "A Private local Retrieval-Augmented Generation (RAG) pipeline using MinerU, Annoy/FAISS, and LM Studio",
         "title_jp": "MinerU、Annoy/FAISS、LM Studioを使用したプライベートなローカル検索拡張生成（RAG）パイプライン",
         "year": "2025",
         "text_en": "This project is a high-performance Retrieval-Augmented Generation (RAG) system for secure, local document analysis. It combines MinerU and VLM-based transformers for advanced PDF processing, including layout detection, OCR, and complex document parsing. Annoy and FAISS power optimized CPU/GPU vector search, while a GPU-accelerated Sentence Transformer pipeline delivers fast, accurate embeddings. Integrated with LM Studio, the system enables private, offline question-answering. Its modular, YAML-configurable architecture is performance-tuned for high-speed, privacy-first processing on local hardware.",
