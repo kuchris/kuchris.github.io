@@ -169,5 +169,14 @@
         "text_en": "This project is a high-performance Retrieval-Augmented Generation (RAG) system for secure, local document analysis. It combines MinerU and VLM-based transformers for advanced PDF processing, including layout detection, OCR, and complex document parsing. Annoy and FAISS power optimized CPU/GPU vector search, while a GPU-accelerated Sentence Transformer pipeline delivers fast, accurate embeddings. Integrated with LM Studio, the system enables private, offline question-answering. Its modular, YAML-configurable architecture is performance-tuned for high-speed, privacy-first processing on local hardware.",
         "text_jp": "このプロジェクトは、安全でローカルなドキュメント分析のための高性能な検索拡張生成（RAG）システムです。MinerUとVLMベースのトランスフォーマーを組み合わせて、レイアウト検出、OCR、複雑なドキュメント解析などの高度なPDF処理を実現します。AnnoyとFAISSは最適化されたCPU/GPUベクトル検索を提供し、GPUアクセラレーションされたSentence Transformerパイプラインが高速で正確な埋め込みを実現します。LM Studioと統合されており、プライベートでオフラインの質問応答が可能です。そのモジュラーでYAML構成可能なアーキテクチャは、ローカルハードウェア上での高速かつプライバシー重視の処理に向けてパフォーマンスチューニングされています。",
         "doi": null
+    },
+    {
+        "id": "project-20",
+        "title_en": "Reinforcement Learning: Monte Carlo vs Q-Learning in GridWorld",
+        "title_jp": "強化学習：GridWorldにおけるモンテカルロ法とQ学習の比較",
+        "year": "2025",
+        "text_en": "This project implements and compares on-policy First-Visit Monte Carlo Control and off-policy Q-Learning in a 10×10 GridWorld with random walls. Through reward curves, policy visualizations, and a side-by-side animation, we demonstrate how Q-Learning’s bootstrapping and off-policy nature enable faster convergence and greater robustness compared to Monte Carlo’s sample-inefficient, on-policy approach. The animation includes real-time metrics—episode count, epsilon decay, and cumulative success rates—to make reinforcement learning concepts intuitively clear.",
+        "text_jp": "このプロジェクトでは、ランダムな壁を持つ10×10のGridWorldにおいて、オンポリシーのFirst-Visitモンテカルロ制御とオフポリシーのQ学習を実装し、比較します。報酬曲線、ポリシーの可視化、並列アニメーションを通じて、Q学習のブートストラップとオフポリシーの特性が、モンテカルロ法のサンプル非効率的でオンポリシーなアプローチと比較して、より速い収束と高い堅牢性を可能にすることを示します。アニメーションには、エピソード数、イプシロン減衰、累積成功率などのリアルタイムメトリクスが含まれており、強化学習の概念を直感的に理解できるようにしています。",
+        "doi": null
     }
 ]
