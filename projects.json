@@ -87,7 +87,7 @@
         "year": "2022",
         "text_en": "Investigated physical properties of different sizes of 2D binary alloys using Monte Carlo methods to study phase transitions and critical phenomena in statistical mechanics.",
         "text_jp": "モンテカルロ法を用いて、異なるサイズの2次元二元合金の物理的特性を調査し、統計力学における相転移と臨界現象を研究しました。",
-        "doi": null
+        "doi": "https://github.com/kuchris/Ising-Model"
     },
     {
         "id": "research-11",
@@ -132,7 +132,7 @@
         "year": "2025",
         "text_en": "This project simulates the one-dimensional laser cooling of a Rubidium-87 atom using Doppler cooling with counter-propagating laser beams. By modeling velocity-dependent forces and stochastic photon interactions, it reveals how atomic motion slows and temperature decreases. Implemented in Python, it delivers a dynamic visualization to explore ultracold atomic physics. The simulation lays a foundation for advanced studies, with potential extensions to multi-dimensional or multi-atom systems.",
         "text_jp": "このプロジェクトは、対向伝播するレーザービームを用いたドップラー冷却によるルビジウム-87原子の1次元レーザー冷却をシミュレートします。速度依存力と確率的な光子相互作用をモデル化することで、原子の運動がどのように減速し、温度が低下するかを明らかにします。Pythonで実装され、超低温原子物理学を探求するための動的可視化を提供します。このシミュレーションは高度な研究の基盤となり、多次元や多原子系への拡張の可能性があります。",
-        "doi": null
+        "doi": "https://github.com/kuchris/Simulating-and-Visualizing-1D-Laser-Cooling-of-Rubidium-87"
     },
     {
         "id": "research-16",
@@ -141,7 +141,7 @@
         "year": "2025",
         "text_en": "This project simulates the 2D laser cooling of atoms within a Magneto-Optical Trap (MOT). It models the forces acting on atoms (Doppler cooling and magnetic trapping), including spontaneous emission and recoil. The simulation visualizes the atomic motion and cooling process, generating a plot of final atom positions and speed distribution, and an animated GIF of the MOT dynamics, specifically for Rubidium-87 atoms.",
         "text_jp": "このプロジェクトは、磁気光学トラップ（MOT）内での原子の2次元レーザー冷却をシミュレートします。原子に作用する力（ドップラー冷却と磁気トラッピング）を、自然放出と反跳を含めてモデル化します。このシミュレーションは、原子の動きと冷却プロセスを視覚化し、最終的な原子の位置と速度分布のプロット、およびMOTダイナミクスのアニメーションGIFを生成します。特にルビジウム87原子を対象としています。",
-        "doi": null
+        "doi": "https://github.com/kuchris/Simulating-and-Visualizing-2D-Laser-Cooling-of-Rubidium-87"
     },
     {
         "id": "research-17",
@@ -150,7 +150,7 @@
         "year": "2025",
         "text_en": "This project is an object-oriented C++ application designed to simulate the quantum-mechanical behavior of a 1D particle by numerically solving the time-dependent Schrödinger equation. The computational core, which leverages STL components like std::vector and std::complex for data management, is architecturally separated from the GUI to ensure modularity. The application implements two sophisticated numerical methods: 1) The Crank-Nicolson finite-difference scheme, which constructs and solves large sparse-matrix equations using the high-performance Eigen library, and 2) The Split-Step Fourier method, which utilizes the industry-standard FFTW library to efficiently transform the wave function between position and momentum space. The user-facing front-end is a responsive GUI built with the Qt 5 framework, allowing for parameter configuration and real-time visualization of the wave function's probability density via Qt Charts.",
         "text_jp": "このプロジェクトは、オブジェクト指向設計に基づいたC++アプリケーションであり、時間依存シュレーディンガー方程式を数値的に解くことで1次元粒子の量子力学的な振る舞いをシミュレーションします。データ管理にstd::vectorやstd::complexといったSTLコンテナを活用する計算コアは、モジュール性を確保するためにGUIからアーキテクチャ的に分離されています。本アプリケーションは、二つの高度な数値計算手法を実装しています。①クランク・ニコルソン有限差分法：高性能なEigenライブラリを用いて大規模な疎行列方程式を構築し、解を求めます。②スプリットステップ・フーリエ法：業界標準のFFTWライブラリを利用し、波動関数を位置空間と運動量空間の間で効率的に変換します。ユーザー向けのフロントエンドはQt 5フレームワークで構築された応答性の高いGUIであり、パラメータ設定や、波動関数の確率密度のリアルタイムな可視化をQt Chartsで行います。",
-        "doi": null
+        "doi": "https://github.com/kuchris/1D-Schr-dinger-Equation-Solver-and-Visualizer-in-C-"
     },
     {
         "id": "project-18",
@@ -168,7 +168,7 @@
         "year": "2025",
         "text_en": "This project is a high-performance Retrieval-Augmented Generation (RAG) system for secure, local document analysis. It combines MinerU and VLM-based transformers for advanced PDF processing, including layout detection, OCR, and complex document parsing. Annoy and FAISS power optimized CPU/GPU vector search, while a GPU-accelerated Sentence Transformer pipeline delivers fast, accurate embeddings. Integrated with LM Studio, the system enables private, offline question-answering. Its modular, YAML-configurable architecture is performance-tuned for high-speed, privacy-first processing on local hardware.",
         "text_jp": "このプロジェクトは、安全でローカルなドキュメント分析のための高性能な検索拡張生成（RAG）システムです。MinerUとVLMベースのトランスフォーマーを組み合わせて、レイアウト検出、OCR、複雑なドキュメント解析などの高度なPDF処理を実現します。AnnoyとFAISSは最適化されたCPU/GPUベクトル検索を提供し、GPUアクセラレーションされたSentence Transformerパイプラインが高速で正確な埋め込みを実現します。LM Studioと統合されており、プライベートでオフラインの質問応答が可能です。そのモジュラーでYAML構成可能なアーキテクチャは、ローカルハードウェア上での高速かつプライバシー重視の処理に向けてパフォーマンスチューニングされています。",
-        "doi": null
+        "doi":"https://github.com/kuchris/Local-RAG"
     },
     {
         "id": "project-20",
@@ -177,6 +177,6 @@
         "year": "2025",
         "text_en": "This project implements and compares on-policy First-Visit Monte Carlo Control and off-policy Q-Learning in a 10×10 GridWorld with random walls. Through reward curves, policy visualizations, and a side-by-side animation, we demonstrate how Q-Learning’s bootstrapping and off-policy nature enable faster convergence and greater robustness compared to Monte Carlo’s sample-inefficient, on-policy approach. The animation includes real-time metrics—episode count, epsilon decay, and cumulative success rates—to make reinforcement learning concepts intuitively clear.",
         "text_jp": "このプロジェクトでは、ランダムな壁を持つ10×10のGridWorldにおいて、オンポリシーのFirst-Visitモンテカルロ制御とオフポリシーのQ学習を実装し、比較します。報酬曲線、ポリシーの可視化、並列アニメーションを通じて、Q学習のブートストラップとオフポリシーの特性が、モンテカルロ法のサンプル非効率的でオンポリシーなアプローチと比較して、より速い収束と高い堅牢性を可能にすることを示します。アニメーションには、エピソード数、イプシロン減衰、累積成功率などのリアルタイムメトリクスが含まれており、強化学習の概念を直感的に理解できるようにしています。",
-        "doi": null
+        "doi": "https://github.com/kuchris/RL_GridWorld"
     }
 ]
