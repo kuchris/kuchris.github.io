@@ -704,7 +704,7 @@
             const card = document.createElement('div');
             card.className = 'research-card';
             const doiLinkHtml = project.doi
-                ? `<a href="https://doi.org/${project.doi}" target="_blank" rel="noopener noreferrer" class="doi-link">${translations[currentLang]['read-more']}</a>`
+                ? `<a href="${project.doi}" target="_blank" rel="noopener noreferrer" class="doi-link">${translations[currentLang]['read-more']}</a>`
                 : '';
             card.innerHTML = `
                 <div class="research-card-header">
