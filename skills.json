@@ -25,6 +25,7 @@
     { "id": "Faiss-CP", "jp": "Faiss-CP", "group": 2 },
     { "id": "Annoy", "jp": "Annoy", "group": 2 },
     { "id": "Sentence-transformers", "jp": "Sentence-transformers", "group": 2 },
+    { "id": "YOLO", "jp": "YOLO", "group": 2 },
 
     { "id": "Frameworks", "jp": "フレームワーク", "group": 3 },
     { "id": "React", "jp": "React", "group": 3 },
@@ -112,6 +113,7 @@
     { "source": "Libraries", "target": "Faiss-CP" },
     { "source": "Libraries", "target": "Annoy" },
     { "source": "Libraries", "target": "Sentence-transformers" },
+    { "source": "Libraries", "target": "YOLO" },
 
     { "source": "Frameworks", "target": "React" },
     { "source": "Frameworks", "target": "Vite" },

@@ -178,5 +178,14 @@
         "text_en": "This project implements and compares on-policy First-Visit Monte Carlo Control and off-policy Q-Learning in a 10×10 GridWorld with random walls. Through reward curves, policy visualizations, and a side-by-side animation, we demonstrate how Q-Learning’s bootstrapping and off-policy nature enable faster convergence and greater robustness compared to Monte Carlo’s sample-inefficient, on-policy approach. The animation includes real-time metrics—episode count, epsilon decay, and cumulative success rates—to make reinforcement learning concepts intuitively clear.",
         "text_jp": "このプロジェクトでは、ランダムな壁を持つ10×10のGridWorldにおいて、オンポリシーのFirst-Visitモンテカルロ制御とオフポリシーのQ学習を実装し、比較します。報酬曲線、ポリシーの可視化、並列アニメーションを通じて、Q学習のブートストラップとオフポリシーの特性が、モンテカルロ法のサンプル非効率的でオンポリシーなアプローチと比較して、より速い収束と高い堅牢性を可能にすることを示します。アニメーションには、エピソード数、イプシロン減衰、累積成功率などのリアルタイムメトリクスが含まれており、強化学習の概念を直感的に理解できるようにしています。",
         "doi": "https://github.com/kuchris/RL_GridWorld"
+    },
+    {
+        "id": "project-21",
+        "title_en": "YOLO Real-time Object Detection",
+        "title_jp": "YOLOリアルタイム物体検出",
+        "year": "2025",
+        "text_en": "This system leverages the cutting-edge YOLOv8 (You Only Look Once version 8) neural network architecture to perform real-time object detection with exceptional speed and accuracy. Built with a modular, extensible architecture, it seamlessly handles multiple input sources including live webcam feeds, YouTube videos, and local video files, making it ideal for a wide range of applications from security monitoring to research demonstrations.",
+        "text_jp": "このシステムは、最先端のYOLOv8（You Only Look Onceバージョン8）ニューラルネットワークアーキテクチャを活用して、卓越した速度と精度でリアルタイムの物体検出を行います。モジュラーで拡張可能なアーキテクチャで構築されており、ライブウェブカメラフィード、YouTube動画、ローカルビデオファイルなど、複数の入力ソースをシームレスに処理できるため、セキュリティ監視から研究デモンストレーションまで、幅広いアプリケーションに最適です。",
+        "doi": "https://github.com/kuchris/YOLO-Realtime-Object-Detection"
     }
 ]
