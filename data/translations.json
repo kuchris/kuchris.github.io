@@ -1,0 +1,40 @@
+{
+    "en": {
+        "hero-title": "Chris Wong",
+        "hero-subtitle": "Computational Physics | Physics Enthusiast",
+        "hero-description": "A recent physics graduate from Hong Kong specializing in computational physics and cold atom systems. Using Python and advanced mathematical modeling, I bridge the gap between abstract theory and data-driven insights through numerical simulations. I am eager to apply my analytical skills to new challenges in a technical role or in academic research.",
+        "cta-research": "Explore My Research",
+        "cta-github": "View GitHub",
+        "about-title": "About Me",
+        "about-text": "I am a physics graduate with a Master's from The Chinese University of Hong Kong and a Bachelor's from City University of Hong Kong. My expertise is in computational methods and cold atom physics. I specialize in applying theoretical knowledge to simulate complex ultracold quantum systems, with a focus on nonlinear Schrödinger-type equations like the Gross-Pitaevskii equation and the analysis of interactions in various partial waves. My goal is to use simulation and analysis to bridge the gap between abstract quantum phenomena and tangible solutions",
+        "skills-title": "Technical Skills",
+        "timeline-title": "My Academic & Professional Journey",
+        "projects-title": "Research Projects",
+        "contact-title": "Connect With Me",
+        "contact-email": "📧 Email",
+        "contact-github": "💻 GitHub",
+        "contact-researchgate": "🔬 ResearchGate",
+        "contact-description": "I am actively seeking research opportunities in academia and jobs. Please feel free to reach out to me for collaborations or to discuss potential roles.",
+        "footer-text": "&copy; 2025 Chris Wong. Exploring the quantum universe through computation.",
+        "read-more": "Read More"
+    },
+    "jp": {
+        "hero-title": "クリス・ウォン",
+        "hero-subtitle": "計算物理学 | 物理学愛好家",
+        "hero-description": "香港出身の物理学卒業生で、計算物理学と冷却原子システムを専門としています。Pythonと高度な数理モデルを用いて、抽象的な理論とデータ駆動型の洞察を数値シミュレーションで結びつけます。分析スキルを活かし、技術職や学術研究での新たな挑戦に取り組みたいと考えています。",
+        "cta-research": "研究実績を見る",
+        "cta-github": "GitHubを見る",
+        "about-title": "私について",
+        "about-text": "私は香港中文大学で修士号を、香港城市大学で学士号を取得した物理学の卒業生です。私の専門は計算手法と冷却原子物理学です。理論的な知識を応用して、複雑な極低温量子システムをシミュレートすることに特化しており、Gross-Pitaevskii方程式のような非線形シュレディンガー型方程式や、さまざまな部分波での相互作用の分析に焦点を当てています。私の目標は、シミュレーションと分析を通じて、抽象的な量子現象と具体的な解決策との間のギャップを埋めることです。",
+        "skills-title": "技術スキル",
+        "timeline-title": "私の学術的・専門的な道のり",
+        "projects-title": "研究プロジェクト",
+        "contact-title": "私とつながる",
+        "contact-email": "📧 メール",
+        "contact-github": "💻 GitHub",
+        "contact-researchgate": "🔬 ResearchGate",
+        "contact-description": "アカデミアでの研究職や就職機会を積極的に探しています。共同研究や職務についてご相談がありましたら、お気軽にご連絡ください。",
+        "footer-text": "&copy; 2025 クリス・ウォン. 計算を通して量子宇宙を探求します。",
+        "read-more": "続きを読む"
+    }
+}
