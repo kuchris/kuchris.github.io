@@ -1,161 +1,81 @@
-{
-  "nodes": [
-    { "id": "Technical Skills", "jp": "技術スキル", "group": 0 },
-    { "id": "Languages", "jp": "言語", "group": 1 },
-    { "id": "Python", "jp": "Python", "group": 1 },
-    { "id": "Julia", "jp": "Julia", "group": 1 },
-    { "id": "JavaScript", "jp": "JavaScript", "group": 1 },
-    { "id": "HTML", "jp": "HTML", "group": 1 },
-    { "id": "CSS", "jp": "CSS", "group": 1 },
-    { "id": "C++", "jp": "C++", "group": 1 },
-    { "id": "Libraries", "jp": "ライブラリ", "group": 2 },
-    { "id": "NumPy", "jp": "NumPy", "group": 2 },
-    { "id": "Pandas", "jp": "Pandas", "group": 2 },
-    { "id": "SciPy", "jp": "SciPy", "group": 2 },
-    { "id": "Matplotlib", "jp": "Matplotlib", "group": 2 },
-    { "id": "PyTorch", "jp": "PyTorch", "group": 2 },
-    { "id": "CuPy", "jp": "CuPy", "group": 2 },
-    { "id": "pySerial", "jp": "pySerial", "group": 2 },
-    { "id": "PyVISA", "jp": "PyVISA", "group": 2 },
-    { "id": "Numba", "jp": "Numba", "group": 2 },
-    { "id": "PythTB", "jp": "PythTB", "group": 2 },
-    { "id": "STL", "jp": "STL", "group": 2 },
-    { "id": "Eigen", "jp": "Eigen", "group": 2 },
-    { "id": "FFTW3", "jp": "FFTW3", "group": 2 },
-    { "id": "Faiss-CP", "jp": "Faiss-CP", "group": 2 },
-    { "id": "Annoy", "jp": "Annoy", "group": 2 },
-    { "id": "Sentence-transformers", "jp": "Sentence-transformers", "group": 2 },
-    { "id": "YOLO", "jp": "YOLO", "group": 2 },
-
-    { "id": "Frameworks", "jp": "フレームワーク", "group": 3 },
-    { "id": "React", "jp": "React", "group": 3 },
-    { "id": "Vite", "jp": "Vite", "group": 3 },
-    { "id": "Qt 5", "jp": "Qt 5", "group": 3 },
-
-    { "id": "Software", "jp": "ソフトウェア", "group": 4 },
-    { "id": "MATLAB", "jp": "MATLAB", "group": 4 },
-    { "id": "LabVIEW", "jp": "LabVIEW", "group": 4 },
-    { "id": "Scilab", "jp": "Scilab", "group": 4 },
-    { "id": "BURAI", "jp": "BURAI", "group": 4 },
-    { "id": "QUANTUM ESPRESSO", "jp": "QUANTUM ESPRESSO", "group": 4 },
-    { "id": "LTspice", "jp": "LTspice", "group": 4 },
-    { "id": "Sequator", "jp": "Sequator", "group": 4 },
-    { "id": "AutoCAD", "jp": "AutoCAD", "group": 4 },
-    { "id": "MSVC", "jp": "MSVC", "group": 4 },
-
-    { "id": "Simulation/Computation", "jp": "シミュレーション/計算", "group": 5 },
-    { "id": "Numerical Analysis", "jp": "数値解析", "group": 5 },
-    { "id": "Schrödinger Equation", "jp": "シュレーディンガー方程式", "group": 5 },
-    { "id": "Monte Carlo", "jp": "モンテカルロ", "group": 5 },
-    { "id": "OOD", "jp": "オブジェクト指向設計", "group": 5 },
-    { "id": "EM Modeling", "jp": "電磁モデリング", "group": 5 },
-
-    { "id": "Infrastructure", "jp": "インフラストラクチャ", "group": 6 },
-    { "id": "Docker", "jp": "Docker", "group": 6 },
-    { "id": "Render", "jp": "Render", "group": 6 },
-
-    { "id": "CI/Testing", "jp": "CI/テスト", "group": 7 },
-    { "id": "GitHub", "jp": "GitHub", "group": 7 },
-
-    { "id": "AI Tools", "jp": "AIツール", "group": 8 },
-    { "id": "ChatGPT", "jp": "ChatGPT", "group": 8 },
-    { "id": "Claude Code", "jp": "Claude Code", "group": 8 },
-    { "id": "Gemini CLI", "jp": "Gemini CLI", "group": 8 },
-    { "id": "Qwen3 Coder", "jp": "Qwen3 Coder", "group": 8 },
-    { "id": "Ollama", "jp": "Ollama", "group": 8 },
-    { "id": "LM Studio", "jp": "LM Studio", "group": 8 },
-    { "id": "MCP integration", "jp": "MCP統合", "group": 8 },
-
-    { "id": "Methodology", "jp": "方法論", "group": 9 },
-    { "id": "Scientific Computing", "jp": "科学計算", "group": 9 },
-    { "id": "Simulation", "jp": "シミュレーション", "group": 9 },
-    { "id": "Automation Scripts", "jp": "自動化スクリプト", "group": 9 },
-    { "id": "Data Analysis", "jp": "データ分析", "group": 9 },
-    { "id": "RAG", "jp": "検索拡張生成", "group": 9 },
-
-    { "id": "IDE", "jp": "IDE", "group": 10 },
-    { "id": "Visual Studio Code", "jp": "Visual Studio Code", "group": 10 },
-    { "id": "Jupyter Notebook", "jp": "Jupyter Notebook", "group": 10 },
-    { "id": "Cursor", "jp": "Cursor", "group": 10 }
-  ],
-  "links": [
-    { "source": "Technical Skills", "target": "Languages" },
-    { "source": "Technical Skills", "target": "Libraries" },
-    { "source": "Technical Skills", "target": "Frameworks" },
-    { "source": "Technical Skills", "target": "Software" },
-    { "source": "Technical Skills", "target": "Simulation/Computation" },
-    { "source": "Technical Skills", "target": "Infrastructure" },
-    { "source": "Technical Skills", "target": "CI/Testing" },
-    { "source": "Technical Skills", "target": "AI Tools" },
-    { "source": "Technical Skills", "target": "Methodology" },
-    { "source": "Technical Skills", "target": "IDE" },
-
-    { "source": "Languages", "target": "Python" },
-    { "source": "Languages", "target": "Julia" },
-    { "source": "Languages", "target": "JavaScript" },
-    { "source": "Languages", "target": "HTML" },
-    { "source": "Languages", "target": "CSS" },
-    { "source": "Languages", "target": "C++" },
-
-    { "source": "Libraries", "target": "NumPy" },
-    { "source": "Libraries", "target": "Pandas" },
-    { "source": "Libraries", "target": "SciPy" },
-    { "source": "Libraries", "target": "Matplotlib" },
-    { "source": "Libraries", "target": "PyTorch" },
-    { "source": "Libraries", "target": "CuPy" },
-    { "source": "Libraries", "target": "pySerial" },
-    { "source": "Libraries", "target": "PyVISA" },
-    { "source": "Libraries", "target": "Numba" },
-    { "source": "Libraries", "target": "PythTB" },
-    { "source": "Libraries", "target": "STL" },
-    { "source": "Libraries", "target": "Eigen" },
-    { "source": "Libraries", "target": "FFTW3" },
-    { "source": "Libraries", "target": "Faiss-CP" },
-    { "source": "Libraries", "target": "Annoy" },
-    { "source": "Libraries", "target": "Sentence-transformers" },
-    { "source": "Libraries", "target": "YOLO" },
-
-    { "source": "Frameworks", "target": "React" },
-    { "source": "Frameworks", "target": "Vite" },
-    { "source": "Frameworks", "target": "Qt 5" },
-
-    { "source": "Software", "target": "MATLAB" },
-    { "source": "Software", "target": "LabVIEW" },
-    { "source": "Software", "target": "Scilab" },
-    { "source": "Software", "target": "BURAI" },
-    { "source": "Software", "target": "QUANTUM ESPRESSO" },
-    { "source": "Software", "target": "LTspice" },
-    { "source": "Software", "target": "Sequator" },
-    { "source": "Software", "target": "AutoCAD" },
-    { "source": "Software", "target": "MSVC" },
-
-    { "source": "Simulation/Computation", "target": "Numerical Analysis" },
-    { "source": "Simulation/Computation", "target": "Schrödinger Equation" },
-    { "source": "Simulation/Computation", "target": "Monte Carlo" },
-    { "source": "Simulation/Computation", "target": "OOD" },
-    { "source": "Simulation/Computation", "target": "EM Modeling" },
-
-    { "source": "Infrastructure", "target": "Docker" },
-    { "source": "Infrastructure", "target": "Render" },
-
-    { "source": "CI/Testing", "target": "GitHub" },
-
-    { "source": "AI Tools", "target": "ChatGPT" },
-    { "source": "AI Tools", "target": "Claude Code" },
-    { "source": "AI Tools", "target": "Gemini CLI" },
-    { "source": "AI Tools", "target": "Qwen3 Coder" },
-    { "source": "AI Tools", "target": "Ollama" },
-    { "source": "AI Tools", "target": "LM Studio" },
-    { "source": "AI Tools", "target": "MCP integration" },
-
-    { "source": "Methodology", "target": "Scientific Computing" },
-    { "source": "Methodology", "target": "Simulation" },
-    { "source": "Methodology", "target": "Automation Scripts" },
-    { "source": "Methodology", "target": "Data Analysis" },
-    { "source": "Methodology", "target": "RAG" },
-
-    { "source": "IDE", "target": "Visual Studio Code" },
-    { "source": "IDE", "target": "Jupyter Notebook" },
-    { "source": "IDE", "target": "Cursor" }
-  ]
-}
+[
+  {
+    "id": "core-languages",
+    "title_en": "Core Languages",
+    "title_jp": "主要言語",
+    "description_en": "Languages I use most often across physics research, simulation, and production-oriented engineering work.",
+    "description_jp": "物理研究、シミュレーション、実務寄りのエンジニアリングで主に使う言語です。",
+    "items": [
+      { "label_en": "Python", "label_jp": "Python", "featured": true },
+      { "label_en": "C++", "label_jp": "C++", "featured": true },
+      { "label_en": "Julia", "label_jp": "Julia" },
+      { "label_en": "JavaScript", "label_jp": "JavaScript" }
+    ]
+  },
+  {
+    "id": "physics-scientific-computing",
+    "title_en": "Physics & Scientific Computing",
+    "title_jp": "物理 / 科学技術計算",
+    "description_en": "The physics-first numerical and simulation skills that define the core direction of my work.",
+    "description_jp": "私の仕事の主軸である、物理寄りの数値解析・シミュレーション能力です。",
+    "items": [
+      { "label_en": "Numerical Methods", "label_jp": "数値計算法", "featured": true },
+      { "label_en": "Scientific Computing", "label_jp": "科学計算", "featured": true },
+      { "label_en": "Simulation", "label_jp": "シミュレーション", "featured": true },
+      { "label_en": "Schrödinger Equation Solvers", "label_jp": "シュレーディンガー方程式ソルバー" },
+      { "label_en": "Finite-Difference Solvers", "label_jp": "有限差分ソルバー" },
+      { "label_en": "Monte Carlo Methods", "label_jp": "モンテカルロ法" },
+      { "label_en": "Data Analysis", "label_jp": "データ解析" },
+      { "label_en": "Quantum Simulation", "label_jp": "量子シミュレーション" }
+    ]
+  },
+  {
+    "id": "systems-protocol-debugging",
+    "title_en": "Systems & Protocol Debugging",
+    "title_jp": "システム / プロトコル解析",
+    "description_en": "Practical engineering skills from debugging TCP-based systems and tracing issues across multiple service layers in Linux environments.",
+    "description_jp": "Linux環境でTCPベースのシステムを解析し、複数レイヤーにまたがる不具合を追跡してきた実務スキルです。",
+    "items": [
+      { "label_en": "TCP/IP Communication", "label_jp": "TCP/IP通信", "featured": true },
+      { "label_en": "Custom Binary Protocols", "label_jp": "独自バイナリプロトコル", "featured": true },
+      { "label_en": "Client-Server Debugging", "label_jp": "クライアント / サーバーデバッグ" },
+      { "label_en": "Linux-based Development", "label_jp": "Linuxベース開発" },
+      { "label_en": "Multi-layer Architectures", "label_jp": "多層アーキテクチャ" },
+      { "label_en": "Root Cause Analysis", "label_jp": "根本原因解析" }
+    ]
+  },
+  {
+    "id": "backend-automation",
+    "title_en": "Backend & Automation",
+    "title_jp": "バックエンド / 自動化",
+    "description_en": "Workflow automation and engineering support skills used in laboratory tooling and production-style development work.",
+    "description_jp": "研究設備の自動化や実務開発の支援で使ってきた、ワークフロー自動化と実装寄りのスキルです。",
+    "items": [
+      { "label_en": "Automation Scripting", "label_jp": "自動化スクリプト", "featured": true },
+      { "label_en": "Data Pipelines", "label_jp": "データパイプライン" },
+      { "label_en": "Remote Development Workflows", "label_jp": "リモート開発ワークフロー" },
+      { "label_en": "Git", "label_jp": "Git" },
+      { "label_en": "Docker", "label_jp": "Docker" },
+      { "label_en": "pySerial", "label_jp": "pySerial" },
+      { "label_en": "PyVISA", "label_jp": "PyVISA" }
+    ]
+  },
+  {
+    "id": "libraries-tools",
+    "title_en": "Libraries & Tools",
+    "title_jp": "ライブラリ / ツール",
+    "description_en": "Core numerical, visualization, UI, and lab tooling used across research code and technical software projects.",
+    "description_jp": "研究コードと技術系ソフトウェア開発の両方で使う、数値計算・可視化・UI・実験系ツールです。",
+    "items": [
+      { "label_en": "NumPy", "label_jp": "NumPy", "featured": true },
+      { "label_en": "SciPy", "label_jp": "SciPy", "featured": true },
+      { "label_en": "Pandas", "label_jp": "Pandas" },
+      { "label_en": "Matplotlib", "label_jp": "Matplotlib" },
+      { "label_en": "PyTorch", "label_jp": "PyTorch" },
+      { "label_en": "CuPy", "label_jp": "CuPy" },
+      { "label_en": "Qt 5", "label_jp": "Qt 5" },
+      { "label_en": "MATLAB", "label_jp": "MATLAB" },
+      { "label_en": "LabVIEW", "label_jp": "LabVIEW" }
+    ]
+  }
+]

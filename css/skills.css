@@ -1,162 +1,103 @@
-#skills-graph {
-    width: 100%;
-    height: 70vh;
-    min-height: 400px;
-    max-height: 800px;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    background: #fafafa;
-    overflow: hidden;
+.skills-shell {
+    margin-top: 28px;
+}
+
+.skills-cards {
+    display: grid;
+    gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.skills-card {
+    background: var(--surface);
+    border: 1px solid rgba(20, 33, 58, 0.08);
+    border-radius: 26px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    min-height: 100%;
+    padding: 24px;
     position: relative;
-    /* Ensure the container creates a new stacking context */
-    isolation: isolate;
 }
 
-#skills-graph .graph-controls {
+.skills-card::before {
+    background: linear-gradient(90deg, var(--accent), rgba(42, 116, 113, 0.9));
+    border-radius: 999px;
+    content: "";
+    height: 4px;
+    left: 24px;
     position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 100;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-    padding: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    top: 0;
+    width: 96px;
 }
 
-.control-btn {
-    background: #667eea;
-    color: white;
-    border: none;
-    padding: 6px 10px;
-    margin: 2px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 12px;
-    transition: background 0.2s, transform 0.1s;
+.skills-card-header {
+    display: grid;
+    gap: 10px;
 }
 
-.control-btn:hover {
-    background: #5a6fd8;
-    transform: translateY(-1px);
+.skills-card-title {
+    font-family: "Fraunces", serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-top: 6px;
 }
 
-.control-btn:active {
-    transform: translateY(0);
+.skills-card-description {
+    color: var(--muted);
+    font-size: 0.98rem;
 }
 
-.node {
-    stroke: #fff;
-    stroke-width: 1.5px;
-    cursor: pointer;
-    transition: r 0.2s, stroke-width 0.2s;
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
 }
 
-.node:hover {
-    stroke: #f39c12;
-    stroke-width: 2px;
+.skill-pill {
+    background: rgba(20, 33, 58, 0.05);
+    border: 1px solid rgba(20, 33, 58, 0.08);
+    border-radius: 999px;
+    color: var(--ink);
+    font-size: 0.92rem;
+    line-height: 1.35;
+    max-width: 100%;
+    padding: 10px 14px;
+    word-break: break-word;
 }
 
-.link {
-    stroke: #999;
-    stroke-opacity: 0.4;
-    transition: stroke-opacity 0.2s, stroke-width 0.2s;
+.skill-pill-featured {
+    background: rgba(182, 90, 42, 0.12);
+    border-color: rgba(182, 90, 42, 0.24);
+    font-weight: 700;
 }
 
-.label {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    fill: #2c3e50;
-    pointer-events: none;
-    text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
-    text-anchor: middle;
-    dominant-baseline: middle;
-    user-select: none;
-}
-
-.skills-tooltip {
-    position: absolute;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 12px;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.2s;
-    z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-/* Mobile optimizations */
-@media (max-width: 768px) {
-    #skills-graph {
-        height: 60vh;
-        min-height: 350px;
-    }
-
-    .graph-controls {
-        top: 5px;
-        right: 5px;
-        padding: 6px;
-    }
-
-    .control-btn {
-        padding: 4px 8px;
-        font-size: 10px;
-        margin: 1px;
-    }
-
-    .skills-tooltip {
-        font-size: 11px;
-        padding: 6px 10px;
+@media (max-width: 820px) {
+    .skills-cards {
+        grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 480px) {
-    #skills-graph {
-        height: 50vh;
-        min-height: 300px;
+@media (max-width: 640px) {
+    .skills-card {
+        border-radius: 22px;
+        padding: 22px 18px 18px;
     }
 
-    .graph-controls {
-        padding: 4px;
+    .skills-card::before {
+        left: 18px;
+        width: 76px;
     }
 
-    .control-btn {
-        padding: 3px 6px;
-        font-size: 9px;
+    .skills-card-title {
+        font-size: 1.35rem;
     }
 
-    .skills-tooltip {
-        font-size: 10px;
-        padding: 4px 8px;
-    }
-}
-
-/* Accessibility improvements */
-@media (prefers-reduced-motion: reduce) {
-    .node,
-    .link,
-    .control-btn,
-    .skills-tooltip {
-        transition: none;
-    }
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-    #skills-graph {
-        border: 2px solid #000;
-    }
-    
-    .node {
-        stroke: #000;
-        stroke-width: 2px;
-    }
-    
-    .label {
-        text-shadow: none;
-        font-weight: 900;
+    .skill-pill {
+        font-size: 0.88rem;
+        padding: 9px 12px;
     }
 }

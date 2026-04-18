@@ -1,191 +1,233 @@
 [
     {
-        "id": "research-1",
-        "title_en": "NP-complete Problems in Combinatorial Optimization",
-        "title_jp": "組み合わせ最適化におけるNP完全問題",
-        "year": "2019 - CityU",
-        "text_en": "Applied genetic algorithms and self-organizing mapping to solve NP-hard problems, specifically the traveling salesman problem, demonstrating computational physics approaches to optimization.",
-        "text_jp": "巡回セールスマン問題といったNP困難な問題を解決するために遺伝的アルゴリズムと自己組織化マッピングを適用し、最適化に対する計算物理学のアプローチを実証しました。",
-        "doi": null
+        "id": "physics-projects",
+        "title_en": "Physics Projects",
+        "title_jp": "物理プロジェクト",
+        "description_en": "Physics-first work centered on simulation, numerical solvers, and computational approaches to quantum and condensed-matter systems.",
+        "description_jp": "量子系や凝縮系に対するシミュレーション、数値ソルバー、計算物理的アプローチを中心とした物理寄りのプロジェクトです。",
+        "items": [
+            {
+                "id": "physics-1",
+                "title_en": "NP-Complete Problems in Combinatorial Optimization",
+                "title_jp": "組み合わせ最適化におけるNP完全問題",
+                "year": "2019",
+                "text_en": "Applied genetic algorithms and self-organizing maps to solve the traveling salesman problem, demonstrating a computational approach to difficult optimization problems.",
+                "text_jp": "遺伝的アルゴリズムと自己組織化マップを用いて巡回セールスマン問題を解き、難しい最適化問題への計算的アプローチを示しました。",
+                "links": []
+            },
+            {
+                "id": "physics-2",
+                "title_en": "CHSH Inequality and Wave-Particle Duality Demonstration Using Entangled Photon Pairs",
+                "title_jp": "もつれ光子対を用いたCHSH不等式と波動粒子二重性の実証",
+                "year": "2020",
+                "text_en": "Investigated photon entanglement, Bell's theorem, wave-particle duality, and CHSH inequality with a quED entanglement demonstrator.",
+                "text_jp": "quED実験装置を用いて、光子もつれ、ベルの定理、波動粒子二重性、CHSH不等式を調べました。",
+                "links": []
+            },
+            {
+                "id": "physics-3",
+                "title_en": "Grouped Schrödinger Equation Solvers and Simulations",
+                "title_jp": "シュレーディンガー方程式ソルバー群とシミュレーション",
+                "year": "2021 - 2022",
+                "text_en": "Built 1D, 2D, and 3D time-independent solvers together with 1D and 2D time-dependent solvers for arbitrary potentials, covering a broad numerical workflow around Schrödinger-equation modeling.",
+                "text_jp": "任意ポテンシャルに対する1次元・2次元・3次元の時間非依存ソルバーと、1次元・2次元の時間依存ソルバーを構築し、シュレーディンガー方程式モデリングの広い数値ワークフローをまとめました。",
+                "links": [
+                    {
+                        "label_en": "1D TISE",
+                        "label_jp": "1次元TISE",
+                        "url": "http://dx.doi.org/10.13140/RG.2.2.26129.97127"
+                    },
+                    {
+                        "label_en": "2D TISE",
+                        "label_jp": "2次元TISE",
+                        "url": "http://dx.doi.org/10.13140/RG.2.2.12835.99360"
+                    },
+                    {
+                        "label_en": "3D TISE",
+                        "label_jp": "3次元TISE",
+                        "url": "http://dx.doi.org/10.13140/RG.2.2.13878.01602/1"
+                    }
+                ]
+            },
+            {
+                "id": "physics-4",
+                "title_en": "Classical Analog of Electromagnetically Induced Transparency",
+                "title_jp": "電磁誘導透明化の古典的アナログ",
+                "year": "2021",
+                "text_en": "Reproduced EIT-like behavior with coupled RLC circuits as a classical analog of quantum interference effects.",
+                "text_jp": "結合RLC回路を用いて、量子干渉効果の古典的アナログとしてEIT様の挙動を再現しました。",
+                "links": []
+            },
+            {
+                "id": "physics-5",
+                "title_en": "Computing Band Structures",
+                "title_jp": "バンド構造の計算",
+                "year": "2021",
+                "text_en": "Computed electronic band structures for materials in Quantum ESPRESSO using density functional theory workflows.",
+                "text_jp": "Quantum ESPRESSOと密度汎関数理論ワークフローを用いて、材料の電子バンド構造を計算しました。",
+                "links": []
+            },
+            {
+                "id": "physics-6",
+                "title_en": "Topological Photonics",
+                "title_jp": "トポロジカルフォトニクス",
+                "year": "2021",
+                "text_en": "Studied Berry phase, one-dimensional diatomic crystal models, and integer quantum Hall physics in topological photonics.",
+                "text_jp": "トポロジカルフォトニクスの文脈で、ベリー位相、1次元二原子結晶モデル、整数量子ホール物理を調べました。",
+                "links": [
+                    {
+                        "label_en": "Read More",
+                        "label_jp": "詳細",
+                        "url": "http://dx.doi.org/10.13140/RG.2.2.27651.22560"
+                    }
+                ]
+            },
+            {
+                "id": "physics-7",
+                "title_en": "Monte Carlo Simulation of the 2D Ising Model in Python",
+                "title_jp": "Pythonによる2次元イジングモデルのモンテカルロシミュレーション",
+                "year": "2022",
+                "text_en": "Simulated thermodynamic properties of a 2D binary alloy model using Monte Carlo methods to study phase-transition behavior.",
+                "text_jp": "モンテカルロ法を用いて2次元二元合金モデルの熱力学的性質を調べ、相転移挙動を解析しました。",
+                "links": [
+                    {
+                        "label_en": "GitHub",
+                        "label_jp": "GitHub",
+                        "url": "https://github.com/kuchris/Ising-Model"
+                    }
+                ]
+            },
+            {
+                "id": "physics-8",
+                "title_en": "Reproducing EIT-Like Behavior by Solving Coupled Simple Harmonic Oscillators Numerically",
+                "title_jp": "結合単振動子の数値解析によるEIT様挙動の再現",
+                "year": "2022",
+                "text_en": "Solved coupled second-order differential equations with multiple ODE solvers to reproduce EIT-like behavior numerically.",
+                "text_jp": "複数のODEソルバーで結合二階微分方程式を解き、EIT様挙動を数値的に再現しました。",
+                "links": [
+                    {
+                        "label_en": "Read More",
+                        "label_jp": "詳細",
+                        "url": "http://dx.doi.org/10.13140/RG.2.2.33199.00164/1"
+                    }
+                ]
+            },
+            {
+                "id": "physics-9",
+                "title_en": "Laser Cooling and Atomic Physics Simulations",
+                "title_jp": "レーザー冷却と原子物理シミュレーション",
+                "year": "2024 - 2025",
+                "text_en": "Studied P-wave Feshbach molecules and built simulations for one-dimensional laser cooling and two-dimensional magneto-optical trapping of Rubidium-87.",
+                "text_jp": "P波フェッシュバッハ分子の研究に加え、Rubidium-87の1次元レーザー冷却と2次元MOTのシミュレーションを構築しました。",
+                "links": [
+                    {
+                        "label_en": "1D Cooling",
+                        "label_jp": "1D冷却",
+                        "url": "https://github.com/kuchris/Simulating-and-Visualizing-1D-Laser-Cooling-of-Rubidium-87"
+                    },
+                    {
+                        "label_en": "2D MOT",
+                        "label_jp": "2D MOT",
+                        "url": "https://github.com/kuchris/Simulating-and-Visualizing-2D-Laser-Cooling-of-Rubidium-87"
+                    }
+                ]
+            },
+            {
+                "id": "physics-10",
+                "title_en": "Numerical Solution of the Gross-Pitaevskii Equation",
+                "title_jp": "Gross-Pitaevskii方程式の数値解法",
+                "year": "2025",
+                "text_en": "Solved the Gross-Pitaevskii equation numerically to analyze Bose-Einstein condensate ground states and dynamics.",
+                "text_jp": "Gross-Pitaevskii方程式を数値的に解き、ボース・アインシュタイン凝縮体の基底状態とダイナミクスを解析しました。",
+                "links": []
+            },
+            {
+                "id": "physics-11",
+                "title_en": "Quantum Wavepacket Dynamics in a 2D Lattice with Defects",
+                "title_jp": "欠陥を含む2次元格子における量子波束ダイナミクス",
+                "year": "2025",
+                "text_en": "Simulated two-dimensional wavepacket propagation with Crank-Nicolson time stepping to study scattering and localization in defected lattices.",
+                "text_jp": "Crank-Nicolson法を用いて2次元波束伝播をシミュレーションし、欠陥格子中の散乱と局在を調べました。",
+                "links": []
+            }
+        ]
     },
     {
-        "id": "research-2",
-        "title_en": "CHSH Inequality and Wave-Particle Duality",
-        "title_jp": "CHSH不等式と波-粒子二重性",
-        "year": "2020 - CityU",
-        "text_en": "Experimental verification using entangled photon pairs and quED/quCR demonstrator to study quantum entanglement, Bell's theorem, and local hidden variable theories under supervision of Prof. Sai Tak CHU.",
-        "text_jp": "Prof. Sai Tak CHUの指導の下、絡み合った光子ペアとquED/quCRデモンストレーターを用いて、量子もつれ、ベルの定理、局所隠れた変数理論を研究するための実験的検証を行いました。",
-        "doi": null
-    },
-    {
-        "id": "research-3",
-        "title_en": "Classical Analog of Electromagnetically Induced Transparency",
-        "title_jp": "電磁誘導透過の古典的アナログ",
-        "year": "2021 - CUHK",
-        "text_en": "Reproduced EIT-like behavior using coupled RLC circuits, demonstrating classical analogies to quantum optical phenomena under supervision of Prof. Daniel H.C. Ong.",
-        "text_jp": "Prof. Daniel H.C. Ongの指導の下、結合RLC回路を用いてEITのような振る舞いを再現し、量子光学現象の古典的な類推を実証しました。",
-        "doi": null
-    },
-    {
-        "id": "research-4",
-        "title_en": "Computing Band Structures",
-        "title_jp": "バンド構造の計算",
-        "year": "2021 - CUHK",
-        "text_en": "Computational study of electronic band structures for different materials using Quantum ESPRESSO based on density functional theory under supervision of Prof. HUI Pak Ming.",
-        "text_jp": "Prof. HUI Pak Mingの指導の下、密度汎関数理論に基づき、Quantum ESPRESSOを用いて異なる材料の電子バンド構造を計算的に研究しました。",
-        "doi": null
-    },
-    {
-        "id": "research-5",
-        "title_en": "Topological Photonics",
-        "title_jp": "トポロジカルフォトニクス",
-        "year": "2021 - CUHK",
-        "text_en": "Investigated topology in physics using 1D diatomic crystal structures, Berry phase in quantum models, and Integer Quantum Hall effects under supervision of Prof. Daniel H.C. Ong.",
-        "text_jp": "Prof. Daniel H.C. Ongの指導の下、1次元二原子結晶構造、ベリー位相、量子モデル、整数量子ホール効果を用いて物理学におけるトポロジーを調査しました。",
-        "doi": "http://dx.doi.org/10.13140/RG.2.2.27651.22560"
-    },
-    {
-        "id": "research-6",
-        "title_en": "1D Time-Independent Schrödinger Equation Solver",
-        "title_jp": "1次元時間非依存シュレディンガー方程式ソルバー",
-        "year": "2021",
-        "text_en": "Implemented tri-diagonal method to find eigenvalues and eigenvectors from the bounded 1D time-independent Schrödinger equation for arbitrary potential energy functions.",
-        "text_jp": "任意のポテンシャルエネルギー関数に対する境界を持つ1次元時間非依存シュレディンガー方程式から、固有値と固有ベクトルを見つけるために三対角行列法を実装しました。",
-        "doi": "http://dx.doi.org/10.13140/RG.2.2.26129.97127"
-    },
-    {
-        "id": "research-7",
-        "title_en": "2D Time-Independent Schrödinger Equation Solver",
-        "title_jp": "2次元時間非依存シュレディンガー方程式ソルバー",
-        "year": "2021",
-        "text_en": "Applied finite difference method to solve 2D time-independent Schrödinger equation for arbitrary potential energy functions, extending 1D numerical approaches.",
-        "text_jp": "任意のポテンシャルエネルギー関数に対して2次元時間非依存シュレディンガー方程式を解くために有限差分法を適用し、1次元の数値的アプローチを拡張しました。",
-        "doi": "http://dx.doi.org/10.13140/RG.2.2.12835.99360"
-    },
-    {
-        "id": "research-8",
-        "title_en": "3D Time-Independent Schrödinger Equation Solver",
-        "title_jp": "3次元時間非依存シュレディンガー方程式ソルバー",
-        "year": "2021",
-        "text_en": "Developed finite difference method to find eigenvalues and eigenvectors from the 3D time-independent Schrödinger equation for arbitrary potential energy functions.",
-        "text_jp": "任意のポテンシャルエネルギー関数に対する3次元時間非依存シュレディンガー方程式から、固有値と固有ベクトルを見つけるための有限差分法を開発しました。",
-        "doi": "http://dx.doi.org/10.13140/RG.2.2.13878.01602/1"
-    },
-    {
-        "id": "research-9",
-        "title_en": "Electromagnetically Induced Transparency via Coupled Oscillators",
-        "title_jp": "結合振動子による電磁誘導透過",
-        "year": "2022",
-        "text_en": "Reproduced EIT-like behavior by solving coupled simple harmonic oscillator systems using numerical methods and different ODE solvers to analyze oscillator dynamics.",
-        "text_jp": "数値手法と異なるODEソルバーを使用して、結合した単振動子システムを解くことにより、振動子のダイナミクスを分析し、EITのような振る舞いを再現しました。",
-        "doi": "http://dx.doi.org/10.13140/RG.2.2.33199.00164/1"
-    },
-    {
-        "id": "research-10",
-        "title_en": "Monte Carlo Simulation of 2D Ising Model",
-        "title_jp": "2次元イジングモデルのモンテカルロシミュレーション",
-        "year": "2022",
-        "text_en": "Investigated physical properties of different sizes of 2D binary alloys using Monte Carlo methods to study phase transitions and critical phenomena in statistical mechanics.",
-        "text_jp": "モンテカルロ法を用いて、異なるサイズの2次元二元合金の物理的特性を調査し、統計力学における相転移と臨界現象を研究しました。",
-        "doi": "https://github.com/kuchris/Ising-Model"
-    },
-    {
-        "id": "research-11",
-        "title_en": "Solving 1D and 2D Time-Dependent Schrödinger Equation",
-        "title_jp": "1次元および2次元時間依存シュレディンガー方程式の解法",
-        "year": "2022",
-        "text_en": "Applied finite difference method to study eigenvalues and time evolution of eigenvectors from 1D and 2D time-dependent Schrödinger equation for arbitrary potential energy functions.",
-        "text_jp": "任意のポテンシャルエネルギー関数に対する1次元および2次元の時間依存シュレディンガー方程式から、固有値と固有ベクトルの時間発展を研究するために有限差分法を適用しました。",
-        "doi": null
-    },
-    {
-        "id": "research-12",
-        "title_en": "Study of P-wave Feshbach Molecules",
-        "title_jp": "P波フェッシュバッハ分子の研究",
-        "year": "2024",
-        "text_en": "Advanced study of ultracold atomic physics including cooling mechanisms, Feshbach resonances, and P-wave contacts. This research is directly relevant to current quantum computing and quantum simulation applications.",
-        "text_jp": "冷却メカニズム、フェッシュバッハ共鳴、P波接触を含む超低温原子物理学の高度な研究。この研究は、現在の量子コンピューティングと量子シミュレーションの応用に直接関連しています。",
-        "doi": null
-    },
-    {
-        "id": "research-13",
-        "title_en": "Numerical Solution of the Gross-Pitaevskii Equation: Ground State Analysis and Dynamics",
-        "title_jp": "グロス-ピタエフスキー方程式の数値解法：基底状態解析とダイナミクス",
-        "year": "2025",
-        "text_en": "This project focuses on the numerical solution of the Gross-Pitaevskii equation to analyze the ground state properties and dynamic behavior of Bose-Einstein condensates.",
-        "text_jp": "このプロジェクトは、ボーズ・アインシュタイン凝縮体の基底状態特性と動的挙動を解析するために、グロス-ピタエフスキー方程式の数値解法に焦点を当てています。",
-        "doi": null
-    },
-    {
-        "id": "research-14",
-        "title_en": "Quantum Wavepacket Dynamics in a 2D Lattice with Defects",
-        "title_jp": "欠陥を含む2次元格子における量子波束ダイナミクス",
-        "year": "2025",
-        "text_en": "This project simulates the time evolution of a quantum mechanical wavepacket in a two-dimensional tight-binding model. The simulation utilizes the Crank-Nicolson method to ensure stable and accurate propagation. The lattice includes configurable defect sites with a specified potential, allowing for the study of scattering and localization phenomena. The code generates visualizations of the Hamiltonian structure, wavepacket probability density, and phase evolution over time.",
-        "text_jp": "このプロジェクトは、2次元タイトバインディングモデルにおける量子力学的な波束の時間発展をシミュレーションします。シミュレーションには、安定的かつ正確な伝播を保証するためにクランク・ニコルソン法を利用しています。格子には指定されたポテンシャルを持つ設定可能な欠陥サイトが含まれており、散乱や局在といった現象の研究を可能にします。このコードは、ハミルトニアンの構造、波束の確率密度、そして時間経過に伴う位相の進化を可視化します。",
-        "doi": null
-    },
-    {
-        "id": "research-15",
-        "title_en": "Simulating and Visualizing 1D Laser Cooling of Rubidium-87",
-        "title_jp": "ルビジウム-87の1次元レーザー冷却のシミュレーションと可視化",
-        "year": "2025",
-        "text_en": "This project simulates the one-dimensional laser cooling of a Rubidium-87 atom using Doppler cooling with counter-propagating laser beams. By modeling velocity-dependent forces and stochastic photon interactions, it reveals how atomic motion slows and temperature decreases. Implemented in Python, it delivers a dynamic visualization to explore ultracold atomic physics. The simulation lays a foundation for advanced studies, with potential extensions to multi-dimensional or multi-atom systems.",
-        "text_jp": "このプロジェクトは、対向伝播するレーザービームを用いたドップラー冷却によるルビジウム-87原子の1次元レーザー冷却をシミュレートします。速度依存力と確率的な光子相互作用をモデル化することで、原子の運動がどのように減速し、温度が低下するかを明らかにします。Pythonで実装され、超低温原子物理学を探求するための動的可視化を提供します。このシミュレーションは高度な研究の基盤となり、多次元や多原子系への拡張の可能性があります。",
-        "doi": "https://github.com/kuchris/Simulating-and-Visualizing-1D-Laser-Cooling-of-Rubidium-87"
-    },
-    {
-        "id": "research-16",
-        "title_en": "Simulating and Visualizing 2D Laser Cooling of Rubidium-87 with Magneto-Optical Trap",
-        "title_jp": "磁気光学トラップを用いたルビジウム87の2次元レーザー冷却のシミュレーションと可視化",
-        "year": "2025",
-        "text_en": "This project simulates the 2D laser cooling of atoms within a Magneto-Optical Trap (MOT). It models the forces acting on atoms (Doppler cooling and magnetic trapping), including spontaneous emission and recoil. The simulation visualizes the atomic motion and cooling process, generating a plot of final atom positions and speed distribution, and an animated GIF of the MOT dynamics, specifically for Rubidium-87 atoms.",
-        "text_jp": "このプロジェクトは、磁気光学トラップ（MOT）内での原子の2次元レーザー冷却をシミュレートします。原子に作用する力（ドップラー冷却と磁気トラッピング）を、自然放出と反跳を含めてモデル化します。このシミュレーションは、原子の動きと冷却プロセスを視覚化し、最終的な原子の位置と速度分布のプロット、およびMOTダイナミクスのアニメーションGIFを生成します。特にルビジウム87原子を対象としています。",
-        "doi": "https://github.com/kuchris/Simulating-and-Visualizing-2D-Laser-Cooling-of-Rubidium-87"
-    },
-    {
-        "id": "research-17",
-        "title_en": "1D Schrödinger Equation Solver and Visualizer in C++",
-        "title_jp": "C++による1次元シュレーディンガー方程式のソルバーと可視化",
-        "year": "2025",
-        "text_en": "This project is an object-oriented C++ application designed to simulate the quantum-mechanical behavior of a 1D particle by numerically solving the time-dependent Schrödinger equation. The computational core, which leverages STL components like std::vector and std::complex for data management, is architecturally separated from the GUI to ensure modularity. The application implements two sophisticated numerical methods: 1) The Crank-Nicolson finite-difference scheme, which constructs and solves large sparse-matrix equations using the high-performance Eigen library, and 2) The Split-Step Fourier method, which utilizes the industry-standard FFTW library to efficiently transform the wave function between position and momentum space. The user-facing front-end is a responsive GUI built with the Qt 5 framework, allowing for parameter configuration and real-time visualization of the wave function's probability density via Qt Charts.",
-        "text_jp": "このプロジェクトは、オブジェクト指向設計に基づいたC++アプリケーションであり、時間依存シュレーディンガー方程式を数値的に解くことで1次元粒子の量子力学的な振る舞いをシミュレーションします。データ管理にstd::vectorやstd::complexといったSTLコンテナを活用する計算コアは、モジュール性を確保するためにGUIからアーキテクチャ的に分離されています。本アプリケーションは、二つの高度な数値計算手法を実装しています。①クランク・ニコルソン有限差分法：高性能なEigenライブラリを用いて大規模な疎行列方程式を構築し、解を求めます。②スプリットステップ・フーリエ法：業界標準のFFTWライブラリを利用し、波動関数を位置空間と運動量空間の間で効率的に変換します。ユーザー向けのフロントエンドはQt 5フレームワークで構築された応答性の高いGUIであり、パラメータ設定や、波動関数の確率密度のリアルタイムな可視化をQt Chartsで行います。",
-        "doi": "https://github.com/kuchris/1D-Schr-dinger-Equation-Solver-and-Visualizer-in-C-"
-    },
-    {
-        "id": "project-18",
-        "title_en": "Full-Stack Twitch Clip Audio Extractor with Video Preview & Time Selection",
-        "title_jp": "ビデオプレビューと時間選択機能付きフルスタックTwitchクリップ音声抽出器",
-        "year": "2025",
-        "text_en": "Developed a full-stack web application for downloading Twitch clips and converting them to trimmed MP3 files. Built a responsive frontend with HTML5 video preview and precise time selection controls using vanilla HTML, CSS, and JavaScript. Created a Node.js/Express backend that integrates with Twitch's GraphQL API to fetch video URLs and uses FFmpeg for server-side video processing and MP3 conversion. Features include internationalization (English/Japanese), error handling, and demonstrates proficiency in full-stack development, API integration, and multimedia processing.",
-        "text_jp": "TwitchクリップをダウンロードしてトリミングされたMP3ファイルに変換するフルスタックWebアプリケーションを開発しました。バニラHTML、CSS、JavaScriptを使用して、HTML5ビデオプレビューと精密な時間選択コントロールを備えたレスポンシブなフロントエンドを構築しました。TwitchのGraphQL APIと統合してビデオURLを取得し、FFmpegを使用してサーバーサイドでのビデオ処理とMP3変換を行うNode.js/Expressバックエンドを作成しました。機能には国際化（英語/日本語）、エラーハンドリングが含まれ、フルスタック開発、API統合、マルチメディア処理における熟練度を示しています。",
-        "doi": null
-    },
-    {
-        "id": "project-19",
-        "title_en": "A Private local Retrieval-Augmented Generation (RAG) pipeline using MinerU, Annoy/FAISS, and LM Studio",
-        "title_jp": "MinerU、Annoy/FAISS、LM Studioを使用したプライベートなローカル検索拡張生成（RAG）パイプライン",
-        "year": "2025",
-        "text_en": "This project is a high-performance Retrieval-Augmented Generation (RAG) system for secure, local document analysis. It combines MinerU and VLM-based transformers for advanced PDF processing, including layout detection, OCR, and complex document parsing. Annoy and FAISS power optimized CPU/GPU vector search, while a GPU-accelerated Sentence Transformer pipeline delivers fast, accurate embeddings. Integrated with LM Studio, the system enables private, offline question-answering. Its modular, YAML-configurable architecture is performance-tuned for high-speed, privacy-first processing on local hardware.",
-        "text_jp": "このプロジェクトは、安全でローカルなドキュメント分析のための高性能な検索拡張生成（RAG）システムです。MinerUとVLMベースのトランスフォーマーを組み合わせて、レイアウト検出、OCR、複雑なドキュメント解析などの高度なPDF処理を実現します。AnnoyとFAISSは最適化されたCPU/GPUベクトル検索を提供し、GPUアクセラレーションされたSentence Transformerパイプラインが高速で正確な埋め込みを実現します。LM Studioと統合されており、プライベートでオフラインの質問応答が可能です。そのモジュラーでYAML構成可能なアーキテクチャは、ローカルハードウェア上での高速かつプライバシー重視の処理に向けてパフォーマンスチューニングされています。",
-        "doi":"https://github.com/kuchris/Local-RAG"
-    },
-    {
-        "id": "project-20",
-        "title_en": "Reinforcement Learning: Monte Carlo vs Q-Learning in GridWorld",
-        "title_jp": "強化学習：GridWorldにおけるモンテカルロ法とQ学習の比較",
-        "year": "2025",
-        "text_en": "This project implements and compares on-policy First-Visit Monte Carlo Control and off-policy Q-Learning in a 10×10 GridWorld with random walls. Through reward curves, policy visualizations, and a side-by-side animation, we demonstrate how Q-Learning’s bootstrapping and off-policy nature enable faster convergence and greater robustness compared to Monte Carlo’s sample-inefficient, on-policy approach. The animation includes real-time metrics—episode count, epsilon decay, and cumulative success rates—to make reinforcement learning concepts intuitively clear.",
-        "text_jp": "このプロジェクトでは、ランダムな壁を持つ10×10のGridWorldにおいて、オンポリシーのFirst-Visitモンテカルロ制御とオフポリシーのQ学習を実装し、比較します。報酬曲線、ポリシーの可視化、並列アニメーションを通じて、Q学習のブートストラップとオフポリシーの特性が、モンテカルロ法のサンプル非効率的でオンポリシーなアプローチと比較して、より速い収束と高い堅牢性を可能にすることを示します。アニメーションには、エピソード数、イプシロン減衰、累積成功率などのリアルタイムメトリクスが含まれており、強化学習の概念を直感的に理解できるようにしています。",
-        "doi": "https://github.com/kuchris/RL_GridWorld"
-    },
-    {
-        "id": "project-21",
-        "title_en": "YOLO Real-time Object Detection",
-        "title_jp": "YOLOリアルタイム物体検出",
-        "year": "2025",
-        "text_en": "This system leverages the cutting-edge YOLOv8 (You Only Look Once version 8) neural network architecture to perform real-time object detection with exceptional speed and accuracy. Built with a modular, extensible architecture, it seamlessly handles multiple input sources including live webcam feeds, YouTube videos, and local video files, making it ideal for a wide range of applications from security monitoring to research demonstrations.",
-        "text_jp": "このシステムは、最先端のYOLOv8（You Only Look Onceバージョン8）ニューラルネットワークアーキテクチャを活用して、卓越した速度と精度でリアルタイムの物体検出を行います。モジュラーで拡張可能なアーキテクチャで構築されており、ライブウェブカメラフィード、YouTube動画、ローカルビデオファイルなど、複数の入力ソースをシームレスに処理できるため、セキュリティ監視から研究デモンストレーションまで、幅広いアプリケーションに最適です。",
-        "doi": "https://github.com/kuchris/YOLO-Realtime-Object-Detection"
+        "id": "engineering-projects",
+        "title_en": "Engineering Projects",
+        "title_jp": "エンジニアリングプロジェクト",
+        "description_en": "Software and systems projects that extend beyond physics while still reflecting the same analytical and implementation rigor.",
+        "description_jp": "物理以外の領域でも、同じ分析力と実装力を示すソフトウェア・システム系プロジェクトです。",
+        "items": [
+            {
+                "id": "eng-1",
+                "title_en": "1D Schrödinger Equation Solver and Visualizer in C++",
+                "title_jp": "C++による1次元シュレーディンガー方程式ソルバー / 可視化ツール",
+                "year": "2025",
+                "text_en": "Built an object-oriented C++ desktop application with a separate numerical core and Qt GUI using Eigen and FFTW.",
+                "text_jp": "EigenとFFTWを用い、数値計算コアとQt GUIを分離したオブジェクト指向C++デスクトップアプリケーションを構築しました。",
+                "links": [
+                    {
+                        "label_en": "GitHub",
+                        "label_jp": "GitHub",
+                        "url": "https://github.com/kuchris/1D-Schr-dinger-Equation-Solver-and-Visualizer-in-C-"
+                    }
+                ]
+            },
+            {
+                "id": "eng-2",
+                "title_en": "Full-Stack Twitch Clip Audio Extractor with Video Preview and Time Selection",
+                "title_jp": "動画プレビュー / 時間選択付きTwitchクリップ音声抽出ツール",
+                "year": "2025",
+                "text_en": "Developed a Node.js and Express web application using FFmpeg for clip download, trimming, and MP3 conversion.",
+                "text_jp": "Node.js、Express、FFmpegを用いて、クリップの取得、トリミング、MP3変換を行うWebアプリケーションを開発しました。",
+                "links": []
+            },
+            {
+                "id": "eng-3",
+                "title_en": "Private Local Retrieval-Augmented Generation (RAG) Pipeline",
+                "title_jp": "プライベートなローカルRAGパイプライン",
+                "year": "2025",
+                "text_en": "Designed a privacy-first local document analysis pipeline using MinerU, Annoy / FAISS, sentence embeddings, and LM Studio.",
+                "text_jp": "MinerU、Annoy / FAISS、文埋め込み、LM Studioを用いた、プライバシー重視のローカル文書解析パイプラインを設計しました。",
+                "links": [
+                    {
+                        "label_en": "GitHub",
+                        "label_jp": "GitHub",
+                        "url": "https://github.com/kuchris/Local-RAG"
+                    }
+                ]
+            },
+            {
+                "id": "eng-4",
+                "title_en": "Reinforcement Learning: Monte Carlo vs Q-Learning in GridWorld",
+                "title_jp": "強化学習: GridWorldにおけるモンテカルロ法とQ学習の比較",
+                "year": "2025",
+                "text_en": "Implemented and compared Monte Carlo control and Q-Learning with visualizations of convergence and policy learning.",
+                "text_jp": "モンテカルロ制御とQ学習を実装・比較し、収束と方策学習の可視化を行いました。",
+                "links": [
+                    {
+                        "label_en": "GitHub",
+                        "label_jp": "GitHub",
+                        "url": "https://github.com/kuchris/RL_GridWorld"
+                    }
+                ]
+            },
+            {
+                "id": "eng-5",
+                "title_en": "Realtime Object Detection Using YOLO",
+                "title_jp": "YOLOによるリアルタイム物体検出",
+                "year": "2025",
+                "text_en": "Built a modular real-time object detection system supporting webcam, YouTube, and local video inputs.",
+                "text_jp": "Webカメラ、YouTube、ローカル動画入力に対応したモジュール型のリアルタイム物体検出システムを構築しました。",
+                "links": [
+                    {
+                        "label_en": "GitHub",
+                        "label_jp": "GitHub",
+                        "url": "https://github.com/kuchris/YOLO-Realtime-Object-Detection"
+                    }
+                ]
+            }
+        ]
     }
 ]

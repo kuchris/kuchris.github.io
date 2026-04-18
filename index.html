@@ -3,138 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO META TAGS -->
-    <meta name="description" content="Chris Wong - Computational Physics researcher from Hong Kong specializing in cold atom systems, quantum simulations, and Python-based physics modeling. Expert in Schrödinger equations, Gross-Pitaevskii equations, and quantum many-body systems.">
-    <meta name="keywords" content="computational physics, cold atom physics, Python simulation, quantum mechanics, Schrödinger equation, Gross-Pitaevskii equation, Feshbach resonances, BEC dynamics, quantum computing, CUHK, Hong Kong physics">
+    <meta
+        name="description"
+        content="Chris Wong is a computational physics researcher focused on cold atom systems, quantum simulations, and numerical modeling."
+    >
+    <meta
+        name="keywords"
+        content="computational physics, cold atom physics, quantum simulation, numerical modeling, Gross-Pitaevskii equation, Schrödinger equation"
+    >
     <meta name="author" content="Chris Wong">
     <link rel="canonical" href="https://kuchris.github.io">
+    <link rel="icon" href="images/kuicon.ico">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Chris Wong - Computational Physics & Cold Atom Research">
-    <meta property="og:description" content="Physics researcher from Hong Kong specializing in computational methods, cold atom systems, and quantum simulations. Expert in Python-based physics modeling and quantum mechanics.">
+    <meta property="og:title" content="Chris Wong | Computational Physics Portfolio">
+    <meta
+        property="og:description"
+        content="Personal portfolio for computational physics research, simulations, and technical projects."
+    >
     <meta property="og:url" content="https://kuchris.github.io">
-    <meta property="og:site_name" content="Chris Wong - Physics Research">
+    <meta property="og:site_name" content="Chris Wong">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Chris Wong - Computational Physics & Cold Atom Research">
-    <meta name="twitter:description" content="Physics researcher specializing in computational methods and cold atom systems">
+    <meta name="twitter:title" content="Chris Wong | Computational Physics Portfolio">
+    <meta
+        name="twitter:description"
+        content="Research portfolio focused on cold atom systems, scientific computing, and simulation-driven work."
+    >
 
-    <title>Chris Wong - Computational Physics & Cold Atom Research</title>
+    <title>Chris Wong | Computational Physics Portfolio</title>
 
-    <!-- External CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/skills.css">
 
-    <!-- External Libraries -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
-    <script src="https://d3js.org/d3.v7.min.js" defer></script>
 </head>
-<body class="bg-gray-50 font-sans antialiased text-gray-800">
-    <header>
-        <nav class="container">
-            <a href="#" class="logo">Chris Wong</a>
-            <div class="nav-right-group">
+<body>
+    <div class="page-noise" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="site-nav container" aria-label="Primary">
+            <a href="#top" class="brand">
+                <span class="brand-mark">CW</span>
+                <span class="brand-text">
+                    <strong>Chris Wong</strong>
+                    <span class="brand-subtitle">Computational Physics</span>
+                </span>
+            </a>
+
+            <button
+                type="button"
+                class="nav-toggle"
+                id="nav-toggle"
+                aria-expanded="false"
+                aria-controls="site-menu"
+                aria-label="Toggle navigation"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-panel" id="site-menu">
                 <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#timeline">Journey</a></li>
-                    <li><a href="#projects">Research</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a id="nav-about" href="#about"></a></li>
+                    <li><a id="nav-skills" href="#skills"></a></li>
+                    <li><a id="nav-timeline" href="#timeline"></a></li>
+                    <li><a id="nav-projects" href="#projects"></a></li>
+                    <li><a id="nav-contact" href="#contact"></a></li>
                 </ul>
-                <div class="language-buttons">
-                    <button class="btn-language active" onclick="switchLanguage('en')">EN</button>
-                    <button class="btn-language" onclick="switchLanguage('jp')">JP</button>
+
+                <div class="language-switch" role="group" aria-label="Language switcher">
+                    <button type="button" class="btn-language" data-lang="en">EN</button>
+                    <button type="button" class="btn-language" data-lang="jp">JP</button>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main>
+    <main id="top">
         <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="profile-img">
-                        <img src="images/profile.jpg" alt="Chris Wong" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="profile-img-placeholder" style="display: none;">CW</div>
-                    </div>
-                    <h1 id="hero-title"></h1>
+            <div class="hero-orbit hero-orbit-left" aria-hidden="true"></div>
+            <div class="hero-orbit hero-orbit-right" aria-hidden="true"></div>
+
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p id="hero-kicker" class="eyebrow"></p>
+                    <h1 id="hero-title" class="hero-title"></h1>
                     <p id="hero-subtitle" class="hero-subtitle"></p>
                     <p id="hero-description" class="hero-description"></p>
-                    <div class="cta-buttons">
+
+                    <div class="hero-actions">
                         <a id="cta-research" href="#projects" class="btn btn-primary"></a>
-                        <a id="cta-github" href="https://github.com/kuchris" class="btn btn-secondary" target="_blank" rel="noopener noreferrer"></a>
+                        <a
+                            id="cta-github"
+                            href="https://github.com/kuchris"
+                            class="btn btn-secondary"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        ></a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <article class="stat-card">
+                            <p id="hero-stat-1-value" class="stat-value"></p>
+                            <p id="hero-stat-1-label" class="stat-label"></p>
+                        </article>
+                        <article class="stat-card">
+                            <p id="hero-stat-2-value" class="stat-value"></p>
+                            <p id="hero-stat-2-label" class="stat-label"></p>
+                        </article>
+                        <article class="stat-card">
+                            <p id="hero-stat-3-value" class="stat-value"></p>
+                            <p id="hero-stat-3-label" class="stat-label"></p>
+                        </article>
                     </div>
                 </div>
+
+                <aside class="hero-panel">
+                    <div class="profile-frame">
+                        <img
+                            src="images/profile.jpg"
+                            alt="Chris Wong portrait"
+                            loading="eager"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        >
+                        <div class="profile-placeholder" style="display: none;">CW</div>
+                    </div>
+
+                    <div class="hero-panel-copy">
+                        <p id="hero-panel-label" class="panel-label"></p>
+                        <h2 id="hero-panel-title" class="panel-title"></h2>
+                        <p id="hero-panel-text" class="panel-text"></p>
+                    </div>
+
+                    <dl class="hero-details">
+                        <div>
+                            <dt id="hero-detail-1-label"></dt>
+                            <dd id="hero-detail-1-value"></dd>
+                        </div>
+                        <div>
+                            <dt id="hero-detail-2-label"></dt>
+                            <dd id="hero-detail-2-value"></dd>
+                        </div>
+                        <div>
+                            <dt id="hero-detail-3-label"></dt>
+                            <dd id="hero-detail-3-value"></dd>
+                        </div>
+                    </dl>
+                </aside>
             </div>
-            <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
-            <div class="particle" style="top: 30%; left: 80%; animation-delay: 2s;"></div>
-            <div class="particle" style="top: 60%; left: 15%; animation-delay: 4s;"></div>
-            <div class="particle" style="top: 70%; left: 85%; animation-delay: 1s;"></div>
-            <div class="particle" style="top: 40%; left: 70%; animation-delay: 3s;"></div>
         </section>
 
         <section id="about" class="section">
             <div class="container">
-                <h2 id="about-title" class="section-title"></h2>
-                <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 1.8;">
-                    <p id="about-text"></p>
+                <div class="section-header">
+                    <p id="about-kicker" class="eyebrow"></p>
+                    <h2 id="about-title" class="section-title"></h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-copy">
+                        <p id="about-text" class="about-text"></p>
+                    </div>
+
+                    <aside class="about-card">
+                        <p id="about-card-label" class="panel-label"></p>
+                        <h3 id="about-card-title" class="about-card-title"></h3>
+                        <ul class="about-points">
+                            <li id="about-point-1"></li>
+                            <li id="about-point-2"></li>
+                            <li id="about-point-3"></li>
+                        </ul>
+                    </aside>
                 </div>
             </div>
         </section>
 
-        <!-- Technical Expertise Section -->
-        <section id="skills" class="section">
+        <section id="skills" class="section section-muted">
             <div class="container">
-                <h2 id="skills-title" class="section-title"></h2>
-                <div id="skills-graph"></div>
+                <div class="section-header split-header">
+                    <div>
+                        <p id="skills-kicker" class="eyebrow"></p>
+                        <h2 id="skills-title" class="section-title"></h2>
+                    </div>
+                    <p id="skills-description" class="section-intro"></p>
+                </div>
+
+                <div class="skills-shell">
+                    <div id="skills-cards" class="skills-cards" aria-live="polite">
+                        <div class="loading-indicator">Loading skills...</div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="timeline" class="section">
             <div class="container">
-                <h2 id="timeline-title" class="section-title"></h2>
-                <div id="timeline-container" class="timeline relative pl-10 sm:pl-12">
-                    <div id="loading-indicator">Loading timeline...</div>
+                <div class="section-header split-header">
+                    <div>
+                        <p id="timeline-kicker" class="eyebrow"></p>
+                        <h2 id="timeline-title" class="section-title"></h2>
+                    </div>
+                    <p id="timeline-description" class="section-intro"></p>
+                </div>
+
+                <div id="timeline-container" class="timeline">
+                    <div class="loading-indicator">Loading timeline...</div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="section">
+        <section id="projects" class="section section-muted">
             <div class="container">
-                <h2 id="projects-title" class="section-title"></h2>
-                <div id="projects-container" class="research-grid">
-                    <div id="loading-indicator">Loading research projects...</div>
+                <div class="section-header split-header">
+                    <div>
+                        <p id="projects-kicker" class="eyebrow"></p>
+                        <h2 id="projects-title" class="section-title"></h2>
+                    </div>
+                    <p id="projects-description" class="section-intro"></p>
+                </div>
+
+                <div id="projects-container" class="projects-grid">
+                    <div class="loading-indicator">Loading research projects...</div>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="section">
             <div class="container">
-                <h2 id="contact-title" class="section-title"></h2>
-                <div class="social-links">
-                    <a href="mailto:kuchrisuk@gmail.com" class="social-link">
-                        <span id="contact-email"></span>
-                    </a>
-                    <a href="https://github.com/kuchris" class="social-link">
-                        <span id="contact-github"></span>
-                    </a>
-                    <a href="https://www.researchgate.net/profile/Wai-Kui-Wong" class="social-link">
-                        <span id="contact-researchgate"></span>
-                    </a>
-                </div>
-                <div style="text-align: center; margin-top: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    <p id="contact-description" style="font-size: 1.1rem; color: #666;"></p>
+                <div class="contact-card">
+                    <div class="contact-copy">
+                        <p id="contact-kicker" class="eyebrow"></p>
+                        <h2 id="contact-title" class="section-title contact-title"></h2>
+                        <p id="contact-description" class="section-intro contact-intro"></p>
+                    </div>
+
+                    <div class="contact-links">
+                        <a href="mailto:kuchrisuk@gmail.com" class="social-link">
+                            <span class="social-label" id="contact-email"></span>
+                            <span class="social-hint">kuchrisuk@gmail.com</span>
+                        </a>
+                        <a
+                            href="https://github.com/kuchris"
+                            class="social-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span class="social-label" id="contact-github"></span>
+                            <span class="social-hint">github.com/kuchris</span>
+                        </a>
+                        <a
+                            href="https://www.researchgate.net/profile/Wai-Kui-Wong"
+                            class="social-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span class="social-label" id="contact-researchgate"></span>
+                            <span class="social-hint">Research profile</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p id="footer-text"></p>
+    <footer class="site-footer">
+        <div class="container">
+            <p id="footer-text"></p>
+        </div>
     </footer>
 
-    <!-- External JavaScript -->
     <script src="js/skills-graph.js" defer></script>
     <script src="js/main.js" defer></script>
 </body>
