@@ -295,7 +295,10 @@ img {
 }
 
 html[lang="ja"] .hero-title {
+    font-size: clamp(2rem, 6.8vw, 5.6rem);
+    line-height: 1.05;
     max-width: none;
+    white-space: nowrap;
     word-break: keep-all;
 }
 
