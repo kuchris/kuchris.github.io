@@ -23,6 +23,7 @@ const textMappings = {
     "hero-description": "hero-description",
     "cta-research": "cta-research",
     "cta-github": "cta-github",
+    "cta-cv": "cta-cv",
     "hero-stat-1-value": "hero-stat-1-value",
     "hero-stat-1-label": "hero-stat-1-label",
     "hero-stat-2-value": "hero-stat-2-value",

@@ -12,6 +12,7 @@
         "hero-description": "I build research-oriented computational models that turn abstract quantum ideas into tractable numerical systems. My work sits between theory, simulation, and practical technical execution.",
         "cta-research": "View Projects",
         "cta-github": "Open GitHub",
+        "cta-cv": "CV",
         "hero-stat-1-value": "Cold Atom Systems",
         "hero-stat-1-label": "Research focus",
         "hero-stat-2-value": "Python + C++",
@@ -60,6 +61,7 @@
         "read-more": "Read More"
     },
     "jp": {
+        "cta-cv": "CV",
         "page-title": "クリス・ウォン | 計算物理ポートフォリオ",
         "nav-about": "概要",
         "nav-skills": "スキル",

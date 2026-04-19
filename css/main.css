@@ -294,6 +294,11 @@ img {
     max-width: 10ch;
 }
 
+html[lang="ja"] .hero-title {
+    max-width: none;
+    word-break: keep-all;
+}
+
 .hero-subtitle {
     color: var(--ink);
     font-size: clamp(1.1rem, 2vw, 1.55rem);
