@@ -341,9 +341,7 @@ html[lang="ja"] .hero-title {
 }
 
 .btn:hover,
-.btn:focus-visible,
-.social-link:hover,
-.social-link:focus-visible {
+.btn:focus-visible {
     transform: translateY(-2px);
 }
 
@@ -371,8 +369,7 @@ html[lang="ja"] .hero-title {
 .about-card,
 .timeline-card,
 .project-card,
-.contact-card,
-.social-link {
+.contact-card {
     background: var(--surface);
     border: 1px solid rgba(20, 33, 58, 0.08);
     box-shadow: var(--shadow);
@@ -814,26 +811,94 @@ html[lang="ja"] .hero-title {
 
 .contact-links {
     display: grid;
-    gap: 14px;
+    gap: 18px;
 }
 
-.social-link {
-    border-radius: 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    padding: 20px 22px;
+.contact-feature,
+.contact-tile {
     text-decoration: none;
+}
+
+.contact-feature {
+    background:
+        linear-gradient(135deg, rgba(182, 90, 42, 0.14), rgba(182, 90, 42, 0.04)),
+        rgba(255, 252, 246, 0.7);
+    border: 1px solid rgba(182, 90, 42, 0.18);
+    border-radius: 26px;
+    box-shadow: 0 20px 48px rgba(20, 33, 58, 0.08);
+    display: grid;
+    gap: 10px;
+    padding: 24px 24px 22px;
+    position: relative;
     transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
-.social-label {
-    font-weight: 700;
+.contact-feature::after {
+    background: linear-gradient(90deg, transparent, rgba(20, 33, 58, 0.12), transparent);
+    content: "";
+    height: 1px;
+    left: 24px;
+    position: absolute;
+    right: 24px;
+    top: 54px;
 }
 
-.social-hint {
+.contact-feature:hover,
+.contact-feature:focus-visible,
+.contact-tile:hover,
+.contact-tile:focus-visible {
+    border-color: rgba(182, 90, 42, 0.34);
+    box-shadow: 0 24px 56px rgba(20, 33, 58, 0.12);
+    transform: translateY(-2px);
+}
+
+.contact-feature-kicker,
+.contact-tile-label {
+    color: var(--accent-strong);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.contact-feature-value {
+    font-family: "Fraunces", serif;
+    font-size: clamp(1.7rem, 3vw, 2.35rem);
+    line-height: 1.02;
+    margin-top: 10px;
+    overflow-wrap: anywhere;
+}
+
+.contact-feature-hint {
     color: var(--muted);
-    font-size: 0.92rem;
+    font-size: 0.96rem;
+    max-width: 26rem;
+}
+
+.contact-secondary-grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.contact-tile {
+    background: rgba(255, 252, 246, 0.58);
+    border: 1px solid rgba(20, 33, 58, 0.08);
+    border-radius: 22px;
+    box-shadow: 0 16px 36px rgba(20, 33, 58, 0.06);
+    display: grid;
+    gap: 10px;
+    min-height: 132px;
+    padding: 20px;
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.contact-tile-value {
+    align-self: end;
+    color: var(--ink);
+    font-family: "Fraunces", serif;
+    font-size: 1.45rem;
+    line-height: 1.1;
 }
 
 .site-footer {
@@ -978,6 +1043,28 @@ html[lang="ja"] .hero-title {
 
     .timeline-dot {
         left: 3px;
+    }
+
+    .contact-secondary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-feature {
+        padding: 22px 18px 20px;
+    }
+
+    .contact-feature::after {
+        left: 18px;
+        right: 18px;
+    }
+
+    .contact-feature-value {
+        font-size: clamp(1.45rem, 8vw, 2rem);
+    }
+
+    .contact-tile {
+        min-height: auto;
+        padding: 18px;
     }
 }
 

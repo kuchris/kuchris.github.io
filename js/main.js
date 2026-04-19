@@ -60,6 +60,8 @@ const textMappings = {
     "contact-title": "contact-title",
     "contact-description": "contact-description",
     "contact-email": "contact-email",
+    "contact-feature-hint": "contact-feature-hint",
+    "contact-cv": "contact-cv",
     "contact-github": "contact-github",
     "contact-researchgate": "contact-researchgate",
     "footer-text": "footer-text"
