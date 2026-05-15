@@ -51,22 +51,33 @@
 }
 
 .skills-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     gap: 10px;
+    align-content: start;
+    grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
     list-style: none;
 }
 
 .skill-pill {
+    align-items: center;
     background: rgba(20, 33, 58, 0.05);
     border: 1px solid rgba(20, 33, 58, 0.08);
-    border-radius: 999px;
+    border-radius: 12px;
     color: var(--ink);
+    display: flex;
     font-size: 0.92rem;
+    justify-content: center;
     line-height: 1.35;
-    max-width: 100%;
+    min-height: 42px;
     padding: 10px 14px;
-    word-break: break-word;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.skill-pill-long {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    text-align: left;
 }
 
 .skill-pill-featured {
@@ -98,6 +109,7 @@
 
     .skill-pill {
         font-size: 0.88rem;
+        min-height: 40px;
         padding: 9px 12px;
     }
 }

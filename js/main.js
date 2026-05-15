@@ -3,6 +3,7 @@ let projectsData = [];
 let timelineData = [];
 let skillsData = null;
 let translations = {};
+const DATA_VERSION = "20260515-2";
 
 const timelineContainer = document.getElementById("timeline-container");
 const projectsContainer = document.getElementById("projects-container");
@@ -210,9 +211,6 @@ function createTimelineItem(item) {
     container.innerHTML = `
         <div class="timeline-dot"></div>
         <div class="timeline-card">
-            <div class="timeline-media">
-                <img src="${item.image}" alt="${item.title[currentLang]} logo" loading="lazy">
-            </div>
             <div class="timeline-body">
                 <p class="timeline-date">${item.dates}</p>
                 <h3 class="timeline-role">${item.title[currentLang]}</h3>
@@ -222,11 +220,6 @@ function createTimelineItem(item) {
             </div>
         </div>
     `;
-
-    const image = container.querySelector("img");
-    image.addEventListener("error", () => {
-        image.style.display = "none";
-    }, { once: true });
 
     return container;
 }
@@ -328,10 +321,10 @@ function handleLoadError() {
 async function loadData() {
     try {
         const [projectsResponse, timelineResponse, translationsResponse, skillsResponse] = await Promise.all([
-            fetch("data/projects.json"),
-            fetch("data/timeline.json"),
-            fetch("data/translations.json"),
-            fetch("data/skills.json")
+            fetch(`data/projects.json?v=${DATA_VERSION}`),
+            fetch(`data/timeline.json?v=${DATA_VERSION}`),
+            fetch(`data/translations.json?v=${DATA_VERSION}`),
+            fetch(`data/skills.json?v=${DATA_VERSION}`)
         ]);
 
         if (!projectsResponse.ok || !timelineResponse.ok || !translationsResponse.ok || !skillsResponse.ok) {

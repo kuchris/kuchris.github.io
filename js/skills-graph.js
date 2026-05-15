@@ -28,7 +28,8 @@ function createSkillsCard(category) {
         .map((item) => {
             const label = item[`label_${currentLang}`] || item.label_en;
             const featuredClass = item.featured ? " skill-pill-featured" : "";
-            return `<li class="skill-pill${featuredClass}">${label}</li>`;
+            const longClass = label.length > 22 ? " skill-pill-long" : "";
+            return `<li class="skill-pill${featuredClass}${longClass}">${label}</li>`;
         })
         .join("");
 

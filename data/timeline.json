@@ -135,30 +135,30 @@
         "dates": "04/2026 - Present",
         "highlights": {
             "en": [
-                "Engineer on a railway IC card and cloud ticketing platform spanning host, relay server, and logic server layers.",
-                "Analyze and debug TCP-based communication modules built on custom binary protocols in Linux environments.",
-                "Identified a critical defect involving buffer memory addresses being used as device identifiers, causing unintended disconnects in multi-device scenarios.",
-                "Proposed protocol-level device identification to improve connection correctness and reliability in concurrent device handling."
+                "Support development and validation of a railway IC card and cloud ticketing platform across host, relay, and logic-server communication layers.",
+                "Diagnose TCP/IP communication defects using Linux logs, simulator behavior, network checks, and C++ source-code investigation.",
+                "Analyze custom binary protocol behavior, including reconnect handling, device identity, sequence-number handling, and message framing.",
+                "Review requirement gaps and implement minimal targeted fixes to improve protocol correctness and communication reliability."
             ],
             "jp": [
-                "ホスト、リレーサーバー、ロジックサーバーにまたがる鉄道ICカード・クラウドチケット基盤でエンジニアとして従事しています。",
-                "Linux環境で独自バイナリプロトコル上に構築されたTCP通信モジュールの解析とデバッグを担当しています。",
-                "バッファのメモリアドレスを端末識別子として扱っていたことが原因の不具合を特定し、複数端末接続時の意図しない切断を解明しました。",
-                "プロトコルレベルでの端末識別方式を提案し、同時接続時の正確性と信頼性の向上に貢献しました。"
+                "鉄道ICカード・クラウドチケッティング関連システムにおいて、ホスト・中継・ロジックサーバ間の通信処理の調査、検証、修正を担当しています。",
+                "Linuxログ、シミュレータ動作、ネットワーク確認、C++ソースコードを用いてTCP/IP通信不具合の原因調査を行っています。",
+                "再接続、端末識別、シーケンス番号、メッセージフレーミングなど、独自バイナリプロトコルの挙動を解析しています。",
+                "要件差分を確認し、通信仕様の正確性と信頼性を高めるための最小限の修正を行っています。"
             ]
         },
         "responsibility": {
             "en": [
-                "TCP/IP module debugging",
+                "TCP/IP communication debugging",
                 "Custom binary protocol analysis",
-                "Linux-based multi-layer issue investigation",
-                "Validation support and remote Git-based development workflows"
+                "Linux log and source-code investigation",
+                "Simulator-based validation and technical documentation"
             ],
             "jp": [
-                "TCP/IP通信モジュールのデバッグ",
-                "独自バイナリプロトコルの解析",
-                "Linuxベース多層システムの不具合調査",
-                "検証支援とGitを用いたリモート開発ワークフロー"
+                "TCP/IP通信デバッグ",
+                "独自バイナリプロトコル解析",
+                "Linuxログとソースコード調査",
+                "シミュレータベースの検証と技術ドキュメント作成"
             ]
         },
         "image": "images/ALTEN_logo.svg"

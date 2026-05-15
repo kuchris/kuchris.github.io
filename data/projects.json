@@ -227,6 +227,66 @@
                         "url": "https://github.com/kuchris/YOLO-Realtime-Object-Detection"
                     }
                 ]
+            },
+            {
+                "id": "eng-6",
+                "title_en": "Tiny LLM Lessons",
+                "title_jp": "Tiny LLM Lessons",
+                "year": "2026",
+                "text_en": "Built a PyTorch learning pipeline for a small decoder-only Transformer from scratch, covering tokenizer experiments, RoPE, attention, FineWeb-Edu pretraining shards, Alpaca-style SFT, CUDA training, checkpoint resume, and generation scripts.",
+                "text_jp": "小規模なdecoder-only TransformerをPyTorchで一から学習するためのパイプラインを構築し、トークナイザー実験、RoPE、attention、FineWeb-Edu事前学習 shard、Alpaca形式SFT、CUDA学習、チェックポイント再開、生成スクリプトを扱いました。",
+                "links": [
+                    {
+                        "label_en": "GitHub",
+                        "label_jp": "GitHub",
+                        "url": "https://github.com/kuchris/llm"
+                    }
+                ]
+            },
+            {
+                "id": "eng-7",
+                "title_en": "RagMemory",
+                "title_jp": "RagMemory",
+                "year": "2026",
+                "text_en": "Developed a local persistent-memory prototype for LLM workflows using layered raw and structured memory, retrieval, exact artifact preservation for configs, tables, and code blocks, and a separate MCP server surface.",
+                "text_jp": "LLMワークフロー向けに、raw / structured memoryの層構造、検索、設定・表・コードブロックの正確な保存、独立したMCP server surfaceを備えたローカル永続メモリのプロトタイプを開発しました。",
+                "links": [
+                    {
+                        "label_en": "GitHub",
+                        "label_jp": "GitHub",
+                        "url": "https://github.com/kuchris/ragmemory"
+                    }
+                ]
+            },
+            {
+                "id": "eng-8",
+                "title_en": "Local Document Conversion Tools",
+                "title_jp": "ローカル文書変換ツール",
+                "year": "2026",
+                "text_en": "Built Windows drag-and-drop tools for Office-to-PDF and PDF-to-Markdown conversion, including recursive folder handling, Japanese filename safeguards, MinerU-based Markdown extraction, skip logic, and failure logs.",
+                "text_jp": "Office-to-PDFとPDF-to-Markdown変換のためのWindowsドラッグ&ドロップツールを構築し、再帰的なフォルダ処理、日本語ファイル名の保護、MinerUベースのMarkdown抽出、skip logic、failure logに対応しました。",
+                "links": [
+                    {
+                        "label_en": "GitHub",
+                        "label_jp": "GitHub",
+                        "url": "https://github.com/kuchris/doc-to-pdf-md"
+                    }
+                ]
+            },
+            {
+                "id": "eng-9",
+                "title_en": "Local Meeting STT",
+                "title_jp": "Local Meeting STT",
+                "year": "2026",
+                "text_en": "Built a local Windows meeting transcription app with an Electron UI and Python/uv backend for loopback audio recording, live rough transcripts, post-meeting transcription, and CPU/GPU whisper.cpp and Qwen3-ASR workflows.",
+                "text_jp": "Electron UIとPython/uvバックエンドを用いて、Windows loopback audio recording、live rough transcript、post-meeting transcription、CPU/GPU whisper.cppおよびQwen3-ASR workflowsに対応したローカル会議文字起こしアプリを構築しました。",
+                "links": [
+                    {
+                        "label_en": "GitHub",
+                        "label_jp": "GitHub",
+                        "url": "https://github.com/kuchris/local-meeting-stt"
+                    }
+                ]
             }
         ]
     }
