@@ -3,7 +3,7 @@ let projectsData = [];
 let timelineData = [];
 let skillsData = null;
 let translations = {};
-const DATA_VERSION = "20260515-2";
+const DATA_VERSION = "20260521";
 
 const timelineContainer = document.getElementById("timeline-container");
 const projectsContainer = document.getElementById("projects-container");

@@ -260,6 +260,21 @@
             },
             {
                 "id": "eng-8",
+                "title_en": "M365 Copilot OpenAI Proxy",
+                "title_jp": "M365 Copilot OpenAI Proxy",
+                "year": "2026",
+                "text_en": "Built a local FastAPI proxy that exposes Microsoft 365 Copilot through OpenAI-compatible API routes, with browser-session token capture and refresh, streaming-style client support, persistent Copilot sessions, and local OpenAI/Anthropic-style client integration.",
+                "text_jp": "Microsoft 365 CopilotをOpenAI互換APIルートから利用するためのローカルFastAPIプロキシを構築し、ブラウザセッショントークンの取得・更新、ストリーミング系クライアント対応、永続Copilotセッション、OpenAI / Anthropic形式のローカルクライアント連携に対応しました。",
+                "links": [
+                    {
+                        "label_en": "GitHub",
+                        "label_jp": "GitHub",
+                        "url": "https://github.com/kuchris/m365-copilot-openai-proxy"
+                    }
+                ]
+            },
+            {
+                "id": "eng-9",
                 "title_en": "Local Document Conversion Tools",
                 "title_jp": "ローカル文書変換ツール",
                 "year": "2026",
@@ -274,7 +289,7 @@
                 ]
             },
             {
-                "id": "eng-9",
+                "id": "eng-10",
                 "title_en": "Local Meeting STT",
                 "title_jp": "Local Meeting STT",
                 "year": "2026",
