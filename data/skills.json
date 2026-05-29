@@ -66,17 +66,20 @@
     "id": "ai-llm-tooling",
     "title_en": "AI / LLM Tooling",
     "title_jp": "AI / LLMツール",
-    "description_en": "Local AI tooling for document workflows, retrieval, speech transcription, and AI-assisted development.",
-    "description_jp": "文書処理、検索、音声文字起こし、AI支援開発に使うローカルAIツール群です。",
+    "description_en": "Local AI tooling for persistent memory, document search, retrieval, speech transcription, and AI-assisted development.",
+    "description_jp": "永続メモリ、文書検索、検索拡張、音声文字起こし、AI支援開発に使うローカルAIツール群です。",
     "items": [
       { "label_en": "RAG Pipelines", "label_jp": "RAGパイプライン", "featured": true },
       { "label_en": "Local LLM Workflows", "label_jp": "ローカルLLMワークフロー", "featured": true },
       { "label_en": "Local STT / ASR Workflows", "label_jp": "ローカル音声認識ワークフロー", "featured": true },
       { "label_en": "OpenAI-compatible APIs", "label_jp": "OpenAI互換API" },
+      { "label_en": "SQLite FTS", "label_jp": "SQLite FTS" },
+      { "label_en": "Hybrid Keyword / Vector Search", "label_jp": "キーワード / ベクトルのハイブリッド検索" },
       { "label_en": "Vector Search", "label_jp": "ベクトル検索" },
       { "label_en": "PDF Parsing", "label_jp": "PDF解析" },
       { "label_en": "Document Chunking", "label_jp": "文書チャンク化" },
       { "label_en": "MCP", "label_jp": "MCP" },
+      { "label_en": "Codex Hooks", "label_jp": "Codexフック" },
       { "label_en": "AI-assisted Development", "label_jp": "AI支援開発" }
     ]
   },

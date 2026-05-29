@@ -134,20 +134,20 @@
             },
             {
                 "id": "physics-10",
-                "title_en": "Numerical Solution of the Gross-Pitaevskii Equation",
-                "title_jp": "Gross-Pitaevskii方程式の数値解法",
-                "year": "2025",
-                "text_en": "Solved the Gross-Pitaevskii equation numerically to analyze Bose-Einstein condensate ground states and dynamics.",
-                "text_jp": "Gross-Pitaevskii方程式を数値的に解き、ボース・アインシュタイン凝縮体の基底状態とダイナミクスを解析しました。",
-                "links": []
-            },
-            {
-                "id": "physics-11",
                 "title_en": "Quantum Wavepacket Dynamics in a 2D Lattice with Defects",
                 "title_jp": "欠陥を含む2次元格子における量子波束ダイナミクス",
                 "year": "2025",
                 "text_en": "Simulated two-dimensional wavepacket propagation with Crank-Nicolson time stepping to study scattering and localization in defected lattices.",
                 "text_jp": "Crank-Nicolson法を用いて2次元波束伝播をシミュレーションし、欠陥格子中の散乱と局在を調べました。",
+                "links": []
+            },
+            {
+                "id": "physics-11",
+                "title_en": "Protocol-Dependent Vortex-Threshold Diagnostics in a Rotating Gross-Pitaevskii Condensate",
+                "title_jp": "回転Gross-Pitaevskii凝縮体における渦しきい値診断",
+                "year": "2026",
+                "text_en": "Built a reproducible 2D finite-difference Gross-Pitaevskii simulation workflow with rotating-frame relaxation, phase-winding vortex detection, density and flow diagnostics, and robustness checks across trap anisotropy, interaction strength, grid resolution, seed, ramp step, timestep, and box size.",
+                "text_jp": "2次元有限差分Gross-Pitaevskiiシミュレーションを構築し、回転座標系での緩和、位相巻き数による渦検出、密度・流れの診断、トラップ異方性、相互作用強度、格子解像度、乱数種、ランプ幅、時間刻み、計算領域サイズに対するロバスト性確認を行いました。",
                 "links": []
             }
         ]
@@ -248,8 +248,8 @@
                 "title_en": "RagMemory",
                 "title_jp": "RagMemory",
                 "year": "2026",
-                "text_en": "Developed a local persistent-memory prototype for LLM workflows using layered raw and structured memory, retrieval, exact artifact preservation for configs, tables, and code blocks, and a separate MCP server surface.",
-                "text_jp": "LLMワークフロー向けに、raw / structured memoryの層構造、検索、設定・表・コードブロックの正確な保存、独立したMCP server surfaceを備えたローカル永続メモリのプロトタイプを開発しました。",
+                "text_en": "Built a local persistent-memory system for Codex workflows with hook-based recall/save, structured memory extraction, decay-aware retrieval, an Obsidian mirror, background compaction, and tombstone-based removal for wrong or private memories.",
+                "text_jp": "Codexワークフロー向けに、hookによる自動 recall/save、structured memory抽出、decay-aware retrieval、Obsidian mirror、background compaction、誤り・私的情報向けのtombstone removalを備えたローカル永続メモリシステムを構築しました。",
                 "links": [
                     {
                         "label_en": "GitHub",
@@ -300,6 +300,21 @@
                         "label_en": "GitHub",
                         "label_jp": "GitHub",
                         "url": "https://github.com/kuchris/local-meeting-stt"
+                    }
+                ]
+            },
+            {
+                "id": "eng-11",
+                "title_en": "DocMemory",
+                "title_jp": "DocMemory",
+                "year": "2026",
+                "text_en": "Built a local Markdown document search tool using SQLite FTS, optional FastEmbed vector search, hybrid keyword/vector ranking, Windows launchers, experimental DirectML/OpenVINO vector builds, and a read-only MCP server for agent workflows.",
+                "text_jp": "SQLite FTS、任意のFastEmbedベクトル検索、keyword/vector hybrid ranking、Windows launcher、実験的なDirectML/OpenVINO vector build、agent workflow向けread-only MCP serverを備えたローカルMarkdown文書検索ツールを構築しました。",
+                "links": [
+                    {
+                        "label_en": "GitHub",
+                        "label_jp": "GitHub",
+                        "url": "https://github.com/kuchris/DocMemory"
                     }
                 ]
             }
