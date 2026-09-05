@@ -26,7 +26,8 @@
       { "label_en": "Finite-Difference Solvers", "label_jp": "有限差分ソルバー" },
       { "label_en": "Monte Carlo Methods", "label_jp": "モンテカルロ法" },
       { "label_en": "Data Analysis", "label_jp": "データ解析" },
-      { "label_en": "Quantum Simulation", "label_jp": "量子シミュレーション" }
+      { "label_en": "Quantum Simulation", "label_jp": "量子シミュレーション" },
+      { "label_en": "3D Gaussian Splatting", "label_jp": "3D Gaussian Splatting" }
     ]
   },
   {
@@ -96,6 +97,10 @@
       { "label_en": "Matplotlib", "label_jp": "Matplotlib" },
       { "label_en": "PyTorch", "label_jp": "PyTorch" },
       { "label_en": "CuPy", "label_jp": "CuPy" },
+      { "label_en": "CUDA", "label_jp": "CUDA" },
+      { "label_en": "COLMAP", "label_jp": "COLMAP" },
+      { "label_en": "gsplat", "label_jp": "gsplat" },
+      { "label_en": "Viser", "label_jp": "Viser" },
       { "label_en": "Qt 5", "label_jp": "Qt 5" },
       { "label_en": "MATLAB", "label_jp": "MATLAB" },
       { "label_en": "LabVIEW", "label_jp": "LabVIEW" }

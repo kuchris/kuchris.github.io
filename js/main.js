@@ -3,7 +3,7 @@ let projectsData = [];
 let timelineData = [];
 let skillsData = null;
 let translations = {};
-const DATA_VERSION = "20260521";
+const DATA_VERSION = "20260905";
 
 const timelineContainer = document.getElementById("timeline-container");
 const projectsContainer = document.getElementById("projects-container");
@@ -11,6 +11,18 @@ const languageButtons = document.querySelectorAll(".btn-language");
 const navToggle = document.getElementById("nav-toggle");
 const navPanel = document.getElementById("site-menu");
 const navLinks = document.querySelectorAll(".nav-links a");
+const cvLinks = document.querySelectorAll("[data-cv-link]");
+
+const cvFiles = {
+    en: {
+        href: "files/Chris_Wong_CV.pdf",
+        download: "Chris_Wong_CV.pdf"
+    },
+    jp: {
+        href: "files/Chris_Wong_CV_JP.pdf",
+        download: "Chris_Wong_CV_JP.pdf"
+    }
+};
 
 const textMappings = {
     "nav-about": "nav-about",
@@ -288,6 +300,15 @@ function updateLanguageButtons(lang) {
     });
 }
 
+function updateCvLinks(lang) {
+    const cvFile = cvFiles[lang] || cvFiles.en;
+
+    cvLinks.forEach((link) => {
+        link.href = cvFile.href;
+        link.download = cvFile.download;
+    });
+}
+
 function switchLanguage(lang) {
     if (!translations[lang]) {
         return;
@@ -296,6 +317,7 @@ function switchLanguage(lang) {
     currentLang = lang;
     updatePageText(lang);
     updateLanguageButtons(lang);
+    updateCvLinks(lang);
     renderTimeline();
     renderResearchProjects();
     renderSkills();

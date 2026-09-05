@@ -317,6 +317,21 @@
                         "url": "https://github.com/kuchris/DocMemory"
                     }
                 ]
+            },
+            {
+                "id": "eng-12",
+                "title_en": "Capture Studio: 3D Gaussian Splatting Pipeline",
+                "title_jp": "Capture Studio：3D Gaussian Splattingパイプライン",
+                "year": "2026",
+                "text_en": "Built an end-to-end local Windows photo-to-3DGS pipeline with photo-quality screening, GPU COLMAP reconstruction, CUDA/gsplat training, resumable densification, held-out PSNR/SSIM/L1 evaluation, SH-preserving PLY export, and an interactive Viser WebGL viewer. A verified 128-image demo registered 84,004 sparse points at 0.612-pixel mean reprojection error, while the smoke trainer reduced preview L1 loss from 0.2281 to 0.0879 in 100 steps.",
+                "text_jp": "写真品質チェック、GPU版COLMAPによる再構成、CUDA・gsplat学習、再開可能な高品質化、ホールドアウト画像によるPSNR・SSIM・L1評価、SH係数を保持したPLY出力、Viser WebGLビューアまでを一体化したローカルWindows向け写真から3DGSを生成するパイプラインを構築しました。128枚の検証用データでは84,004点の疎点群を平均再投影誤差0.612ピクセルで生成し、100ステップのスモーク学習でプレビュー画像のL1損失を0.2281から0.0879へ低減しました。",
+                "links": [
+                    {
+                        "label_en": "GitHub",
+                        "label_jp": "GitHub",
+                        "url": "https://github.com/kuchris/3dgs-capture-studio"
+                    }
+                ]
             }
         ]
     }
