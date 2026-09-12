@@ -340,7 +340,13 @@
                 "year": "2026",
                 "text_en": "Built a privacy-first Windows voice studio around OmniVoice for zero-shot voice cloning and multilingual text-to-speech. The app reuses saved Cantonese and Mandarin voice prompts, loads the model once on GPU, localizes the UI in Cantonese, English, and Japanese, and provides searchable language selection, speed, quality, voice-direction, gain, and autoplay controls. On an RTX 5070 Ti, a tested Japanese sample generated 4.63 seconds of audio in 1.04 seconds.",
                 "text_jp": "OmniVoiceを用い、ゼロショット音声クローニングと多言語TTSに対応するプライバシー重視のWindowsローカルボイススタジオを開発しました。保存済みの広東語・中国語音声プロンプトを再利用し、モデルをGPU上に一度だけ読み込み、広東語・英語・日本語に切り替えられるUI、検索可能な言語選択、話速・品質・音声指示・音量・自動再生を実装しました。RTX 5070 Tiでは、4.63秒の日本語音声を1.04秒で生成しました。",
-                "links": []
+                "links": [
+                    {
+                        "label_en": "GitHub",
+                        "label_jp": "GitHub",
+                        "url": "https://github.com/kuchris/local-voice-studio"
+                    }
+                ]
             }
         ]
     }
