@@ -347,6 +347,21 @@
                         "url": "https://github.com/kuchris/local-voice-studio"
                     }
                 ]
+            },
+            {
+                "id": "eng-14",
+                "title_en": "Industrial Visual Anomaly Detection",
+                "title_jp": "工業製品の画像異常検知",
+                "year": "2026",
+                "text_en": "Implemented a PyTorch PatchCore pipeline with pretrained CNN features, coreset sampling, chunked nearest-neighbor search, normal-only threshold calibration, and defect heatmaps. On MVTec AD bottle, the calibrated model achieved 1.0000 image AUROC and 0.9884 pixel AUROC, with 82/83 correct image decisions. Compared an autoencoder baseline and ran 20 PatchCore experiments to measure few-shot accuracy, memory use, and GPU latency; results are specific to this benchmark category.",
+                "text_jp": "事前学習済みCNN特徴、コアセット選択、分割最近傍探索、正常画像のみを用いたしきい値校正、欠陥ヒートマップを備えたPatchCoreをPyTorchで実装しました。MVTec ADのbottleカテゴリで画像AUROC 1.0000・画素AUROC 0.9884、83枚中82枚の正判定を達成しました。オートエンコーダーとの比較と20回のPatchCore実験により、少数画像時の精度、メモリ使用量、GPU推論時間を評価しました。結果はこのベンチマークカテゴリに限定されます。",
+                "links": [
+                    {
+                        "label_en": "GitHub",
+                        "label_jp": "GitHub",
+                        "url": "https://github.com/kuchris/industrial-anomaly-detection"
+                    }
+                ]
             }
         ]
     }
